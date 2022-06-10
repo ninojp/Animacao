@@ -1,0 +1,72 @@
+<nome> Nome:
+
+Steins;Gate
+________________________________________________________________________________________________________________________
+<nome_completo> Nome completo ou Sinônimos:
+
+Steins-Gate e a Teoria do Caos (Portuguese)
+English: Steins;Gate
+Hepburn: Shutainzu Gēto
+Japonês: シュタインズ・ゲート
+
+________________________________________________________________________________________________________________________
+<genero> Gênero e TAGs de Tema:
+
+Anime, Ficção científica, Thriller, Drama
+________________________________________________________________________________________________________________________
+<descricao> Descrição e Enredo:
+
+Steins;Gate (シュタインズ・ゲート Shutainzu Gēto?) é uma visual novel japonesa desenvolvida pela 5pb e pela Nitroplus. Foi lançada em 15 de outubro de 2009 para o Xbox 360. Essa é a segunda vez que essas empresas trabalham juntas depois de Chaos;Head. Uma versão foi feita para o sistema operacional Windows, que foi lançada em 26 de agosto de 2010 e outra versão para PSP, lançada em 23 de junho de 2011.
+Steins;Gate tem sido elogiado por seu enredo e as vozes dos atores. Uma adaptação para mangá foi feita por Sarachi Yomi e começou a ser distribuída pela revista Monthly Comic Alive em 26 de setembro de 2009. Uma segunda série de mangás foi feita por Kenji Mizuta e distribuida pela revista Monthly Comic Blade em 28 de dezembro de 2009. Uma versão em anime foi ao ar no Japão entre 6 de abril de 2011 e 14 de setembro de 2011, com intenção de ser levada para o cinema. Uma sequência do jogo chamada Steins;Gate: Hiyoku Renri no Darling foi lançada em 16 de junho de 2011. A segunda sequência do jogo chamada Steins;Gate 8bit foi lançada em 28 de Novembro de 2011.
+Enredo:
+A história de Steins;Gate acontece em Akihabara e é sobre um grupo de amigos que customizaram seu microondas em um dispositivo que pode mandar mensagens para o passado. Como eles fazem diversos experimentos, uma organização chamada SERN, que vem fazendo suas próprias pesquisas sobre viagem no tempo descobre esse grupo e agora os personagens tem de encontrar uma maneira para evitar ser capturado por eles.
+Conteúdo completo em <a href="https://pt.wikipedia.org/wiki/Steins;Gate" alt="Wikipedia" target="_blank">Wikipedia</a>
+
+________________________________________________________________________________________________________________________
+<temporadas>Numero de Temporadas - episódios - Datas:
+<nome_completo>
+Serie: 1ª Temporada, Steins;Gate - Episódios(24 min) 1 ao 24
+Exibido: 6 de Abril a 14 Setembro 2011 
+
+________________________________________________________________________________________________________________________
+<ovas>: OVAs/ONAs/especiais/extras:
+
+OVA - Steins;Gate: Egoistic Poriomania - Episódio 25 (24 min)
+Exibido: 22 de Fevereiro 2012
+
+ONA - Steins;Gate: Sōmei Eichi no Cognitive Computing - Episódios(3 min) 1 ao 4 
+O projeto é o resultado de uma colaboração entre Steins; o criador, Chiyomaru Shikura, e representantes da IBM Japão. Os curtas foram transmitidos no site da IBM Japão e no canal oficial do YouTube.
+Exibido: 15 de Outubro a 11 Novembro 2014
+
+Especial - Steins;Gate: Kyoukaimenjou no Missing Link - Divide by Zero - Episódio 23β (24 min)
+Exibido 02 de Dezembro 2015 durante a retransmissão de Steins;Gate para promover o Steins;Gate 0.
+O especial incorpora a maior parte do 23º episódio do anime Steins;Gate, mas apresenta uma alternativa totalmente nova que termina na última metade.
+________________________________________________________________________________________________________________________
+<anime_filmes>: Links para Filmes:
+<a href="https://localhost/dtudo/anime_detalhes.php?id=187">
+1ª Serie - Chaos;Head</a><br>
+<a href="https://localhost/dtudo/filme_detalhes.php?id=3">
+Filme - Steins;Gate: Load Region of Déjà Vu</a><br>
+<a href="https://localhost/dtudo/anime_detalhes.php?id=194">
+3ª Serie - Robotics;Notes</a><br>
+<a href="https://localhost/dtudo/anime_detalhes.php?id=195">
+4ª Serie - Occultic;Nine</a><br>
+<a href="https://localhost/dtudo/anime_detalhes.php?id=196">
+5ª Serie - Chaos;Child</a><br>
+<a href="https://localhost/dtudo/anime_detalhes.php?id=197">
+6ª Serie - Steins;Gate 0: Zero</a>
+________________________________________________________________________________________________________________________
+<elenco> Personagens Principal:
+
+Rintaro Okabe, Kurisu Makise, Mayuri Shiina, Itaru "Daru" Hashida, Suzuha Amane, Luka Urushibara, Faris NyanNyan, Moeka Kiryu, John Titor, Yugo "Mr. Braun" Tennouji, Nae Tennouji
+_______________________________________________________________________________________________________________________
+<nota>De 1 a 10 o que eu achei do Anime:
+9.9 
+
+<direcao>:(opcional o preechimento) 
+
+Direção: Hiroshi Hamasaki, Takuya Satō, Tomoki Kobayashi (OVA)
+Estúdio de animação: White Fox
+Emissoras de televisão originais: Japão AT-X, CTC, NND, SUN-TV, Tokyo MX, TV Aichi, TVK, TVS
+Emissoras de televisão lusófonas: Brasil Funimation
+

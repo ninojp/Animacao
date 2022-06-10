@@ -1,0 +1,18 @@
+#footer_rodape {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  	justify-items: space-between;
+	align-content: space-between;
+  	align-items: center;
+    font-size: 12px;
+}
+#div_esquerda {
+    display: flex;
+}
+#div_centro {
+    display: flex;
+}
+#div_direita {
+    display: flex;
+}
