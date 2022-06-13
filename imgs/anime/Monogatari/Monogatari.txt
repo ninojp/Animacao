@@ -1,0 +1,22 @@
+Listagem de caminhos de pasta
+O n£mero de s‚rie do volume ‚ B2B0-8A97
+C:.
++---1. First Season
+|   +---1. Bakemonogatari
+|   |   \---Bakemonogatari [720p] Leg
+|   +---2. Kizumonogatari
+|   +---3. Nisemonogatari
+|   \---4. Nekomonogatari (Kuro)
++---2. Second Season
+|   +---10. Hanamonogatari
+|   +---5. Nekomonogatari (Shiro)
+|   +---6. Kabukimonogatari
+|   +---7. Otorimonogatari
+|   +---8 .Onimonogatari
+|   \---9. Koimonogatari
+\---3. Final Season
+    +---11. Tsukimonogatari
+    +---12. Owarimonogatari S01
+    +---13. Koyomimonogatari
+    +---14. Owarimonogatari S02
+    \---15. Zoku Owarimonogatari

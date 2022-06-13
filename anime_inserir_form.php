@@ -116,29 +116,30 @@
 				<input type="radio" name="genero_anime" value="8">CyberPunk<br>
 				<input type="radio" name="genero_anime" value="7">Drama<br>
 				<input type="radio" name="genero_anime" value="36">Ecchi<br>
+				<input type="radio" name="genero_anime" value="9">Fantasia<br>
 			</div>
 			<div class="col-4">
-				<input type="radio" name="genero_anime" value="34">Horror<br>
-				<input type="radio" name="genero_anime" value="9">Fantasia<br>
 				<input type="radio" name="genero_anime" value="10">Ficção<br>
 				<input type="radio" name="genero_anime" value="11">Ficção Científica<br>
+				<input type="radio" name="genero_anime" value="20">Game<br>
 				<input type="radio" name="genero_anime" value="12">Harém<br>
+				<input type="radio" name="genero_anime" value="34">Horror<br>
 				<input type="radio" name="genero_anime" value="13">Magia<br>
+				<input type="radio" name="genero_anime" value="37">Mecha<br>
+				<input type="radio" name="genero_anime" value="21">Mistério<br>
 				<input type="radio" name="genero_anime" value="14">Romance<br>
 				<input type="radio" name="genero_anime" value="15">Seinen<br>
-				<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
-				<input type="radio" name="genero_anime" value="17">Super Herói<br>
 			</div>
 			<div class="col-4">
-				<input type="radio" name="genero_anime" value="18">Super Poderes<br>
-				<input type="radio" name="genero_anime" value="19">Policial<br>
-				<input type="radio" name="genero_anime" value="20">Game<br>
-				<input type="radio" name="genero_anime" value="21">Mistério<br>
-				<input type="radio" name="genero_anime" value="22">Terror<br>
-				<input type="radio" name="genero_anime" value="23">Suspence<br>
+				<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
 				<input type="radio" name="genero_anime" value="24">Sobrenatural<br>
+				<input type="radio" name="genero_anime" value="17">Super Herói<br>
+				<input type="radio" name="genero_anime" value="18">Super Poderes<br>
+				<input type="radio" name="genero_anime" value="23">Suspence<br>
+				<input type="radio" name="genero_anime" value="19">Policial<br>
 				<input type="radio" name="genero_anime" value="25">Paródia<br>
 				<input type="radio" name="genero_anime" value="26">Pós Apocalíptico<br>
+				<input type="radio" name="genero_anime" value="22">Terror<br>
 			</div>
 			</div><hr>
 			<button type="submit" class="btn btn-success">Enviar GENERO do ANIME!</button>
