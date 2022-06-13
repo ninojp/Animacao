@@ -110,53 +110,6 @@ $consulta_filme = $conecta->query("SELECT * FROM filme where anime_id_anime='$id
 	  			<button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#demo">Descrição: <?php echo $exib_anime['nome_anime'];?></button> Click no Botão para vizualizar a Descrição!
 				<p id="demo" class="collapse fundo_black_80"><?php echo nl2br($exib_anime['descricao_anime']); ?></p>
     		</div>
-			<!-- Bloco FIELDSET PERSONAGENS PRINCIPAIS -->
-    		<div class="col-md-6 text-start">
-        	<?php if ($exib_anime['personagens']!="") { ?>
-					<fieldset class="" id="fieldset">
-						<legend>
-						Persomagens do Anime:
-						</legend>
-				  		<p><?php echo nl2br($exib_anime['personagens']); ?></p>
-					</fieldset>
-        	<?php } ?>
-    		</div>
-			<!-- Bloco FIELDSET dados dos AUTORES------------------------------------>
-    		<div class="col-md-6 text-start">   
-        		<?php if ($exib_anime['estudio']!="") { ?>
-            	<fieldset class="">
-			    	<legend><h4>Dados dos AUTORES:</h4></legend>
-                	<?php if ($exib_anime['direcao']!="") { ?>
-                	<div class="">
-				    	<p>Direção: <?php echo nl2br($exib_anime['direcao']); ?></p>
-               		</div><?php } ?><hr>
-               		<?php if ($exib_anime['producao']!="") { ?>
-               	 	<div class="">
-				    	<p>Produção: <?php echo nl2br($exib_anime['producao']); ?></p>
-                	</div><?php } ?><hr>
-                	<?php if ($exib_anime['roteiro']!="") { ?>
-                	<div class="">
-				    	<p>Roteiro: <?php echo nl2br($exib_anime['roteiro']); ?></p>
-               	 	</div><?php } ?><hr>
-                	<?php if ($exib_anime['musica']!="") { ?>
-                	<div class="">
-				    	<p>Musica: <?php echo nl2br($exib_anime['musica']); ?></p>
-                	</div><?php } ?><hr>
-                	<?php if ($exib_anime['estudio']!="") { ?>
-                	<div class="">
-				   	 	<p>Estúdio: <?php echo nl2br($exib_anime['estudio']); ?></p>
-                	</div><?php } ?><hr>
-                	<?php if ($exib_anime['licenciamento']!="") { ?>
-                	<div class="">
-				    	<p>Licenciado: <?php echo nl2br($exib_anime['licenciamento']); ?></p>
-                	</div><?php } ?><hr>
-                	<?php if ($exib_anime['original_network']!="") { ?>
-                	<div class="">
-				    	<p>Original Network: <?php echo nl2br($exib_anime['original_network']); ?></p>
-                	</div> <?php } ?>
-            	</fieldset>
-    			<?php } ?>
-    		</div>	
 			<!-- Bloco para exibição dos detalhes da SÉRIE deste ANIME -->
 			<?php while($exib_serie = $consulta_serie->fetch(PDO::FETCH_ASSOC)) {  ?>
 			<?php if ($exib_serie['titulo_serie']!="") { ?>
@@ -200,6 +153,41 @@ $consulta_filme = $conecta->query("SELECT * FROM filme where anime_id_anime='$id
     		</div>
 			<?php } ?>
 			<?php } ?>
+			<!-- Bloco de detalhes dos FILMEs ANIME -->
+			<?php while($exib_filme = $consulta_filme->fetch(PDO::FETCH_ASSOC)) {  ?>
+			<?php if ($exib_filme['titulo_filme']!="") { ?>
+    		<div class="col-md-6 fundo_black_40">
+    			<h4 class="tex-center">filme: <?php echo nl2br($exib_filme['titulo_filme']); ?></h4>
+			<!-- Bloco IMAGENS MINI do FILME  -->
+			<div class="row">
+        		<div class="col-md-5">
+            		<img class="div_img_thumb" style="max-height:300px" src="imgs/filme/<?php echo $exib_filme['img_mini'];?>">
+        		</div>
+        		<div class="col-md-7 fundo_black_80">
+        			<?php if ($exib_filme['s_titulo_filme']!="") { ?>
+           			<div class="">
+				    	<p>Sinônimos ou Subtitulos:<?php echo nl2br($exib_filme['s_titulo_filme']); ?></p>
+                	</div><?php } ?><hr>
+                	<?php if ($exib_filme['duracao_filme']!="") { ?>
+                	<div class="">
+				    	<p>Tempo de Duração dos Episódios:  <?php echo nl2br($exib_filme['duracao_filme']); ?></p>
+                	</div><?php } ?><hr>
+                	<?php if ($exib_filme['exibido']!="") { ?>
+                	<div class="">
+				    	<p>Data de lançamento:<br><?php echo nl2br($exib_filme['exibido']); ?></p>
+                	</div><?php } ?>
+        		</div>
+			</div>
+			<div class="row">
+        		<?php if ($exib_filme['enredo_filme']!="") { ?>
+            	<div class="col-md-12">
+				<button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#filme<?php echo $exib_filme['id_filme'];?>">Enredo:</button> Click no Botão para vizualizar o Enredo!
+				    <p id="filme<?php echo $exib_filme['id_filme'];?>" class="collapse text-start"><?php echo nl2br($exib_filme['enredo_filme']); ?></p>
+            	</div><?php } ?>
+			</div>
+    		</div>
+			<?php } ?>
+			<?php } ?>	
 			<!-- Bloco de detalhes das OVAs do ANIME -->
 			<?php while($exib_ova = $consulta_ova->fetch(PDO::FETCH_ASSOC)) {  ?>
 			<?php if ($exib_ova['titulo_ova']!="") { ?>
@@ -330,42 +318,53 @@ $consulta_filme = $conecta->query("SELECT * FROM filme where anime_id_anime='$id
     		</div>
 			<?php } ?>
 			<?php } ?>
-			<!-- Bloco de detalhes dos FILMEs ANIME -->
-			<?php while($exib_filme = $consulta_filme->fetch(PDO::FETCH_ASSOC)) {  ?>
-			<?php if ($exib_filme['titulo_filme']!="") { ?>
-    		<div class="col-md-6 fundo_black_40">
-    			<h4 class="tex-center">filme: <?php echo nl2br($exib_filme['titulo_filme']); ?></h4>
-			<!-- Bloco IMAGENS MINI do FILME  -->
-			<div class="row">
-        		<div class="col-md-5">
-            		<img class="div_img_thumb" style="max-height:300px" src="imgs/filme/<?php echo $exib_filme['img_mini'];?>">
-        		</div>
-        		<div class="col-md-7 fundo_black_80">
-        			<?php if ($exib_filme['s_titulo_filme']!="") { ?>
-           			<div class="">
-				    	<p>Sinônimos ou Subtitulos:<?php echo nl2br($exib_filme['s_titulo_filme']); ?></p>
-                	</div><?php } ?><hr>
-                	<?php if ($exib_filme['duracao_filme']!="") { ?>
-                	<div class="">
-				    	<p>Tempo de Duração dos Episódios:  <?php echo nl2br($exib_filme['duracao_filme']); ?></p>
-                	</div><?php } ?><hr>
-                	<?php if ($exib_filme['exibido']!="") { ?>
-                	<div class="">
-				    	<p>Data de lançamento:<br><?php echo nl2br($exib_filme['exibido']); ?></p>
-                	</div><?php } ?>
-        		</div>
-			</div>
-			<div class="row">
-        		<?php if ($exib_filme['enredo_filme']!="") { ?>
-            	<div class="col-md-12">
-				<button class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#filme<?php echo $exib_filme['id_filme'];?>">Enredo:</button> Click no Botão para vizualizar o Enredo!
-				    <p id="filme<?php echo $exib_filme['id_filme'];?>" class="collapse text-start"><?php echo nl2br($exib_filme['enredo_filme']); ?></p>
-            	</div><?php } ?>
-			</div>
+			<!-- Bloco FIELDSET PERSONAGENS PRINCIPAIS -->
+    		<div class="col-md-6 text-start">
+        	<?php if ($exib_anime['personagens']!="") { ?>
+					<fieldset class="" id="fieldset">
+						<legend>
+						Persomagens do Anime:
+						</legend>
+				  		<p><?php echo nl2br($exib_anime['personagens']); ?></p>
+					</fieldset>
+        	<?php } ?>
     		</div>
-			<?php } ?>
-			<?php } ?>	
-
+			<!-- Bloco FIELDSET dados dos AUTORES------------------------------------>
+    		<div class="col-md-6 text-start">   
+        		<?php if ($exib_anime['estudio']!="") { ?>
+            	<fieldset class="">
+			    	<legend><h4>Dados dos AUTORES:</h4></legend>
+                	<?php if ($exib_anime['direcao']!="") { ?>
+                	<div class="">
+				    	<p>Direção: <?php echo nl2br($exib_anime['direcao']); ?></p>
+               		</div><?php } ?><hr>
+               		<?php if ($exib_anime['producao']!="") { ?>
+               	 	<div class="">
+				    	<p>Produção: <?php echo nl2br($exib_anime['producao']); ?></p>
+                	</div><?php } ?><hr>
+                	<?php if ($exib_anime['roteiro']!="") { ?>
+                	<div class="">
+				    	<p>Roteiro: <?php echo nl2br($exib_anime['roteiro']); ?></p>
+               	 	</div><?php } ?><hr>
+                	<?php if ($exib_anime['musica']!="") { ?>
+                	<div class="">
+				    	<p>Musica: <?php echo nl2br($exib_anime['musica']); ?></p>
+                	</div><?php } ?><hr>
+                	<?php if ($exib_anime['estudio']!="") { ?>
+                	<div class="">
+				   	 	<p>Estúdio: <?php echo nl2br($exib_anime['estudio']); ?></p>
+                	</div><?php } ?><hr>
+                	<?php if ($exib_anime['licenciamento']!="") { ?>
+                	<div class="">
+				    	<p>Licenciado: <?php echo nl2br($exib_anime['licenciamento']); ?></p>
+                	</div><?php } ?><hr>
+                	<?php if ($exib_anime['original_network']!="") { ?>
+                	<div class="">
+				    	<p>Original Network: <?php echo nl2br($exib_anime['original_network']); ?></p>
+                	</div> <?php } ?>
+            	</fieldset>
+    			<?php } ?>
+    		</div>	
 			<!-- Link para ALTERAÇÂO do anime em exibição LEGADO do site anterior: TESTE -->
 			<a href="anime_alterar_form.php?id_anime=<?php echo $exib_anime['id_anime']; ?>">Alterar</a>
 		<!--DIV de fechamento do bloco principal col-xxl-10	e ROW -->
