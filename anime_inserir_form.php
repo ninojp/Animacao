@@ -338,7 +338,7 @@
 				</div>
 				<div class="col-xxl-4 border">
 					<label>Fim da Exibição:</label>
-					<input type="text" name="exib_fim_ova" class="form-control" size="100" placeholder="FIM 0000ano-00mês-00dia">
+					<input type="text" name="exib_fim_ova" class="form-control" size="100">
 				</div>
 				<div class="col-xxl-4 border">
 					<label for="tipo_anime1">OVA - Tipo:</label><br>
