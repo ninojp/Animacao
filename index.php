@@ -6,7 +6,44 @@
 	include_once('conecta.php');
 //CONSULTA na tabela ANIME JOIN IMAGEM ordenado por nome_anime
 	$consulta_anime = $conecta->query("SELECT * FROM anime AS a LEFT JOIN imagem AS img ON a.id_anime = img.anime_id_anime ORDER BY nome_anime ASC");
+
+//consulta para minha contagem de ANIMES
+	$consulta_anime = "SELECT COUNT(id_anime) AS qnt_anime FROM anime";
+	$result_anime = $conecta->prepare($consulta_anime);
+	$result_anime->execute();
+	$exibe_count_anime = $result_anime->fetch(PDO::FETCH_ASSOC);
+
+//consulta para minha contagem de SÉRIES
+	$consulta_serie = "SELECT COUNT(id_serie) AS qnt_serie FROM serie";
+	$result_serie = $conecta->prepare($consulta_serie);
+	$result_serie->execute();
+	$exibe_count_serie = $result_serie->fetch(PDO::FETCH_ASSOC);
+
+//consulta para minha contagem de FILMES
+	$consulta_filme = "SELECT COUNT(id_filme) AS qnt_filme FROM filme";
+	$result_filme = $conecta->prepare($consulta_filme);
+	$result_filme->execute();
+	$exibe_count_filme = $result_filme->fetch(PDO::FETCH_ASSOC);
+
+//consulta para minha contagem de OVAS
+	$consulta_ova = "SELECT COUNT(id_ova) AS qnt_ova FROM ova";
+	$result_ova = $conecta->prepare($consulta_ova);
+	$result_ova->execute();
+	$exibe_count_ova = $result_ova->fetch(PDO::FETCH_ASSOC);
+
+	//consulta para minha contagem de ONAS
+	$consulta_ona = "SELECT COUNT(id_ona) AS qnt_ona FROM ona";
+	$result_ona = $conecta->prepare($consulta_ona);
+	$result_ona->execute();
+	$exibe_count_ona = $result_ona->fetch(PDO::FETCH_ASSOC);
+
+	//consulta para minha contagem de ESPECIAIS
+	$consulta_especial = "SELECT COUNT(id_especial) AS qnt_especial FROM especial";
+	$result_especial = $conecta->prepare($consulta_especial);
+	$result_especial->execute();
+	$exibe_count_especial = $result_especial->fetch(PDO::FETCH_ASSOC);
 ?>
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -28,7 +65,7 @@
 <link rel="stylesheet" type="text/css" href="css/geral_style.css">
 </head>
 <body>
-<!--	DIV VIDEO video_dragao (loop) FOI RETIRADO pois estava consumindo muita MEMÓRIAW -->
+<!--	DIV VIDEO video_dragao (loop) FOI RETIRADO pois estava consumindo muita MEMÓRIA -->
 <!--
 <div class="video_dragao">
 	<video playsinline autoplay  muted>
@@ -87,6 +124,24 @@
 <!-- MAIN -> DIV -> SIDEBAR - CAMPO de selecionar por genero ----------------->
 	<div class="col-xxl-2 text-center">
 	<div class="row">
+	<div class="col-xx-12" style="margin-top: 3rem;">
+			<h5>Animes (<?php echo $exibe_count_anime['qnt_anime'];?>)</h5>
+		</div>
+		<div class="col-xx-12" style="margin-top: 1rem;">
+			<h5>Séries (<?php echo $exibe_count_serie['qnt_serie'];?>)</h5>
+		</div>
+		<div class="col-xx-12" style="margin-top: 1rem;">
+			<h5>Filmes (<?php echo $exibe_count_filme['qnt_filme'];?>)</h5>
+		</div>
+		<div class="col-xx-12" style="margin-top: 1rem;">
+			<h5>OVAs (<?php echo $exibe_count_ova['qnt_ova'];?>)</h5>
+		</div>
+		<div class="col-xx-12" style="margin-top: 1rem;">
+			<h5>ONAs (<?php echo $exibe_count_ona['qnt_ona'];?>)</h5>
+		</div>
+		<div class="col-xx-12" style="margin-top: 1rem;">
+			<h5>Especiais (<?php echo $exibe_count_especial['qnt_especial'];?>)</h5>
+		</div>
 		<div class="col-xxl-12" style="margin-top: 1rem;">
 			<a href="https://anidb.net/" target="_blank">
 			<img src="imgs/banner/Anidb-plain.webp" width="80%">
@@ -132,7 +187,7 @@
 			<a href="form_busca.php?input_busca=Super Poderes">Super Poderes </a><br>
 			<a href="form_busca.php?input_busca=Super heróis">Super heróis </a><br>
 			<a href="form_busca.php?input_busca=terror">Terror </a><br>
-			<a href="form_busca.php?input_busca=policial">Policial </a><br>
+			<a href="form_busca.php?input_busca=policial">Militar </a><br>
 			</h6><hr>
 			<h4>Tipo:</h4><h6>
 			<a href="form_busca.php?input_busca=filme">Filme(Anime)</a><br>
@@ -147,7 +202,8 @@
 </div>
 </main>
 <?php
-	include_once('rodape.php')
+	include_once('rodape.php');
+	include_once('banner_girls.php');
 ?>
 <script src="js/custom.js"></script>
 </body>

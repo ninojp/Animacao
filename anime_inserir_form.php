@@ -136,7 +136,7 @@
 				<input type="radio" name="genero_anime" value="17">Super Herói<br>
 				<input type="radio" name="genero_anime" value="18">Super Poderes<br>
 				<input type="radio" name="genero_anime" value="23">Suspence<br>
-				<input type="radio" name="genero_anime" value="19">Policial<br>
+				<input type="radio" name="genero_anime" value="19">Militar<br>
 				<input type="radio" name="genero_anime" value="25">Paródia<br>
 				<input type="radio" name="genero_anime" value="26">Pós Apocalíptico<br>
 				<input type="radio" name="genero_anime" value="22">Terror<br>

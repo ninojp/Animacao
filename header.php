@@ -22,22 +22,6 @@
     			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="13"></button>
     			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="14"></button>
     			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="15"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="16"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="17"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="18"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="19"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="20"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="21"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="22"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="23"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="24"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="25"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="26"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="27"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="28"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="29"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="30"></button>
-    			<button type="button" data-bs-target="#demo_anime" data-bs-slide-to="31"></button>
   			</div>
   			<!-- The slideshow/carousel -->
   			<div class="carousel-inner">
@@ -89,52 +73,7 @@
 				<div class="carousel-item">
 					<img src="imgs\banner\banner_img(14).png" alt="Imagem16" class="d-block" style="height:100%;">
 				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(15).png" alt="Imagem17" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(16).png" alt="Imagem18" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(17).png" alt="Imagem19" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(18).png" alt="Imagem20" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(19).png" alt="Imagem21" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(20).png" alt="Imagem22" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(21).png" alt="Imagem23" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(22).png" alt="Imagem24" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(23).png" alt="Imagem25" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(24).png" alt="Imagem26" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(25).png" alt="Imagem27" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(26).png" alt="Imagem28" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(27).png" alt="Imagem29" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(28).png" alt="Imagem30" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_img(29).jpg" alt="Imagem31" class="d-block" style="height:100%;">
-				</div>
-  			</div>
+			</div>
   			<!-- Left and right controls/icons -->
   			<button class="carousel-control-prev" type="button" data-bs-target="#demo_anime" data-bs-slide="prev">
     			<span class="carousel-control-prev-icon"></span>

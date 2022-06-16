@@ -9,3 +9,10 @@
 	width: 100%;
 	z-index: -1;	
 }
+.banner_lat_direita {
+	display: block;
+	position: fixed;
+	top: 4rem;
+	right: 1rem;
+	max-width: 290px;
+}
