@@ -188,6 +188,10 @@
 			<a href="form_busca.php?input_busca=Super heróis">Super heróis </a><br>
 			<a href="form_busca.php?input_busca=terror">Terror </a><br>
 			<a href="form_busca.php?input_busca=policial">Militar </a><br>
+			<a href="form_busca.php?input_busca=policial">Slice of Life</a><br>
+			<a href="form_busca.php?input_busca=policial">Infantil</a><br>
+			<a href="form_busca.php?input_busca=policial">Mecha</a><br>
+			<a href="form_busca.php?input_busca=policial">Horror</a><br>
 			</h6><hr>
 			<h4>Tipo:</h4><h6>
 			<a href="form_busca.php?input_busca=filme">Filme(Anime)</a><br>

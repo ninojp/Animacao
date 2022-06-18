@@ -117,13 +117,14 @@
 				<input type="radio" name="genero_anime" value="7">Drama<br>
 				<input type="radio" name="genero_anime" value="36">Ecchi<br>
 				<input type="radio" name="genero_anime" value="9">Fantasia<br>
+				<input type="radio" name="genero_anime" value="10">Ficção<br>
 			</div>
 			<div class="col-4">
-				<input type="radio" name="genero_anime" value="10">Ficção<br>
 				<input type="radio" name="genero_anime" value="11">Ficção Científica<br>
 				<input type="radio" name="genero_anime" value="20">Game<br>
 				<input type="radio" name="genero_anime" value="12">Harém<br>
 				<input type="radio" name="genero_anime" value="34">Horror<br>
+				<input type="radio" name="genero_anime" value="38">Infantil<br>
 				<input type="radio" name="genero_anime" value="13">Magia<br>
 				<input type="radio" name="genero_anime" value="37">Mecha<br>
 				<input type="radio" name="genero_anime" value="21">Mistério<br>
@@ -131,6 +132,8 @@
 				<input type="radio" name="genero_anime" value="15">Seinen<br>
 			</div>
 			<div class="col-4">
+				<input type="radio" name="genero_anime" value="39">Slice of Life<br>
+				<input type="radio" name="genero_anime" value="40">Shounen<br>
 				<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
 				<input type="radio" name="genero_anime" value="24">Sobrenatural<br>
 				<input type="radio" name="genero_anime" value="17">Super Herói<br>
