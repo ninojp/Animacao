@@ -111,11 +111,11 @@
 				<input type="radio" name="genero_anime" value="1">Ação<br>
 				<input type="radio" name="genero_anime" value="3">Aventura<br>
 				<input type="radio" name="genero_anime" value="4">Artes Marciais<br>
-				<input type="radio" name="genero_anime" value="5">Colegial<br>
 				<input type="radio" name="genero_anime" value="6">Comédia<br>
 				<input type="radio" name="genero_anime" value="8">CyberPunk<br>
 				<input type="radio" name="genero_anime" value="7">Drama<br>
 				<input type="radio" name="genero_anime" value="36">Ecchi<br>
+				<input type="radio" name="genero_anime" value="5">Escolar<br>
 				<input type="radio" name="genero_anime" value="9">Fantasia<br>
 				<input type="radio" name="genero_anime" value="10">Ficção<br>
 			</div>
@@ -130,12 +130,13 @@
 				<input type="radio" name="genero_anime" value="21">Mistério<br>
 				<input type="radio" name="genero_anime" value="14">Romance<br>
 				<input type="radio" name="genero_anime" value="15">Seinen<br>
+				<input type="radio" name="genero_anime" value="39">Slice of Life<br>
 			</div>
 			<div class="col-4">
-				<input type="radio" name="genero_anime" value="39">Slice of Life<br>
 				<input type="radio" name="genero_anime" value="40">Shounen<br>
 				<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
 				<input type="radio" name="genero_anime" value="24">Sobrenatural<br>
+				<input type="radio" name="genero_anime" value="41">Steampunk<br>
 				<input type="radio" name="genero_anime" value="17">Super Herói<br>
 				<input type="radio" name="genero_anime" value="18">Super Poderes<br>
 				<input type="radio" name="genero_anime" value="23">Suspence<br>
