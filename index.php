@@ -144,22 +144,32 @@
 		</div>
 		<div class="col-xxl-12" style="margin-top: 1rem;">
 			<a href="https://anidb.net/" target="_blank">
-			<img src="imgs/banner/Anidb-plain.webp" width="80%">
+			<img src="imgs/Anidb-plain.webp" width="80%">
 			</a>
 		</div>
 		<div class="col-xxl-12">
 			<a href="https://myanimelist.net/" target="_blank">
-			<img src="imgs/banner/myanimelist-Logo_mini.png">
+			<img src="imgs/myanimelist-Logo_mini.png">
 			</a>
 		</div>
 		<div class="col-xxl-12" style="margin-top: 2rem;">
 			<a href="https://www.animenewsnetwork.com/" target="_blank">
-			<img src="imgs/banner/Anime_News_Network_logo_mini.png">
+			<img src="imgs/Anime_News_Network_logo_mini.png">
 			</a>
 		</div>
 		<div class="col-xxl-12" style="margin-top: 2rem;">
 			<a href="https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal" target="_blank">
-				<img src="imgs/banner/wikipedia_mini.png"><img src="imgs/banner/wikipedia-logo-text-logo-branco_mini.png"></a>
+				<img src="imgs/wikipedia_mini.png"><img src="imgs/wikipedia-logo-text-logo-branco_mini.png"></a>
+		</div>
+		<div class="col-xxl-12" style="margin-top: 2rem;">
+			<a href="https://www.imdb.com/" target="_blank">
+			<img src="imgs/imdb-logo.png">
+			</a>
+		</div>
+		<div class="col-xxl-12" style="margin-top: 2rem;">
+			<a href="https://filmow.com/" target="_blank">
+			<img src="imgs/filmow-logo.png">
+			</a>
 		</div>
 		<div class="col-xxl-12" style="margin-top: 2rem;">
 		<h4>Generos e temas</h4>
