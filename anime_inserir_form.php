@@ -118,13 +118,15 @@
 				<input type="radio" name="genero_anime" value="5">Escolar<br>
 				<input type="radio" name="genero_anime" value="9">Fantasia<br>
 				<input type="radio" name="genero_anime" value="10">Ficção<br>
+				<input type="radio" name="genero_anime" value="11">Ficção Científica<br>
 			</div>
 			<div class="col-4">
-				<input type="radio" name="genero_anime" value="11">Ficção Científica<br>
 				<input type="radio" name="genero_anime" value="20">Game<br>
+				<input type="radio" name="genero_anime" value="43">Gore<br>
 				<input type="radio" name="genero_anime" value="12">Harém<br>
 				<input type="radio" name="genero_anime" value="34">Horror<br>
 				<input type="radio" name="genero_anime" value="38">Infantil<br>
+				<input type="radio" name="genero_anime" value="42">Isekai<br>
 				<input type="radio" name="genero_anime" value="13">Magia<br>
 				<input type="radio" name="genero_anime" value="37">Mecha<br>
 				<input type="radio" name="genero_anime" value="21">Mistério<br>
