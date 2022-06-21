@@ -353,7 +353,7 @@
 					<input type="radio" name="tipo_anime1" value="2">Animação<br>
 					<input type="radio" name="tipo_anime1" value="3">Animação (CGI)<br>
 					<input type="radio" name="tipo_anime1" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime" value="5">Live Action<br>
+					<input type="radio" name="tipo_anime1" value="5">Live Action<br>
 				</div>
 				<div class="col-xxl-4 border">
 					<label for="select_anime3">Selecione o Anime para cadastrar!</label>
@@ -440,7 +440,7 @@
 					<input type="radio" name="tipo_anime3" value="2">Animação<br>
 					<input type="radio" name="tipo_anime3" value="3">Animação (CGI)<br>
 					<input type="radio" name="tipo_anime3" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime" value="5">Live Action<br>
+					<input type="radio" name="tipo_anime3" value="5">Live Action<br>
 				</div>
 				<div class="col-xxl-4  border">
 					<label for="select_anime4">Selecione o Anime para cadastrar:</label>
@@ -527,7 +527,7 @@
 					<input type="radio" name="tipo_anime4" value="2">Animação<br>
 					<input type="radio" name="tipo_anime4" value="3">Animação (CGI)<br>
 					<input type="radio" name="tipo_anime4" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime" value="5">Live Action<br>
+					<input type="radio" name="tipo_anime4" value="5">Live Action<br>
 				</div>
 				<div class="col-xxl-4 border">
 					<label for="select_anime5">Selecione o Anime para cadastrar a ONA</label>
@@ -606,7 +606,7 @@
 					<input type="radio" name="tipo_anime5" value="2">Animação<br>
 					<input type="radio" name="tipo_anime5" value="3">Animação (CGI)<br>
 					<input type="radio" name="tipo_anime5" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime" value="5">Live Action<br>
+					<input type="radio" name="tipo_anime5" value="5">Live Action<br>
 				</div>
 				<div class="col-xxl-6">
 					<label for="select_anime6">Selecione o NOME do Anime para cadastrar o FILME</label>

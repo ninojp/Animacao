@@ -189,6 +189,7 @@ where anime_id_anime='$id_anime'");
 				<input type="radio" name="tipo_serie" value="2">Animação<br>
 				<input type="radio" name="tipo_serie" value="3">Animação (CGI)<br>
 				<input type="radio" name="tipo_serie" value="4">Animação (Stop_Motion)<br>
+				<input type="radio" name="tipo_serie" value="5">Live Action<br>
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary">Enviar os Dados SÉRIE!</button>
@@ -233,6 +234,7 @@ where anime_id_anime='$id_anime'");
 				<input type="radio" name="tipo_ova" value="2">Animação<br>
 				<input type="radio" name="tipo_ova" value="3">Animação (CGI)<br>
 				<input type="radio" name="tipo_ova" value="4">Animação (Stop_Motion)<br>
+				<input type="radio" name="tipo_ova" value="5">Live Action<br>
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary">ALTERAR os Dados!</button>
@@ -277,6 +279,7 @@ where anime_id_anime='$id_anime'");
 				<input type="radio" name="tipo_especial" value="2">Animação<br>
 				<input type="radio" name="tipo_especial" value="3">Animação (CGI)<br>
 				<input type="radio" name="tipo_especial" value="4">Animação (Stop_Motion)<br>
+				<input type="radio" name="tipo_especial" value="5">Live Action<br>
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary">ALTERAR os Dados!</button>
@@ -321,6 +324,7 @@ where anime_id_anime='$id_anime'");
 				<input type="radio" name="tipo_ona" value="2">Animação<br>
 				<input type="radio" name="tipo_ona" value="3">Animação (CGI)<br>
 				<input type="radio" name="tipo_ona" value="4">Animação (Stop_Motion)<br>
+				<input type="radio" name="tipo_ona" value="5">Live Action<br>
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary">ALTERAR os Dados!</button>
@@ -361,6 +365,7 @@ where anime_id_anime='$id_anime'");
 				<input type="radio" name="tipo_filme" value="2">Animação<br>
 				<input type="radio" name="tipo_filme" value="3">Animação (CGI)<br>
 				<input type="radio" name="tipo_filme" value="4">Animação (Stop_Motion)<br>
+				<input type="radio" name="tipo_filme" value="5">Live Action<br>
 			</div>
 		</div>
 		<button type="submit" class="btn btn-primary">ALTERAR os Dados!</button>
