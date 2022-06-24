@@ -31,8 +31,6 @@
     			<button type="button" data-bs-target="#girls_anime" data-bs-slide-to="23"></button>
     			<button type="button" data-bs-target="#girls_anime" data-bs-slide-to="24"></button>
     			<button type="button" data-bs-target="#girls_anime" data-bs-slide-to="25"></button>
-    			<button type="button" data-bs-target="#girls_anime" data-bs-slide-to="26"></button>
-    			<button type="button" data-bs-target="#girls_anime" data-bs-slide-to="27"></button>
   			</div>
   			<!-- The slideshow/carousel -->
   			<div class="carousel-inner">
@@ -56,12 +54,6 @@
 				</div>
 				<div class="carousel-item">
 					<img src="imgs\banner\banner_girls (6).png" alt="Imagem6" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_girls (7).png" alt="Imagem7" class="d-block" style="height:100%;">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs\banner\banner_girls (8).png" alt="Imagem8" class="d-block" style="height:100%;">
 				</div>
 				<div class="carousel-item">
 					<img src="imgs\banner\banner_girls (9).png" alt="Imagem9" class="d-block" style="height:100%;">
