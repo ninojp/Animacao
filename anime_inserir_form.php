@@ -106,7 +106,6 @@
 				<?php }	?>
 				</select>
 		<div class="row border">
-			<hr><label for="genero_anime">Selecione os Genêros e Temas do Anime</label><br>
 			<div class="col-4">
 				<input type="radio" name="genero_anime" value="1">Ação<br>
 				<input type="radio" name="genero_anime" value="3">Aventura<br>
@@ -124,6 +123,7 @@
 			<div class="col-4">
 				<input type="radio" name="genero_anime" value="43">Gore<br>
 				<input type="radio" name="genero_anime" value="12">Harém<br>
+				<input type="radio" name="genero_anime" value="45">Histórico<br>
 				<input type="radio" name="genero_anime" value="34">Horror<br>
 				<input type="radio" name="genero_anime" value="38">Infantil<br>
 				<input type="radio" name="genero_anime" value="42">Isekai<br>
@@ -131,11 +131,12 @@
 				<input type="radio" name="genero_anime" value="37">Mecha<br>
 				<input type="radio" name="genero_anime" value="19">Militar<br>
 				<input type="radio" name="genero_anime" value="21">Mistério<br>
+				<input type="radio" name="genero_anime" value="46">Mitológico<br>
 				<input type="radio" name="genero_anime" value="14">Romance<br>
 				<input type="radio" name="genero_anime" value="15">Seinen<br>
-				<input type="radio" name="genero_anime" value="39">Slice of Life<br>
 			</div>
 			<div class="col-4">
+				<input type="radio" name="genero_anime" value="39">Slice of Life<br>
 				<input type="radio" name="genero_anime" value="40">Shounen<br>
 				<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
 				<input type="radio" name="genero_anime" value="24">Sobrenatural<br>
@@ -148,7 +149,7 @@
 				<input type="radio" name="genero_anime" value="44">Psicológico<br>
 				<input type="radio" name="genero_anime" value="22">Terror<br>
 			</div>
-			</div><hr>
+			</div>
 			<button type="submit" class="btn btn-success">Enviar GENERO do ANIME!</button>
 			</form>
 		</div>
