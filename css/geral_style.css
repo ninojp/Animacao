@@ -159,3 +159,27 @@ li .menu_pag {
 .fundo_black_20 {
 	background-color: rgba(0,0,0,0.2);
 }
+
+.thumb_div {
+    margin: 1rem 0rem 0rem 0rem;
+    max-height: 300px;
+}
+
+.thumb_img {
+    max-height:270px;
+    min-width:190px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255,1.00);
+}
+.thumb_div:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+span .span_nome {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+span a {
+    text-decoration: none;
+}

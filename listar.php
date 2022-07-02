@@ -11,27 +11,25 @@ if (!empty($pagina)) {
 //CONSULTA QUERY na tabela ANIME JOIN IMAGEM ordenado por nome_anime
 // testar erro  where id_anime = 1000
 	$query_anime = "SELECT id_anime, nome_anime, img_mini FROM `anime` 
-					ORDER BY id_anime DESC LIMIT $inicio, $qnt_result_pg";
+					ORDER BY nome_anime ASC LIMIT $inicio, $qnt_result_pg";
 	$result_anime = $conecta->prepare($query_anime);
 	$result_anime->execute();
 
 if (($result_anime) and ($result_anime->rowCount() != 0)){
 	$dados = "<div class='row text-center'>";
-
+	
 	while($row_anime = $result_anime->fetch(PDO::FETCH_ASSOC)){
 		extract($row_anime);
-		$dados .= "<div class='col-xxl-3'>";
+		$dados .= "<div class='thumb_div col-xxl-3'>";
 		$dados .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do Anime' target='_blank'>";
-		$dados .= "<div class='col-xxl-10 fundo_black_40 pt-2' style='max-height: 300px;'>";
-		$dados .= "<img src='imgs/anime/$img_mini' style='max-height:250px;'>";
-		$dados .= "</div>";
-		$dados .= "<div class='col-xxl-12 fundo_dark'>";
-		$dados .= "<h3>$nome_anime</h3>";
+		$dados .= "<img class='thumb_img' src='imgs/anime/$img_mini'>";
+		$dados .= "<div class='col-xxl-10'>";
+		$dados .= "<span class='span_nome'>$nome_anime</span>";
 		$dados .= "</div>";
 		$dados .= "</a>";
 		$dados .= "</div>";
 	}
-
+	
 	$dados .= "</div>";
 	
 	//Paginação - somar a quantidade de registro que ha no BD
