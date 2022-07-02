@@ -22,7 +22,7 @@ if (($result_anime) and ($result_anime->rowCount() != 0)){
 		extract($row_anime);
 		$dados .= "<div class='col-xxl-3'>";
 		$dados .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do Anime' target='_blank'>";
-		$dados .= "<div class='col-xxl-12 fundo_black_40 pt-2' style='max-height: 250px;'>";
+		$dados .= "<div class='col-xxl-10 fundo_black_40 pt-2' style='max-height: 300px;'>";
 		$dados .= "<img src='imgs/anime/$img_mini' style='max-height:250px;'>";
 		$dados .= "</div>";
 		$dados .= "<div class='col-xxl-12 fundo_dark'>";

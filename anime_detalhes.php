@@ -371,44 +371,9 @@ $consulta_filme = $conecta->query("SELECT * FROM filme where anime_id_anime='$id
 		</div>
 		</div>
 	<!-- MAIN -> DIV -> SIDEBAR col-2 - CAMPO de selecionar por genero -->
-	<div class="col-2 border text-center">
-	<div class="row">
-		<div class="col">
-		<h5>Generos ou temas:<br>
-			<a href="form_busca.php?input_busca=animação 3d">Animação 3D</a><br>
-			<a href="form_busca.php?input_busca=Ação">Ação</a><br>
-			<a href="form_busca.php?input_busca=Artes marciais">Artes Marciais </a><br>
-			<a href="form_busca.php?input_busca=aventura">Aventura</a><br>
-			<a href="form_busca.php?input_busca=Comédia">Comédia</a><br>
-			<a href="form_busca.php?input_busca=colegial">Colegial </a><br>
-			<a href="form_busca.php?input_busca=CyberPunk">CyberPunk </a><br>
-			<a href="form_busca.php?input_busca=Drama">Drama </a><br>
-			<a href="form_busca.php?input_busca=Ecchi">Ecchi </a><br>
-			<a href="form_busca.php?input_busca=Fantasia">Fantasia </a><br>
-			<a href="form_busca.php?input_busca=Ficção">Ficção </a><br>
-			<a href="form_busca.php?input_busca=Ficção Científica">Ficção Científica </a><br>
-			<a href="form_busca.php?input_busca=game">Game </a><br>
-			<a href="form_busca.php?input_busca=Harém">Harém </a><br>
-			<a href="form_busca.php?input_busca=Magia">Magia </a><br>
-			<a href="form_busca.php?input_busca=Mistério">Mistério </a><br>
-			<a href="form_busca.php?input_busca=Romance">Romance </a><br>
-			<a href="form_busca.php?input_busca=Seinen">Seinen </a><br>
-			<a href="form_busca.php?input_busca=Sobrenatural">Sobrenatural </a><br>
-			<a href="form_busca.php?input_busca=Sobrevivência">Sobrevivência </a><br>
-			<a href="form_busca.php?input_busca=suspense">Suspense </a><br>
-			<a href="form_busca.php?input_busca=Super Poderes">Super Poderes </a><br>
-			<a href="form_busca.php?input_busca=Super heróis">Super heróis </a><br>
-			<a href="form_busca.php?input_busca=policial">Policial </a><br>
-			<hr>
-			Tipo:<br>
-			<a href="form_busca.php?input_busca=filme">Filme(Anime)</a><br>
-			<a href="form_busca.php?input_busca=ecchi">Ecchi(+16)</a><br>
-			<hr>
-			<a href="anime_inserir_form.php">Inserir ANIME </a><br>
-		</h5>
-		</div>
-	</div>
-	</div>
+<?php
+	include_once('side_bar.php');
+?>
 </div>
 </main>
 <?php include 'rodape.php'; ?>
