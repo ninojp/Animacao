@@ -5,7 +5,7 @@ $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 
 if (!empty($pagina)) {
 	// CALCULAR O INICIO DA VISUALIZAÇÃO
-	$qnt_result_pg = 28; // Quantidade de registro por pagina
+	$qnt_result_pg = 32; // Quantidade de registro por pagina
 	$inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
 	
 //CONSULTA QUERY na tabela ANIME JOIN IMAGEM ordenado por nome_anime
@@ -42,7 +42,7 @@ if (($result_anime) and ($result_anime->rowCount() != 0)){
 	
 	// Quantidade de paginas
 	$quantidade_pg = ceil($row_pg['num_result']/$qnt_result_pg);// foi usado o CEIL para o arendondamento do numero
-	$max_links = 4; 
+	$max_links = 5; 
 	
 	$dados .= "<nav class='menu_pag' aria-label='Page navigation example'>";
 	$dados .= "<ul class='menu_pag pagination pagination-sm justify-content-center'>";
