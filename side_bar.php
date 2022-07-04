@@ -2,7 +2,7 @@
 include_once('consulta_count.php');
 ?>
 <!-- MAIN -> DIV -> SIDEBAR - CAMPO de selecionar por genero ----------------->
-<div class="col-xxl-2 text-center">
+<div class="col-xxl-2 col-xl-2 col-lg-2 text-center">
 	<div class="row">
 	<div class="col-xx-12" style="margin-top: 3rem;">
 			<h5>Animes (<?php echo $exibe_count_anime['qnt_anime'];?>)</h5>

@@ -1,8 +1,8 @@
 <div class="container banner_lat_direita">
 <div class="row text-center justify-content-center">
 <!-- Carousel de IMAGENS Animes-->
-	<div class="col-xxl-12 text-center">
-		<div id="girls_anime" class="col-xxl-12 carousel slide" data-bs-ride="carousel">
+	<div class="d-none d-xxl-block text-center">
+		<div id="girls_anime" class="carousel slide" data-bs-ride="carousel">
   		<!-- Indicators/dots -->
   			<div class="carousel-indicators">
     			<button type="button" data-bs-target="#girls_anime" data-bs-slide-to="0" class="active"></button>

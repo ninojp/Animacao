@@ -47,7 +47,7 @@
 <main class="container">
 <div class="row text-center fundo_black_80">
 <!-- coluna do campo Busca por letras -->
-	<div class="col-xxl-10 container">
+	<div class="col-xxl-10 col-xl-10 col-lg-10 container">
 		<div class="col-xxl-12">
 			<div class="row  mt-2">
 				<div class="col-xxl-12 nav nav-tabs">
