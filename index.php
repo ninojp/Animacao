@@ -84,6 +84,7 @@
 		<!-- MAIN -> DIV classe ROW - CAMPO para exibir os Thumps por ordem alfabetica -->
 		<div class="row text-center">
 			<span id="msgAlerta"></span>
+			<span class="listar-series"></span>
 			<span class="listar-animes"></span>
 		</div>
 	</div>

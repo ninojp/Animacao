@@ -92,3 +92,4 @@ include_once('consulta_count.php');
 		</div>
 	</div>
 	</div>
+	<script src="js/custom.js"></script>
