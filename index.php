@@ -7,9 +7,7 @@
 	include_once('consulta_count.php');
 //CONSULTA na tabela ANIME JOIN IMAGEM ordenado por nome_anime
 	// $consulta_anime = $conecta->query("SELECT * FROM anime AS a LEFT JOIN imagem AS img ON a.id_anime = img.anime_id_anime ORDER BY nome_anime ASC");
-
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -20,8 +18,6 @@
 <title>Animação</title>
 	<!-- BOOTSTRAP CSS-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- BOOTSTRAP JQUERRY -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- ICONs google Fonts  -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Favicon Imagem -->
@@ -31,14 +27,12 @@
 <link rel="stylesheet" type="text/css" href="css/geral_style.css">
 </head>
 <body>
-<!--	DIV VIDEO video_dragao (loop) FOI RETIRADO pois estava consumindo muita MEMÓRIA -->
-<!--
+<!--	DIV VIDEO video_dragao (loop) FOI RETIRADO pois estava consumindo muita MEMÓRIA 
 <div class="video_dragao">
 	<video playsinline autoplay  muted>
 		<source src="video/dragon_black_proto.webm" type="video/webm">
 	</video>
-</div>
--->
+</div> -->
 <?php
 	include_once 'navbar_top.php';
 	include_once 'header.php';
@@ -84,9 +78,19 @@
 		<!-- MAIN -> DIV classe ROW - CAMPO para exibir os Thumps por ordem alfabetica -->
 		<div class="row text-center">
 			<span id="msgAlerta"></span>
-			<span class="listar-series"></span>
-			<span class="listar-animes"></span>
+			<div class="row">
+				<div class="col-xxl-12 col-xl-12 col-lg-12">
+					<h1>Lista de categorias</h1>
+					<span id="msgAlertaCat"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xxl-12 col-xl-12 col-lg-12">
+					<span class="listar-cat-animacao"></span>
+				</div>
+			</div>
 		</div>
+		<span class="listar-animes"></span>
 	</div>
 <?php
 include_once('side_bar.php');
@@ -98,7 +102,11 @@ include_once('side_bar.php');
 	include_once('rodape.php');
 	include_once('banner_girls.php');
 ?>
+<!-- BOOTSTRAP JQUERRY -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- meu arquivo JavaScript Custom.js para o arquivo listar-animes -->
 <script src="js/custom.js"></script>
+<script src="js/categorias.js"></script>
 </body>
 </html>
 

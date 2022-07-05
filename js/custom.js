@@ -2,10 +2,10 @@
 const listarAnimes = async (pagina) => {
 	const dados = await fetch("./listar.php?pagina=" + pagina);
 	const resposta = await dados.json();
-//	console.log(resposta);
+	// console.log(resposta);
 	if(!resposta['status']){
 		document.getElementById("msgAlerta").innerHTML=resposta['msg'];
-	} else {
+	}else{
 		const conteudo = document.querySelector(".listar-animes");
 		if(conteudo){
 		   conteudo.innerHTML = resposta['dados'];

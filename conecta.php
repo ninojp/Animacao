@@ -1,8 +1,18 @@
 <?php
- try {
-	 $conecta = new PDO('mysql:host=localhost;dbname=anime_bd;charset=utf8','root','', array(PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES UTF8'));
-	 $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- 		} catch (PDOException $e){
-			echo 'Erro na conexão:'.$e->getMessage().'<br>';
-		echo 'Código do erro:'.$e->getCode();
- 		} ?>
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "anime_bd";
+$port = "3306";
+try{
+	//Conexão com a PORTA
+	//$conecta = new PDO("mysql:host=$host;port=$port;dbname=" . $dbname, $user, $pass);
+	//Conexão sem a PORTA
+	$conecta = new PDO("mysql:host=$host;dbname=" . $dbname, $user, $pass);
+
+	//echo "Conexão com o DB realizada com sucesso!";
+}catch(PDOException $erro){
+	//echo "Erro: Conexão com o DB NÃO realizada com sucesso! Erro gerado " . $erro->getMessage();
+}
+
+?>
