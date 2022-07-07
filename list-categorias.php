@@ -4,7 +4,7 @@ $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 
 if(!empty($pagina)){
     // Calcular o inicio da visualização
-    $qnt_result_pg = 2; //Quantidade de registro por pagina
+    $qnt_result_pg = 3; //Quantidade de registro por pagina
     $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
 
     $query_cat_anime =  "SELECT id, nome_cat FROM categoria_animacao LIMIT $inicio, $qnt_result_pg";
