@@ -10,7 +10,7 @@ include_once('consulta_count.php');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="animação, anime, animação 3d, filmes anime, ecchi, desenhos animados">
-	<title>Séries</title>
+	<title>Filmes</title>
 	<!-- BOOTSTRAP CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- ICONs google Fonts  -->
@@ -66,11 +66,11 @@ include_once('consulta_count.php');
 				</div>
 				<!-- Exibir MENSAGENs nesta parte -  msgAlertSerie  -->
 				<div class="row text-center">
-					<span id="msgAlertSerie"></span>
+					<span id="msgAlertFilmes"></span>
 				</div>
-				<!-- Tentativa de listar as SERIES aqui - listar_series -->
+				<!-- Tentativa de listar os FILMES aqui - listar_filmes -->
 				<div class="row text-center">
-					<span class="listar_series"></span>
+					<span class="listar_filmes"></span>
 				</div>
 			</div>
 	<?php
@@ -85,8 +85,6 @@ include_once('consulta_count.php');
 <!-- BOOTSTRAP JQUERRY + POPPERJS-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-<!-- meu arquivo JavaScript Custom.js para o arquivo listar-animes -->
-<script src="js/series.js"></script>
-<!-- <script src="js/categorias.js"></script> -->
+<script src="js/filmes.js"></script>
 </body>
 </html>

@@ -11,10 +11,10 @@ include_once('consulta_count.php');
 			<h5><a href="series.php" target="_blank" alt="Página da Lista das Séries">Séries</a> (<?php echo $exibe_count_serie['qnt_serie'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5>Filmes (<?php echo $exibe_count_filme['qnt_filme'];?>)</h5>
+			<h5><a href="filmes.php" target="_blank" alt="Página da Lista dos Filmes">Filmes</a> (<?php echo $exibe_count_filme['qnt_filme'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5>OVAs (<?php echo $exibe_count_ova['qnt_ova'];?>)</h5>
+			<h5><a href="ovas.php" target="_blank" alt="Página da Lista dos OVAs">OVAs</a> (<?php echo $exibe_count_ova['qnt_ova'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
 			<h5>ONAs (<?php echo $exibe_count_ona['qnt_ona'];?>)</h5>

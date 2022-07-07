@@ -3,7 +3,7 @@ session_start(); //deve ser a primeira linha de codigo da pagina(DICA), antes me
 //Limpar o buffer de saida
 ob_start();
 // conecta com o banco de dados
-include_once('conecta.php');
+// include_once('conecta.php');
 include_once('consulta_count.php');
 //CONSULTA na tabela ANIME JOIN IMAGEM ordenado por nome_anime
 // $consulta_anime = $conecta->query("SELECT * FROM anime AS a LEFT JOIN imagem AS img ON a.id_anime = img.anime_id_anime ORDER BY nome_anime ASC");
@@ -17,7 +17,7 @@ include_once('consulta_count.php');
 	<meta name="keywords" content="animação, anime, animação 3d, filmes anime, ecchi, desenhos animados">
 	<title>Animação</title>
 	<!-- BOOTSTRAP CSS-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- ICONs google Fonts  -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Favicon Imagem -->
@@ -91,8 +91,9 @@ include_once('consulta_count.php');
 	<?php
 	include_once('rodape.php');
 	?>
-<!-- BOOTSTRAP JQUERRY -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- BOOTSTRAP JQUERRY + POPPERJS-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 <!-- meu arquivo JavaScript Custom.js para o arquivo listar-animes -->
 <script src="js/custom.js"></script>
 <!-- <script src="js/categorias.js"></script> -->
