@@ -75,33 +75,7 @@ include_once('consulta_count.php');
 						</div>
 					</div>
 				</div>
-				<!-- DIV classe ROW - para exibir o Listar por categorias -->
-				<div class="row text-center">
-					<div class="col-xxl-12 col-xl-12 col-lg-12">
-						<h1>Lista de categorias</h1>
-						<span id="msgAlertaCat"></span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xxl-12 col-xl-12 col-lg-12">
-						<span class="listar-cat-animacao"></span>
-					</div>
-				</div>
-				<!-- Bloco do código da janela MODAL para exibição dos animes por categorias -->
-				<div class="modal fade" id="listAnimesModal" tabindex="-1" aria-labelledby="listAnimesModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-xl">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="listAnimesModalLabel">Listar Animes</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<span id="msgErroAnime"></span>
-								<span class="lista_anime"></span>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				<!-- Bloco de codigo de inserção do LISTAR.PHP -->
 				<div class="row text-center">
 					<span id="msgAlerta"></span>

@@ -1,0 +1,20 @@
+SELECT id, id_anime, nome_anime FROM `categoria_animacao` AS cat_ani 
+INNER JOIN anime AS ani 
+ON cat_ani.id = ani.categoria_id_cat;
+Funcionou mas traz daddos apenas da tabela anime
+
+SELECT cat_ani.id, ani.nome_anime, ani.categoria_id_cat, fil.titulo_filme, fil.categoria_id_cat FROM `categoria_animacao` AS cat_ani
+INNER JOIN anime AS ani
+ON cat_ani.id = ani.categoria_id_cat
+INNER JOIN filme AS fil
+ON fil.categoria_id_cat = cat_ani.id
+não traz dado nenhum
+
+FUNCIONOU
+SELECT cat_ani.id, ani.nome_anime, ani.categoria_id_cat, fil.titulo_filme, fil.categoria_id_cat FROM `categoria_animacao` AS cat_ani 
+LEFT JOIN anime AS ani 
+ON cat_ani.id = ani.categoria_id_cat 
+LEFT JOIN filme AS fil 
+ON cat_ani.id = fil.categoria_id_cat;
+
+SELECT cat_ani.id, cat_ani.nome_cat, ani.nome_anime, ani.categoria_id_cat, fil.titulo_filme, fil.categoria_id_cat FROM `categoria_animacao` AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat;
