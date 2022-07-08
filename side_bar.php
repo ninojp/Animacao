@@ -17,10 +17,10 @@ include_once('consulta_count.php');
 			<h5><a href="ovas.php" target="_blank" alt="Página da Lista dos OVAs">OVAs</a> (<?php echo $exibe_count_ova['qnt_ova'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5>ONAs (<?php echo $exibe_count_ona['qnt_ona'];?>)</h5>
+			<h5><a href="onas.php" target="_blank" alt="Página da Lista dos ONAs">ONAs</a> (<?php echo $exibe_count_ona['qnt_ona'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5>Especiais (<?php echo $exibe_count_especial['qnt_especial'];?>)</h5>
+			<h5><a href="especiais.php" target="_blank" alt="Página da Lista dos especiais">Especiais</a> (<?php echo $exibe_count_especial['qnt_especial'];?>)</h5>
 		</div>
 		<div class="col-xxl-12" style="margin-top: 1rem;">
 			<a href="https://anidb.net/" target="_blank">
