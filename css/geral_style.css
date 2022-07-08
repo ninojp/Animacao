@@ -169,7 +169,7 @@ li .menu_pag {
 
 .thumb_img {
     max-height:270px;
-    min-width:190px;
+    width:190px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255,1.00);
 }

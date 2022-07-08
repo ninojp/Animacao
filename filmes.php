@@ -64,7 +64,7 @@ include_once('consulta_count.php');
 						</div>
 					</div>
 				</div>
-				<!-- Exibir MENSAGENs nesta parte -  msgAlertSerie  -->
+				<!-- Exibir MENSAGENs nesta parte -  msgAlertFilmes  -->
 				<div class="row text-center">
 					<span id="msgAlertFilmes"></span>
 				</div>
