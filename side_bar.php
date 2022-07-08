@@ -53,10 +53,9 @@ include_once('consulta_count.php');
 		</div>
 		<div class="col-xxl-12" style="margin-top: 2rem;">
 		<h4>Generos e temas</h4>
-			<h6><a href="form_busca.php?input_busca=Ação">Ação</a><br>
-			<a href="form_busca.php?input_busca=animação 3d">Animação (CGI)</a><br>
-			<a href="form_busca.php?input_busca=aventura">Aventura</a><br>
-			<a href="form_busca.php?input_busca=Artes marciais">Artes Marciais </a><br>
+			<h6><a href="form_busca.php?input_busca=Ação">Ação</a> (<?php echo $exibe_count_acao['qnt_acao'];?>)<br>
+			<a href="form_busca.php?input_busca=aventura">Aventura</a> (<?php echo $exibe_count_aventura['qnt_aventura'];?>)<br>
+			<a href="form_busca.php?input_busca=Artes marciais">Artes Marciais</a> (<?php echo $exibe_count_artes['qnt_artes'];?>)<br>
 			<a href="form_busca.php?input_busca=colegial">Colegial </a><br>
 			<a href="form_busca.php?input_busca=Comédia">Comédia</a><br>
 			<a href="form_busca.php?input_busca=CyberPunk">CyberPunk </a><br>
@@ -77,13 +76,14 @@ include_once('consulta_count.php');
 			<a href="form_busca.php?input_busca=Super Poderes">Super Poderes </a><br>
 			<a href="form_busca.php?input_busca=Super heróis">Super heróis </a><br>
 			<a href="form_busca.php?input_busca=terror">Terror </a><br>
-			<a href="form_busca.php?input_busca=policial">Militar </a><br>
-			<a href="form_busca.php?input_busca=policial">Slice of Life</a><br>
-			<a href="form_busca.php?input_busca=policial">Infantil</a><br>
-			<a href="form_busca.php?input_busca=policial">Mecha</a><br>
-			<a href="form_busca.php?input_busca=policial">Horror</a><br>
+			<a href="form_busca.php?input_busca=Militar">Militar </a><br>
+			<a href="form_busca.php?input_busca=Slice of Life">Slice of Life</a><br>
+			<a href="form_busca.php?input_busca=Infantil">Infantil</a><br>
+			<a href="form_busca.php?input_busca=Mecha">Mecha</a><br>
+			<a href="form_busca.php?input_busca=Horror">Horror</a><br>
 			</h6><hr>
 			<h4>Tipo:</h4><h6>
+			<a href="form_busca.php?input_busca=animação 3d">Animação (CGI)</a><br>
 			<a href="form_busca.php?input_busca=filme">Filme(Anime)</a><br>
 			<a href="form_busca.php?input_busca=ecchi">Ecchi(+16)</a><br>
 			<hr>
