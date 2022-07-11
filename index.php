@@ -19,7 +19,7 @@ include_once('consulta_count.php');
 	<!-- BOOTSTRAP CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- ICONs google Fonts  -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<!-- Favicon Imagem -->
 	<link rel="icon" type="image/x-icon" sizes="128x128" href="imgs/favicon.ico">
 	<!-- Meu CSS INDEX -->
