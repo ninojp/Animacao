@@ -15,7 +15,7 @@
             </button>
         	<!--------------- DIV -> LOGIN  + o MENU ANIME ------------->
         	<div class="col-sm-3 col-md-3 col-lg-3 col-xl-5 col-xxl-7 collapse navbar-collapse" id="mynavbar">
-			<div class="row justify-content-between text-center">
+			<div class="row text-center">
 				<div class="col-xxl-12">
 					<div class="nav-item col-xxl-12 d-flex">
                         <!----- Bloco PHP + HTML para o -> LOGIN.PHP ---------------------->
@@ -31,7 +31,7 @@
                             $exibe_user=$consulta_user->fetch(PDO::FETCH_ASSOC); ?>
                     <a class="nav-link" href="sair.php">
                     <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4"><?php echo $exibe_user['nome'];?></div>
-                    <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-1 col-xxl-1"><span class="material-symbols-outlined">logout</span></div></a>
+                    <div class="nav-item col-sm-3 col-md-1 col-lg-1 col-xl-1 col-xxl-1"><span class="material-symbols-outlined">logout</span></div></a>
                     <!-- SE ESTIVER LOGADO COMO ADMINISTRADOR-->
                     <?php } else { ?>
                     <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-6 col-xxl-3">
@@ -66,7 +66,7 @@
             </button>
         </div>-->
         <!-- Bloco do FORM de BUSCA -->
-        <div class="col-sm-4 col-md-4 col-lg-3 col-xl-5 col-xxl-4">
+        <div class="col-sm-4 col-md-4 col-lg-3 col-xl-4 col-xxl-4 justify-content-end">
             <form class="form-control d-flex bg-dark" method="get" action="form_busca.php" name="form_busca" id="form_busca" role="search" style="max-height: 35px;">
                <input class="form-control form-sm me-3" type="text" name="input_busca" placeholder="Pesquisar por nome" style="max-height: 35px;">
                <button class="btn btn-primary btn-sm" type="submit" name="input_submit" style="max-height: 35px;"><span class="material-icons">search</span></button>
