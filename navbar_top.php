@@ -31,7 +31,7 @@
                             $exibe_user=$consulta_user->fetch(PDO::FETCH_ASSOC); ?>
                     <a class="nav-link" href="sair.php">
                     <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4"><?php echo $exibe_user['nome'];?></div>
-                    <div class="nav-item col-sm-3 col-md-1 col-lg-1 col-xl-1 col-xxl-1"><span class="material-symbols-outlined">logout</span></div></a>
+                    <div class="nav-item col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"><span class="material-symbols-outlined">logout</span></div></a>
                     <!-- SE ESTIVER LOGADO COMO ADMINISTRADOR-->
                     <?php } else { ?>
                     <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-6 col-xxl-3">
@@ -41,10 +41,10 @@
                         <a class="nav-link" href="sair.php"><span class="material-symbols-outlined">logout</span></a>
                     </div>
                     <!--BLOCO PARA ACESSO RAPIDO DE INSERÇÃO E EXCLUSÃO-->
-                    <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-6 col-xxl-5">
+                    <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
                         <a class="nav-link" href="anime_inserir_form.php">Inserir</a>
                     </div>
-                    <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-6 col-xxl-4">
+                    <div class="nav-item col-sm-3 col-md-3 col-lg-3 col-xl-4 col-xxl-4">
                         <a class="nav-link" href="anime_listar.php">Alterar</a>
                     </div>
                     <?php } } ?>

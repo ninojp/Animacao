@@ -34,7 +34,7 @@ include_once('consulta_count.php');
 	</video>
 </div> -->
 <?php
-	include_once 'navbar_topo.php';
+	include_once 'navbar_top.php';
 	include_once 'header.php';
 ?>
 	<!-- MAIN -> DIV classe CONTAINER-FLUID - CAMPO de BUSCA -->
