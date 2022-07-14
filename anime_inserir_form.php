@@ -27,10 +27,6 @@
 <title>Inserir Anime</title>
 	<!-- BOOTSTRAP CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- BOOTSTRAP JQUERRY -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- ICONs google Fonts  -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/geral_style.css">
 <link rel="icon" sizes="128x128" href="imgs/favicon.ico">
 <!-- inserção das FUNÇÕEs JS - CampoVazio  -->
@@ -651,5 +647,8 @@
 	</div>
 	</div>
 </main>
+<!-- BOOTSTRAP JQUERRY + POPPERJS-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>

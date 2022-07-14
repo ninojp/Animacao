@@ -3,8 +3,8 @@ session_start(); //deve ser a primeira linha de codigo da pagina(DICA), antes me
 //Limpar o buffer de saida
 ob_start();
 // conecta com o banco de dados
-// include_once('conecta.php');
-include_once('consulta_count.php');
+include_once('conecta.php');
+// include_once('consulta_count.php');
 //CONSULTA na tabela ANIME JOIN IMAGEM ordenado por nome_anime
 // $consulta_anime = $conecta->query("SELECT * FROM anime AS a LEFT JOIN imagem AS img ON a.id_anime = img.anime_id_anime ORDER BY nome_anime ASC");
 ?>
@@ -18,8 +18,6 @@ include_once('consulta_count.php');
 	<title>Animação</title>
 	<!-- BOOTSTRAP CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<!-- ICONs google Fonts  -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<!-- Favicon Imagem -->
 	<link rel="icon" type="image/x-icon" sizes="128x128" href="imgs/favicon.ico">
 	<!-- Meu CSS INDEX -->
