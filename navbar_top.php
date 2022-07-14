@@ -5,16 +5,14 @@
     		<!--BLOCO DA IMAGEM DE LOGO-->
         	<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <a class="navbar-brand" href="index.php">
-                <img src="imgs/home_white_24dp.svg" style="margin: 0.2rem 0rem 0rem 0.5rem;">
-                <img src="imgs/Logo-Dtudo_102x40.png" style="max-height: 35px;">
-            </a>
+                <img src="imgs/Logo-Dtudo_102x40.png" style="max-height: 35px;"></a>
         	</div>
-            <!--BLOCO BOTÃO TOGGLER de teste -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!--BLOCO BOTÃO TOGGLER -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_top" aria-controls="navbar_top" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
         	<!--------------- DIV -> LOGIN  + o MENU ANIME ------------->
-        	<div class="col-sm-3 col-md-3 col-lg-3 col-xl-5 col-xxl-7 collapse navbar-collapse" id="mynavbar">
+        	<div class="col-sm-4 col-md-4 col-lg-4 col-xl-6 col-xxl-6 collapse navbar-collapse" id="navbar_top">
 			<div class="row text-center">
 				<div class="col-xxl-12">
 					<div class="nav-item col-xxl-12 d-flex">
@@ -59,13 +57,7 @@
 				</div>
 			</div>
         </div>
-        <!--BLOCO BOTÃO TOGGLER
-        <div class="col-sm-1 col-md-1">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon" style="max-height: 25px;"></span>
-            </button>
-        </div>-->
-        <!-- Bloco do FORM de BUSCA -->
+         <!-- Bloco do FORM de BUSCA -->
         <div class="col-sm-4 col-md-4 col-lg-3 col-xl-4 col-xxl-4 justify-content-end">
             <form class="form-control d-flex bg-dark" method="get" action="form_busca.php" name="form_busca" id="form_busca" role="search" style="max-height: 35px;">
                <input class="form-control form-sm me-3" type="text" name="input_busca" placeholder="Pesquisar por nome" style="max-height: 35px;">
