@@ -37,9 +37,9 @@ include_once('conecta.php');
 ?>
 	<!-- MAIN -> DIV classe CONTAINER-FLUID - CAMPO de BUSCA -->
 	<main class="container">
-		<div class="row text-center fundo_black_80">
-			<!-- coluna do campo Busca por letras -->
-			<div class="col-xxl-10 col-xl-10 col-lg-10 container">
+		<div class="row text-center fundo_black_80"><!-- ROW da parte CENTRAL  -->
+			<div class="col-xxl-10 col-xl-10 col-lg-10 container"><!-- COLUNA CENTRAL  -->
+				<!-- coluna do campo Busca por letras -->
 				<div class="col-xxl-12">
 					<div class="row  mt-2">
 						<div class="col-xxl-12 nav nav-tabs">
@@ -80,6 +80,58 @@ include_once('conecta.php');
 				<div class="row text-center">
 					<span class="listar-animes"></span>
 				</div>
+				<!-- Inicio do bloco da janela MODAL  -->
+				<div class="modal fade fundo_black_40" id="Modal_login" tabindex="-1" aria-labelledby="Modal_loginLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				<div class="modal-content fundo_black_80">
+				<div class="modal-header">
+					<h5 class="modal-title" id="Modal_loginLabel">Faça seu Login</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<!--Bloco da DIV para inserção do conteúdo novo-->
+					<div class="container">
+						<div class="row justify-content-center">
+						<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_40">
+							<fieldset>
+								<legend>Fazer Login</legend>
+								<form class="" method="post" action="validaUsuario.php" name="logon">
+									<div class="input-group input-group-sm mb-3">
+										<span class="input-group-text" id="inputGroup-sizing-sm"> Email: </span>
+										<input name="email" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required id="email">
+									</div>
+									<div class="input-group input-group-sm mb-3">
+										<span class="input-group-text" id="inputGroup-sizing-sm"> Senha: </span>
+										<input name="senha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required id="senha">
+									</div>			
+								<button type="submit" class="meu_btn">Entrar</button>
+								</form>
+							</fieldset>
+							<fieldset>
+								<legend>Ainda não sou cadastrado!</legend>
+								<div class="form-group">
+								<a href="form_usuario.php">
+									<button type="submit" class="meu_btn">Cadastrar</button></a>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Recuperar Senha!</legend>
+								<div class="form-group">
+									<a href="esqueci_senha.php">
+									<button type="submit" class="meu_btn">Esqueci minha senha!</button></a>
+								</div>
+							</fieldset>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+				</div>
+			</div>
+			</div>
 			</div>
 	<?php
 	include_once('side_bar.php');

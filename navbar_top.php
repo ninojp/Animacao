@@ -8,7 +8,7 @@
        	</div>
         <!----- Bloco PHP + HTML para o fazer a o LOGIN.PHP ------------>
 		<?php  if (empty($_SESSION['id'])) { ?>
-        <a class="nav-link" href="login.php" alt="Link para Login" title="Link Log">
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#Modal_login" alt="Link para Login" title="Link Log">
         <div class="d-inline"><img class="" src="imgs/login.png">
         </div>
         <div class="d-inline"><span>Login</span></div></a>
