@@ -8,10 +8,17 @@
        	</div>
         <!----- Bloco PHP + HTML para o fazer a o LOGIN.PHP ------------>
 		<?php  if (empty($_SESSION['id'])) { ?>
-        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#Modal_login" alt="Link para Login" title="Link Log">
+        <div class="dropdown">
+                <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" alt="Link para Login" title="Link para Login">
         <div class="d-inline"><img class="" src="imgs/login.png">
         </div>
         <div class="d-inline"><span>Login</span></div></a>
+                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item nav-link" href="" data-bs-toggle="modal" data-bs-target="#Modal_login">Fazer Login</a></li>
+                    <li><a class="dropdown-item nav-link" href="" data-bs-toggle="modal" data-bs-target="#Modal_cadastrar">Cadastrar</a></li>
+                    <li><a class="dropdown-item nav-link" href="" data-bs-toggle="modal" data-bs-target="#Modal_recuperarSenha">Recuperar Senha</a></li>
+                </ul>
+        </div>
         <!-- SE USUARIO ESTIVER LOGADO como usuário comum --------->
         <?php } else {
             if($_SESSION['adm']==0) {
@@ -28,7 +35,7 @@
             <div class="dropdown">
                 <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown">NinoJP</a>
                 <ul class="dropdown-menu dropdown-menu-dark fundo_black_80" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item nav-link fundo_black_80" href="anime_inserir_form.php" target="_blank">Inserir</a></li>
+                    <li><a class="dropdown-item nav-link" href="anime_inserir_form.php" target="_blank">Inserir</a></li>
                     <li><a class="dropdown-item nav-link" href="anime_listar.php" target="_blank">Alterar</a></li>
                     <li><a class="dropdown-item nav-link" href="sair.php"><img class="" src="imgs/logout.png">Logout</a></li>
                 </ul>
@@ -41,6 +48,9 @@
         	<!--------------- DIV - PRINCIPAL DO BLOCO DE MENU collapse ------------->
         	<div class="collapse navbar-collapse" id="navbar_top">
                     <!--BLOCO PARA ACESSO RAPIDO DE INSERÇÃO E EXCLUSÃO-->
+                    <div class="nav-item ps-5">
+                        <a class="nav-link" href="index.php">Animes</a>
+                    </div>
                     <div class="nav-item">
                         <a class="nav-link" href="series.php">Séries</a>
                     </div>
@@ -58,7 +68,7 @@
                     </div>
                     <!-- Menu do botão dropdown ANIMES - Filmes - Ecchi BOTÃO DROPDOWN ----- -->
                     <div class="nav-item dropdown justify-content-end">
-                        <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown">Tipo</a>
+                        <a class="dropdown-toggle nav-link pe-5" role="button" data-bs-toggle="dropdown">Tipo</a>
                         <ul class="dropdown-menu dropdown-menu-dark fundo_black_80">
                             <li><a class="dropdown-item nav-link" href="#" target="_blank">Animação</a></li>
                             <li><a class="dropdown-item nav-link" href="#" target="_blank">Animação CGI</a></li>
@@ -68,7 +78,7 @@
           			</div>
             </div>
          <!-- Bloco do FORM de BUSCA -->
-        <div class="col-sm-4 col-md-4 col-lg-3 col-xl-4 col-xxl-4 justify-content-end">
+        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
             <form class="form-control d-flex bg-dark" method="get" action="form_busca.php" name="form_busca" id="form_busca" role="search">
                <input class="form-control form-sm me-3" type="text" name="input_busca" placeholder="Pesquisar por nome">
                <button class="btn btn-primary btn-sm" type="submit" name="input_submit"><img src="imgs/pesquisar-26_mini.png"></button>

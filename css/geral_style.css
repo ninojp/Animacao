@@ -94,11 +94,11 @@ fieldset label {
     color: rgb(96, 96, 255);
 }
 fieldset input {
-    min-width: 400px;
+    min-width: 200px;
     background-color: #727272;
 }
 fieldset textarea {
-    min-width: 700px;
+    min-width: 300px;
     background-color: #727272;
 }
 fieldset input:hover {

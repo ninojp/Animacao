@@ -80,16 +80,17 @@ include_once('conecta.php');
 				<div class="row text-center">
 					<span class="listar-animes"></span>
 				</div>
-				<!-- Inicio do bloco da janela MODAL  -->
+				<!-- Inicio do bloco da janela MODAL para fazer LOGIN -->
 				<div class="modal fade fundo_black_40" id="Modal_login" tabindex="-1" aria-labelledby="Modal_loginLabel" aria-hidden="true">
 				<div class="modal-dialog">
 				<div class="modal-content fundo_black_80">
-				<div class="modal-header">
-					<h5 class="modal-title" id="Modal_loginLabel">Faça seu Login</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<div class="row position-relative">
+					<div class="col-1 position-absolute top-0 end-0">
+					<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" aria-label="Close">X</button>
+					</div>
 				</div>
 				<div class="modal-body">
-					<!--Bloco da DIV para inserção do conteúdo novo-->
+					<!--Bloco da DIV para o conteudo do Modal fazer Login -->
 					<div class="container">
 						<div class="row justify-content-center">
 						<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_40">
@@ -107,36 +108,103 @@ include_once('conecta.php');
 								<button type="submit" class="meu_btn">Entrar</button>
 								</form>
 							</fieldset>
-							<fieldset>
-								<legend>Ainda não sou cadastrado!</legend>
-								<div class="form-group">
-								<a href="form_usuario.php">
-									<button type="submit" class="meu_btn">Cadastrar</button></a>
-								</div>
-							</fieldset>
-							<fieldset>
-								<legend>Recuperar Senha!</legend>
-								<div class="form-group">
-									<a href="esqueci_senha.php">
-									<button type="submit" class="meu_btn">Esqueci minha senha!</button></a>
-								</div>
-							</fieldset>
+							<div class="modal-footer">
+								<fieldset>
+									<legend>Ainda não sou cadastrado!</legend>
+									<div class="form-group">
+									<!-- <a href="form_usuario.php"> -->
+										<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">Cadastrar Novo Usuário</button>
+									<!-- </a> -->
+									</div>
+								</fieldset>
+								<fieldset>
+									<legend>Recuperar Senha!</legend>
+									<div class="form-group">
+										<!-- <a href="esqueci_senha.php"> -->
+										<button type="submit" class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">Esqueci minha senha!</button>
+									<!-- </a> -->
+									</div>
+								</fieldset>
+							</div>
 						</div>
 						</div>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 				</div>
-			</div>
-			</div>
-			</div>
+				</div>
+				<!-- Modal para CADASTRAR no usuário -->
+				<div class="modal fade fundo_black_40" id="Modal_cadastrar" aria-hidden="true" aria-labelledby="Modal_cadastrarLabel" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content fundo_black_80">
+						<div class="row position-relative">
+							<div class="col-1 position-absolute top-0 end-0">
+								<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" aria-label="Close">X</button>
+							</div>
+						</div>
+						<div class="modal-body">
+							<fieldset>
+							<legend>Cadastrar um Novo Usuário</legend>
+								<form method="post" action="inserirUsuario.php" name="logon">
+									<div class="form-group">
+											<label for="nome">Nome</label>
+											<input name="nome" type="text" class="form-control" required id="nome">
+									</div>
+									<div class="form-group">
+											<label for="apelido">Apelido</label>
+											<input name="apelido" type="text" class="form-control" required id="apelido">
+									</div>
+									<div class="form-group">
+											<label for="email">E-mail</label>
+											<input name="email" type="email" class="form-control" required id="email">
+									</div>
+									<div class="form-group">
+											<label for="senha">Senha</label>
+											<input name="senha" type="password" class="form-control" required id="senha">
+									</div>
+									<div class="form-group">
+											<label for="endereco">Endereço</label>
+											<textarea name="endereco" rows="2" class="form-control" id="endereco"></textarea>
+									</div>
+									<div class="form-group">
+											<label for="telefone">Telefone</label>
+											<input name="telefone" type="text" class="form-control" id="telefone">
+									</div>
+									<button type="submit" class="meu_btn">
+										<span class="glyphicon glyphicon-pencil"> Cadastrar</span>
+									</button>
+								</form>
+							</fieldset>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-primary" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">RECUPERAR A SENHA</button>
+						</div>
+						</div>
+					</div>
+					</div>
+					<div class="modal fade" id="Modal_recuperarSenha" aria-hidden="true" aria-labelledby="Modal_recuperarSenhaLabel2" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="Modal_recuperarSenhaLabel2">RECUPERAR A SENHA</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							AQUI VAI O FORM PARA RECUPERAR A SENHA
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-primary" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
+						</div>
+						</div>
+					</div>
+					</div>
+					<a class="btn btn-primary" data-bs-toggle="modal" href="#Modal_login" role="button">Login</a>
+
+		</div><!-- Fechamento da COLUNA CENTRAL  -->
 	<?php
 	include_once('side_bar.php');
 	?>
-		</div>
+		</div><!-- Fechamento da ROW da parte CENTRAL  -->
 	</main>
 	<?php
 	include_once('rodape.php');
