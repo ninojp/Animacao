@@ -8,6 +8,7 @@
     padding: 0px;
     text-decoration: none;
     list-style: none;
+    color: #0d6efd;
 }
 html {
     scroll-behavior: smooth;
@@ -22,7 +23,7 @@ body {
 	z-index: -110;
 	color: #0d6efd;
 	background-color: #000000;
-	margin-top: 50px;
+	margin-top: 35px;
 }
 .table {
     color: #0d6efd;
@@ -108,6 +109,8 @@ fieldset input:hover {
 #form_busca {
 	margin-top: 0px;
 	padding: 0px;
+    max-height: 30px;
+    border: none;
 }
 ul .menu_pag {
 	margin: 0px;
@@ -122,7 +125,8 @@ li .menu_pag {
 .navbar_meu {
 	margin-top: 0px;
 	padding: 0px;
-	color: #0d6efd;
+	color: #0d6efd !important;
+    font-weight: 600;
 }
 .nav-link_meu {
 	padding: 0rem;
@@ -188,10 +192,4 @@ span .span_nome {
 span a {
     text-decoration: none;
 }
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' -25,
-    'opsz' 20
-  }
+
