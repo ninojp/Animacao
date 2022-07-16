@@ -39,40 +39,10 @@ include_once('conecta.php');
 	<main class="container">
 		<div class="row text-center fundo_black_80"><!-- ROW da parte CENTRAL  -->
 			<div class="col-xxl-10 col-xl-10 col-lg-10 container"><!-- COLUNA CENTRAL  -->
-				<!-- coluna do campo Busca por letras -->
-				<div class="col-xxl-12">
-					<div class="row  mt-2">
-						<div class="col-xxl-12 nav nav-tabs">
-							<div class="nav-item px-1"><a class="nav-link active px-3" href="">#</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="form_busca.php?input_busca=a">A</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">B</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">C</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">D</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">E</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">F</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">G</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">H</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">I</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">J</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">K</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">L</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">M</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">N</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">O</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">P</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">Q</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">R</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">S</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">T</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">U</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">V</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">X</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">Y</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">W</a></div>
-							<div class="nav-item px-1"><a class="nav-link px-2" href="">Z</a></div>
-						</div>
-					</div>
-				</div>
+				<!-- Bloco do campo de LISTAR por LETRA -->
+				<?php
+					include_once ('listar_letras.php');
+				?>
 				<!-- Bloco de codigo de inserção do LISTAR.PHP -->
 				<div class="row text-center">
 					<span id="msgAlerta"></span>
@@ -82,18 +52,17 @@ include_once('conecta.php');
 				</div>
 				<!-- Inicio do bloco da janela MODAL para fazer LOGIN -->
 				<div class="modal fade fundo_black_40" id="Modal_login" tabindex="-1" aria-labelledby="Modal_loginLabel" aria-hidden="true">
-				<div class="modal-dialog">
+				<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content fundo_black_80">
 				<div class="row position-relative">
 					<div class="col-1 position-absolute top-0 end-0">
-					<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" aria-label="Close">X</button>
+					<button type="button" class="meu_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
 					</div>
 				</div>
 				<div class="modal-body">
-					<!--Bloco da DIV para o conteudo do Modal fazer Login -->
 					<div class="container">
 						<div class="row justify-content-center">
-						<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_40">
+						<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_40"><br>
 							<fieldset>
 								<legend>Fazer Login</legend>
 								<form class="" method="post" action="validaUsuario.php" name="logon">
@@ -107,26 +76,16 @@ include_once('conecta.php');
 									</div>			
 								<button type="submit" class="meu_btn">Entrar</button>
 								</form>
-							</fieldset>
-							<div class="modal-footer">
-								<fieldset>
-									<legend>Ainda não sou cadastrado!</legend>
-									<div class="form-group">
-									<!-- <a href="form_usuario.php"> -->
-										<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">Cadastrar Novo Usuário</button>
-									<!-- </a> -->
-									</div>
-								</fieldset>
-								<fieldset>
-									<legend>Recuperar Senha!</legend>
-									<div class="form-group">
-										<!-- <a href="esqueci_senha.php"> -->
-										<button type="submit" class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">Esqueci minha senha!</button>
-									<!-- </a> -->
-									</div>
-								</fieldset>
+							</fieldset><br>
+								<legend class="legend2">Ainda não sou cadastrado!</legend>
+								<div class="form-group">
+									<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">Cadastrar Novo Usuário</button>
+								</div><br>
+								<legend class="legend2">Recuperar Senha!</legend>
+								<div class="form-group">
+									<button type="submit" class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">Esqueci minha senha!</button>
+								</div>
 							</div>
-						</div>
 						</div>
 					</div>
 				</div>
@@ -139,10 +98,10 @@ include_once('conecta.php');
 						<div class="modal-content fundo_black_80">
 						<div class="row position-relative">
 							<div class="col-1 position-absolute top-0 end-0">
-								<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" aria-label="Close">X</button>
+								<button type="button" class="meu_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
 							</div>
 						</div>
-						<div class="modal-body">
+						<div class="modal-body"><br>
 							<fieldset>
 							<legend>Cadastrar um Novo Usuário</legend>
 								<form method="post" action="inserirUsuario.php" name="logon">
@@ -170,36 +129,83 @@ include_once('conecta.php');
 											<label for="telefone">Telefone</label>
 											<input name="telefone" type="text" class="form-control" id="telefone">
 									</div>
-									<button type="submit" class="meu_btn">
-										<span class="glyphicon glyphicon-pencil"> Cadastrar</span>
-									</button>
+									<button type="submit" class="meu_btn mt-4">Cadastrar</button>
 								</form>
 							</fieldset>
 						</div>
 						<div class="modal-footer">
-							<button class="btn btn-primary" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">RECUPERAR A SENHA</button>
+							<button type="submit" class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">
+										Recuperar Senha</button><br>
+							<button class="meu_btn" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
 						</div>
 						</div>
 					</div>
 					</div>
-					<div class="modal fade" id="Modal_recuperarSenha" aria-hidden="true" aria-labelledby="Modal_recuperarSenhaLabel2" tabindex="-1">
+					<!-- Modal para RECUPERAR A SENHA -->
+					<div class="modal fade fundo_black_40" id="Modal_recuperarSenha" aria-hidden="true" aria-labelledby="Modal_recuperarSenhaLabel2" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="Modal_recuperarSenhaLabel2">RECUPERAR A SENHA</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
+						<div class="modal-content fundo_black_80">
+						<div class="row position-relative">
+							<div class="col-1 position-absolute top-0 end-0">
+								<button type="button" class="meu_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+							</div>
+						</div><br>
 						<div class="modal-body">
-							AQUI VAI O FORM PARA RECUPERAR A SENHA
+						<fieldset>
+							<legend>Para Recuperar sua senha:</legend>
+								<div class="form-group">
+									<div class="form-group">
+										<p>Basta digite o e-mail cadastrado no campo abaixo</p>
+									</div>
+									<div class="form-group">
+									<form method="post" action="enviarEmail.php" name="logon">
+										<div class="form-group">
+											<input name="email" type="email" class="form-control" required id="email">
+										</div>
+										<div class="form-group">
+										<p>Sua senha será enviada para o seu e-mail</p>
+										<button type="submit" class="meu_btn">Enviar</button>
+										</div>
+									</form>
+									</div>
+								</div>
+						</fieldset>
 						</div>
 						<div class="modal-footer">
-							<button class="btn btn-primary" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
+							<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">
+										Novo cadastro</button><br>
+							<button class="meu_btn" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
 						</div>
 						</div>
 					</div>
 					</div>
-					<a class="btn btn-primary" data-bs-toggle="modal" href="#Modal_login" role="button">Login</a>
-
+					<!-- MODAL DE ERRO -->
+					<div class="modal fade fundo_black_40" id="Modal_erro" aria-hidden="true" aria-labelledby="Modal_erroLabel" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content fundo_black_80">
+						<div class="row position-relative">
+							<div class="col-1 position-absolute top-0 end-0">
+								<button type="button" class="meu_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+							</div>
+						</div><br>
+						<div class="modal-body">
+							<fieldset>
+								<legend>Erro no Login</legend>
+								<div class="form-group">
+									<h2>Usuário ou senha incorreto!!</h2>
+								</div>
+								<div class="form-group">
+									<button class="meu_btn" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
+								</div>
+							</fieldset>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">
+										Novo cadastro</button><br>
+						</div>
+						</div>
+					</div>
+					</div>
 		</div><!-- Fechamento da COLUNA CENTRAL  -->
 	<?php
 	include_once('side_bar.php');

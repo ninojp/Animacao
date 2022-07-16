@@ -1,7 +1,7 @@
 <?php 
-include 'conexao.php';
+include 'conecta.php';
 $recebe_email = $_POST['email'];
-$consulta = $conexao->query("SELECT nome,senha,email FROM usuarios WHERE email='$recebe_email'");
+$consulta = $conexao->query("SELECT nome,senha,email FROM usuario WHERE email='$recebe_email'");
 if ($consulta->rowCount()==0) {
 	header('location:erro2.php');
 } else {
