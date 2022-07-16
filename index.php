@@ -35,7 +35,7 @@ include_once('conecta.php');
 	include_once 'navbar_top.php';
 	include_once 'header.php';
 ?>
-	<!-- MAIN -> DIV classe CONTAINER-FLUID - CAMPO de BUSCA -->
+	<!-- MAIN -> DIV classe CONTAINER-FLUID -->
 	<main class="container">
 		<div class="row text-center fundo_black_80"><!-- ROW da parte CENTRAL  -->
 			<div class="col-xxl-10 col-xl-10 col-lg-10 container"><!-- COLUNA CENTRAL  -->
@@ -92,7 +92,7 @@ include_once('conecta.php');
 				</div>
 				</div>
 				</div>
-				<!-- Modal para CADASTRAR no usuário -->
+				<!-- Modal para CADASTRAR NOVO usuário -->
 				<div class="modal fade fundo_black_40" id="Modal_cadastrar" aria-hidden="true" aria-labelledby="Modal_cadastrarLabel" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content fundo_black_80">
@@ -175,33 +175,6 @@ include_once('conecta.php');
 							<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">
 										Novo cadastro</button><br>
 							<button class="meu_btn" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
-						</div>
-						</div>
-					</div>
-					</div>
-					<!-- MODAL DE ERRO -->
-					<div class="modal fade fundo_black_40" id="Modal_erro" aria-hidden="true" aria-labelledby="Modal_erroLabel" tabindex="-1">
-					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content fundo_black_80">
-						<div class="row position-relative">
-							<div class="col-1 position-absolute top-0 end-0">
-								<button type="button" class="meu_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
-							</div>
-						</div><br>
-						<div class="modal-body">
-							<fieldset>
-								<legend>Erro no Login</legend>
-								<div class="form-group">
-									<h2>Usuário ou senha incorreto!!</h2>
-								</div>
-								<div class="form-group">
-									<button class="meu_btn" data-bs-target="#Modal_login" data-bs-toggle="modal">Login</button>
-								</div>
-							</fieldset>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">
-										Novo cadastro</button><br>
 						</div>
 						</div>
 					</div>
