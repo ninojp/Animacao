@@ -1,9 +1,9 @@
 <?php 
 include 'conecta.php';
 $recebe_email = $_POST['email'];
-$consulta = $conexao->query("SELECT nome,senha,email FROM usuario WHERE email='$recebe_email'");
+$consulta = $conecta->query("SELECT nome,senha,email FROM usuario WHERE email='$recebe_email'");
 if ($consulta->rowCount()==0) {
-	header('location:erro2.php');
+	header('location:erro_email2.php');
 } else {
 	$exibe=$consulta->fetch(PDO::FETCH_ASSOC);
 		$recebe_nome=$exibe['nome'];

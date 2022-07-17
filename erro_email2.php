@@ -12,7 +12,7 @@ include_once('conecta.php');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="animação, anime, animação 3d, filmes anime, ecchi, desenhos animados">
-	<title>Erro! E-mail já Cadastrado!</title>
+	<title>Erro! Este E-mail Ainda não foi Cadastrado</title>
 	<!-- BOOTSTRAP CSS-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- Favicon Imagem -->
@@ -34,21 +34,21 @@ include_once('conecta.php');
 			<div class="row">
 				<div class="col-8">
 					<fieldset>
-					<legend>Erro ao Cadastrar!</legend>
+					<legend>E-mail Ainda não Cadastrado!</legend>
 						<div class="form-group">
-							<h3>Email já Cadastrado neste Site!</h3>
+							<h3>Este E-mail Ainda não foi Cadastrado!</h3>
 						</div>
 						<div class="form-group">
 							<p>Tentar Novamente</p>
-							<button class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">Cadastrar</button>
+							<button class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">Recuperar Senha</button>
 						</div>
 					</fieldset>
 					<fieldset>
 					<div class="form-group">
 						<button type="submit" class="meu_btn" data-bs-target="#Modal_login" data-bs-toggle="modal">
 						Login</button><br><br>
-						<button type="submit" class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">
-						Esqueci minha senha!</button>
+						<button type="submit" class="meu_btn" data-bs-target="#Modal_cadastrar" data-bs-toggle="modal">
+						Cadastrar Novo Usuário</button>
 					</div>
 					</fieldset>
 				</div>
@@ -195,4 +195,4 @@ include_once('conecta.php');
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
-</html>
+</html>	
