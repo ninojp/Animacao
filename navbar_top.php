@@ -26,7 +26,7 @@
             $exibe_user=$consulta_user->fetch(PDO::FETCH_ASSOC); ?>
             <div class="nav-item dropdown float-start">
                 <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown"><?php echo $exibe_user['nome'];?></a>
-                <ul class="dropdown-menu bg-dark">
+                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80">
                     <li><a class="dropdown-item nav-link" href="sair.php"><img class="" src="imgs/logout.png">Logout</a></li>
                 </ul>
             </div>
@@ -79,7 +79,7 @@
             </div>
          <!-- Bloco do FORM de BUSCA -->
         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-            <form class="form-control d-flex bg-dark" method="get" action="form_busca.php" name="form_busca" id="form_busca" role="search">
+            <form class="form-control d-flex fundo_black_40" method="get" action="form_busca.php" name="form_busca" id="form_busca" role="search">
                <input class="form-control form-sm me-3" type="text" name="input_busca" placeholder="Pesquisar por nome">
                <button class="btn btn-primary btn-sm" type="submit" name="input_submit"><img src="imgs/pesquisar-26_mini.png"></button>
             </form>

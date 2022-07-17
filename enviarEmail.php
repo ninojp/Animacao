@@ -38,6 +38,6 @@ if ($consulta->rowCount()==0) {
 		if (!$mail->send()) {
 			echo "ERRO! Ao tentar enviar E-MAIL!". $mail->ErrorInfo;
 		} else {
-			echo "<html><script>location.href='ok2.php'</script></html>";
+			echo "<html><script>location.href='ok_email.php'</script></html>";
 		}
 } ?>
