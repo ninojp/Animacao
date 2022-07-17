@@ -5,22 +5,22 @@ include_once('consulta_count.php');
 <div class="col-xxl-2 col-xl-2 col-lg-2 text-center">
 	<div class="row">
 	<div class="col-xx-12" style="margin-top: 3rem;">
-			<h5><a href="index.php" target="_blank" alt="Página da Lista dos Animes">Animes</a> (<?php echo $exibe_count_anime['qnt_anime'];?>)</h5>
+			<h5><a href="index.php" alt="Página da Lista dos Animes">Animes</a> (<?php echo $exibe_count_anime['qnt_anime'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5><a href="series.php" target="_blank" alt="Página da Lista das Séries">Séries</a> (<?php echo $exibe_count_serie['qnt_serie'];?>)</h5>
+			<h5><a href="series.php" alt="Página da Lista das Séries">Séries</a> (<?php echo $exibe_count_serie['qnt_serie'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5><a href="filmes.php" target="_blank" alt="Página da Lista dos Filmes">Filmes</a> (<?php echo $exibe_count_filme['qnt_filme'];?>)</h5>
+			<h5><a href="filmes.php" alt="Página da Lista dos Filmes">Filmes</a> (<?php echo $exibe_count_filme['qnt_filme'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5><a href="ovas.php" target="_blank" alt="Página da Lista dos OVAs">OVAs</a> (<?php echo $exibe_count_ova['qnt_ova'];?>)</h5>
+			<h5><a href="ovas.php" alt="Página da Lista dos OVAs">OVAs</a> (<?php echo $exibe_count_ova['qnt_ova'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5><a href="onas.php" target="_blank" alt="Página da Lista dos ONAs">ONAs</a> (<?php echo $exibe_count_ona['qnt_ona'];?>)</h5>
+			<h5><a href="onas.php" alt="Página da Lista dos ONAs">ONAs</a> (<?php echo $exibe_count_ona['qnt_ona'];?>)</h5>
 		</div>
 		<div class="col-xx-12" style="margin-top: 1rem;">
-			<h5><a href="especiais.php" target="_blank" alt="Página da Lista dos especiais">Especiais</a> (<?php echo $exibe_count_especial['qnt_especial'];?>)</h5>
+			<h5><a href="especiais.php" alt="Página da Lista dos especiais">Especiais</a> (<?php echo $exibe_count_especial['qnt_especial'];?>)</h5>
 		</div>
 		<div class="col-xxl-12" style="margin-top: 1rem;">
 			<a href="https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal" target="_blank">
