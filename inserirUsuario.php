@@ -22,7 +22,7 @@ $consulta = $conecta->query("SELECT email from usuario WHERE email='$recebe_emai
 		'$recebe_endereco',
 		'$recebe_telefone',
 		'0')");
-		header('location:ok.php');
+		header('location:ok_user_cad.php');
 			 } catch(PDOException $e) {
 			echo $e->getMessage();
 		}

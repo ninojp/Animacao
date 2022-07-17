@@ -26,7 +26,7 @@ if ($consulta->rowCount()==0) {
 		$mail->addReplyTo('meuemailparablog@gmail.com', 'Ninojp');
 		$mail->addAddress($recebe_email, $recebe_nome);
 		$mail->Subject = 'Recuperação de Senha || Ninojp';
-		$mail->msgHTML('Sua Senha na minha loja é:'.$recebe_senha);
+		$mail->msgHTML('Sua Senha no meu Site Dtudo Animação é:'.$recebe_senha);
 		
 		$mail->SMTPOptions = array(
 		'ssl' => array(
