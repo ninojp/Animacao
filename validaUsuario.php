@@ -16,5 +16,5 @@ if ($consulta->rowCount()==1) {
 		header('location:index.php');
 		}
 } else {
-	header('location:erro.php'); 
+	header('location:erro_login.php'); 
 } ?>

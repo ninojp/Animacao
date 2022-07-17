@@ -11,7 +11,7 @@ $recebe_telefone = str_replace($remover, '', $recebe_telefone);
 $consulta = $conecta->query("SELECT email from usuario WHERE email='$recebe_email'");
 //$exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 	if ($consulta->rowCount()==1) {
-		header('location:erro1.php');
+		header('location:erro_email.php');
 	} else {
 		try {
 		$incluir = $conecta->query("INSERT INTO usuario (nome, apelido, email, senha, endereco, telefone, adm) VALUE (
