@@ -10,10 +10,10 @@
 		<?php  if (empty($_SESSION['id'])) { ?>
         <div class="dropdown">
                 <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" alt="Link para Login" title="Link para Login">
-        <div class="d-inline"><img class="" src="imgs/login.png">
+        <div class="d-inline"><img class="ms-2" src="imgs/login.png">
         </div>
-        <div class="d-inline"><span>Login</span></div></a>
-                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80" aria-labelledby="dropdownMenuButton2">
+        <div class="d-inline fonte_small"><span>Login</span></div></a>
+                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80 fonte_small" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item nav-link" href="" data-bs-toggle="modal" data-bs-target="#Modal_login">Fazer Login</a></li>
                     <li><a class="dropdown-item nav-link" href="" data-bs-toggle="modal" data-bs-target="#Modal_cadastrar">Cadastrar</a></li>
                     <li><a class="dropdown-item nav-link" href="" data-bs-toggle="modal" data-bs-target="#Modal_recuperarSenha">Recuperar Senha</a></li>
@@ -24,17 +24,17 @@
             if($_SESSION['adm']==0) {
             $consulta_user=$conecta->query("SELECT nome FROM usuario WHERE id_usuario='$_SESSION[id]'");
             $exibe_user=$consulta_user->fetch(PDO::FETCH_ASSOC); ?>
-            <div class="nav-item dropdown float-start">
+            <div class="nav-item dropdown float-start fonte_small ms-2">
                 <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown"><?php echo $exibe_user['nome'];?></a>
-                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80">
+                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80 fonte_small">
                     <li><a class="dropdown-item nav-link" href="sair.php"><img class="" src="imgs/logout.png">Logout</a></li>
                 </ul>
             </div>
             <!-- SE ESTIVER LOGADO COMO ADMINISTRADOR-->
             <?php } else { ?>
-            <div class="dropdown">
+            <div class="dropdown fonte_small ms-2">
                 <a class="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown">NinoJP</a>
-                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80" aria-labelledby="dropdownMenuButton2">
+                <ul class="dropdown-menu dropdown-menu-dark fundo_black_80 fonte_small" aria-labelledby="dropdownMenuButton2">
                     <li><a class="dropdown-item nav-link" href="anime_inserir_form.php" target="_blank">Inserir</a></li>
                     <li><a class="dropdown-item nav-link" href="anime_listar.php" target="_blank">Alterar</a></li>
                     <li><a class="dropdown-item nav-link" href="sair.php"><img class="" src="imgs/logout.png">Logout</a></li>
