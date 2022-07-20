@@ -6,7 +6,8 @@
 		echo "<html><script>location.href='index.php'</script></hmtl>";
 	}
 	$recebe_busca = $_GET['input_busca'];
-	$consulta = $conecta->query("SELECT * FROM anime WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%')");
+	// $consulta = $conecta->query("SELECT * FROM anime WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%')");
+	$consulta = $conecta->query("SELECT * FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE ani.nome_anime OR fil.titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR fil.titulo_filme LIKE CONCAT ('%','$recebe_busca','%')");
 	if ($consulta->rowCount()==0) {
 		echo "<html><script>location.href='erro2.php'</script></hmtl>";	
 	} ?>
