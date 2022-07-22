@@ -60,14 +60,13 @@
 		<h4>Pesquise por NOME ou GENERO para encotrar as animações, Animação 3D e Animes (series e filmes).</h4>
 		<p>Lembrando que atualmente o Banco de dados só tem ANIMES, que são pesquisados apenas no campos NOME DO ANIME e GENERO.</p>
 	</div>
-	<?php $id_anime_exib = $consulta->fetch(PDO::FETCH_ASSOC);?>
-	<div class="form-group">
-		<a href="anime_detalhes.php?id_anime=<?php echo $id_anime_exib['id_anime']; ?>">
-			<button type="button" class="meu_btn">Detalhes</button></a>
-	</div>
+
 	<div class="row" id="div_animes_conteiner"> 
 	<?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
-		
+		<div class="form-group">
+		<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
+			<button type="button" class="meu_btn">Detalhes</button></a>
+		</div>
 		<?php if ($exibir['id_anime']!="") { ?>
 		<div id="div_animes">
 			<div id="div_anime_nome">
