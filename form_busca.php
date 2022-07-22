@@ -6,9 +6,12 @@
 		echo "<html><script>location.href='index.php'</script></hmtl>";
 	}
 	$recebe_busca = $_GET['input_busca'];
-	$consulta = $conecta->query("SELECT * FROM anime WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%')");
+	// $consulta = $conecta->query("SELECT * FROM anime WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%')");
 	// não funcionou bem
 	// $consulta = $conecta->query("SELECT * FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE ani.nome_anime OR fil.titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR fil.titulo_filme LIKE CONCAT ('%','$recebe_busca','%')");
+	
+	// Novos testes 21-07-22
+	$consulta = $conecta->query("SELECT ani.id_anime, ani.nome_anime, ani.nome_completo_anime, ani.img_mini as ani_img, fil.id_filme, fil.titulo_filme, fil.img_mini as fil_img, ser.id_serie, ser.titulo_serie, ser.img_mini as ser_img, ova.id_ova, ova.titulo_ova, ona.id_ona, ona.titulo_ona, esp.id_especial, esp.titulo_especial FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE id_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR titulo_serie LIKE CONCAT ('%','$recebe_busca','%')");
 	if ($consulta->rowCount()==0) {
 		echo "<html><script>location.href='erro2.php'</script></hmtl>";	
 	} ?>
@@ -56,26 +59,54 @@
 		<h4>Pesquise por NOME ou GENERO para encotrar as animações, Animação 3D e Animes (series e filmes).</h4>
 		<p>Lembrando que atualmente o Banco de dados só tem ANIMES, que são pesquisados apenas no campos NOME DO ANIME e GENERO.</p>
 	</div>
+	<?php $id_anime_exib = $consulta->fetch(PDO::FETCH_ASSOC);?>
+	<div class="form-group">
+		<a href="anime_detalhes.php?id_anime=<?php echo $id_anime_exib['id_anime']; ?>">
+			<button type="button" class="meu_btn">Detalhes</button></a>
+	</div>
 	<div class="row" id="div_animes_conteiner"> 
 	<?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
+		
+		<?php if ($exibir['id_anime']!="") { ?>
 		<div id="div_animes">
-			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
-			<figure id="figure_foto">
-				<img src="imgs/anime/<?php echo $exibir['img_mini']; ?>" class="img-responsive">
-				<figcaption id="figcap_foto">
-					<p>Click para DETALHES</p>
-				</figcaption>
-			</figure></a>
 			<div id="div_anime_nome">
 				<h1><?php echo $exibir['nome_anime']; ?></h1>
 			</div>
+			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
+			<figure id="figure_foto">
+				<img src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
+				<figcaption id="figcap_foto">
+					<p>Click para DETALHES ANIME</p>
+				</figcaption>
+			</figure></a>
 			<div class="form-group">
 			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
 				<button type="button" class="meu_btn">
 				Detalhes </button></a>
 			</div> 
 			<a href="anime_alterar.php?id_anime=<?php echo $exibir['id_anime']; ?>">Alterar</a>
-		</div>	
+		</div>
+		<?php } ?>
+		<?php if ($exibir['id_filme']!="") { ?>
+			<div id="div_animes">
+			<div id="div_anime_nome">
+				<h1><?php echo $exibir['titulo_filme']; ?></h1>
+			</div>
+			<figure id="figure_foto">
+				<img src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
+			</figure>
+			<div class="form-group">
+		<?php } ?>
+		<?php if ($exibir['id_serie']!="") { ?>
+			<div id="div_animes">
+			<div id="div_anime_nome">
+				<h1><?php echo $exibir['titulo_serie']; ?></h1>
+			</div>
+			<figure id="figure_foto">
+				<img src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
+			</figure>
+			<div class="form-group">
+		<?php } ?>	
 	<?php } ?>
 	</div>
 	<!--DIV de fechamento do bloco principal	-->
