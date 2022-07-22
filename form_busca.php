@@ -65,20 +65,16 @@
 	<?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
 		<?php if ($exibir['id_anime']!="") { ?>
 		<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
-			<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
 			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
-			<figure id="figure_foto">
+			<div class='col-xxl-10'>
+			<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
 				<img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
-				<figcaption id="figcap_foto">
-					<p>Click para DETALHES ANIME</p>
-				</figcaption>
-			</figure></a>
+			</a></div>
 			<div class="form-group">
 			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
 				<button type="button" class="meu_btn">
 				Detalhes </button></a>
 			</div> 
-			<a href="anime_alterar.php?id_anime=<?php echo $exibir['id_anime']; ?>">Alterar</a>
 		</div><br>
 
 		<?php } ?>

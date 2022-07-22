@@ -210,4 +210,18 @@ span a {
     font-weight: 400;
     font-size: 10pt;
 }
-
+.banner_lat_direita {
+	display: block;
+	position: fixed;
+	top: 4rem;
+	right: 1rem;
+	max-width: 290px;
+}
+/*BLOCO DE CONTROLE DO VIDEO DO DARAGÃO*/
+.video_dragao {
+	position: fixed;
+	top: 0px;
+	left: 400px;
+	width: 100%;
+	z-index: -1;	
+}
