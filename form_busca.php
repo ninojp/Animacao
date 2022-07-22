@@ -63,18 +63,15 @@
 
 	<div class="row" id="div_animes_conteiner"> 
 	<?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
-		<div class="form-group">
-		<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
-			<button type="button" class="meu_btn">Detalhes</button></a>
-		</div>
+		
 		<?php if ($exibir['id_anime']!="") { ?>
-		<div id="div_animes">
-			<div id="div_anime_nome">
+		<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
+			<div>
 				<h1><?php echo $exibir['nome_anime']; ?></h1>
 			</div>
 			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
 			<figure id="figure_foto">
-				<img src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
+				<img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
 				<figcaption id="figcap_foto">
 					<p>Click para DETALHES ANIME</p>
 				</figcaption>
@@ -85,27 +82,23 @@
 				Detalhes </button></a>
 			</div> 
 			<a href="anime_alterar.php?id_anime=<?php echo $exibir['id_anime']; ?>">Alterar</a>
-		</div>
+		</div><br>
 		<?php } ?>
 		<?php if ($exibir['id_filme']!="") { ?>
-			<div id="div_animes">
-			<div id="div_anime_nome">
-				<h1><?php echo $exibir['titulo_filme']; ?></h1>
-			</div>
+			<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+			<span class="span_nome"><?php echo $exibir['titulo_filme']; ?></span>
 			<figure id="figure_foto">
-				<img src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
+				<img class='thumb_img' src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
 			</figure>
-			<div class="form-group">
+			
 		<?php } ?>
 		<?php if ($exibir['id_serie']!="") { ?>
-			<div id="div_animes">
-			<div id="div_anime_nome">
-				<h1><?php echo $exibir['titulo_serie']; ?></h1>
-			</div>
+			<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+			<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
 			<figure id="figure_foto">
-				<img src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
+				<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
 			</figure>
-			<div class="form-group">
+		
 		<?php } ?>	
 	<?php } ?>
 	</div>
