@@ -41,43 +41,52 @@
 	<main class="container">
 		<div class="row text-center fundo_black_80"><!-- ROW da parte CENTRAL  -->
 			<div class="col-xxl-10 col-xl-10 col-lg-10 container"><!-- COLUNA CENTRAL  -->
-				<!-- Inserir o conteudo no bloco pricipal AQUI -->
+				<!-- Aqui começa o row para EXIBIÇÃO dos resultados da BUSCA -->
                 <div class="row justify-content-center">
-                    <div class="col-sm-12 text-center"><h2>Resultado da busca</h2>
+                    <div class="col-sm-12 text-center">
+						<h2>Resultado da busca</h2>
                         <p>Atualmente o resultado tem LINKs apenas para os animes, dentro da pagina ANIMES DETALHES vc terá acesso a todas os detalhes do anime; Filmes, Series, Ovas, Onas, Especiais do mesmo.</p>
                     </div>
+					<!-- WHILE para exibir o resulta da BUSCA -->
                     <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <?php if ($exibir['id_anime']!="") { ?>
+					<!-- Exibir o resultado da BUSCA por ANIME -->
+                    <?php if ($exibir['id_anime']!="") { ?>
                         <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
                             <a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
                             <div class='col-xxl-10'>
                             <span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
                                 <img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
-                            </a></div>
+                            </a>
+						</div>
                             <div class="form-group">
-                            <a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
-                                <button type="button" class="meu_btn">
-                                Detalhes </button></a>
+                            	<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
+                                	<button type="button" class="meu_btn">
+                                	Detalhes </button></a>
                             </div> 
-                        </div><br>
-                        <?php } ?>
-                        <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <?php if ($exibir['id_anime']!="") { ?>
-                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
-                            <a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
-                            <div class='col-xxl-10'>
-                            <span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
-                                <img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
-                            </a></div>
-                            <div class="form-group">
-                            <a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
-                                <button type="button" class="meu_btn">
-                                Detalhes </button></a>
-                            </div> 
-                        </div><br>
                         <?php } ?>
 
-                </div>
+						<!-- Exibir o resultado da BUSCA por FILMEs -->
+                        <?php if ($exibir['id_filme']!="") { ?>
+						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+							<span class="span_nome"><?php echo $exibir['titulo_filme']; ?></span>
+							<figure id="figure_foto">
+								<img class='thumb_img' src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
+							</figure>
+						</div><br>
+						<?php } ?>
+						
+						<!-- Exibir o resultado da BUSCA por SERIEs -->	
+						<?php if ($exibir['id_serie']!="") { ?>
+						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+							<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
+							<figure id="figure_foto">
+								<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
+							</figure>
+						</div>
+						<?php } ?>
+					<?php } ?>
+				</div><!-- FECHAMENTO do ROW de exibição do resulta da BUSCA -->
+
                 <!-- Inicio do bloco da janela MODAL para fazer LOGIN -->
 				<div class="modal fade fundo_black_40" id="Modal_login" tabindex="-1" aria-labelledby="Modal_loginLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
