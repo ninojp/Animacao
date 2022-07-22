@@ -17,17 +17,10 @@ include_once('conecta.php');
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- Favicon Imagem -->
 	<link rel="icon" type="image/x-icon" sizes="128x128" href="imgs/favicon.ico">
-	<!-- Meu CSS INDEX -->
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<!-- Inserção do CSS GERAL da maioria das paginas -->
 	<link rel="stylesheet" type="text/css" href="css/geral_style.css">
 </head>
 <body>
-	<!--	DIV VIDEO video_dragao (loop) FOI RETIRADO pois estava consumindo muita MEMÓRIA 
-<div class="video_dragao">
-	<video playsinline autoplay  muted>
-		<source src="video/dragon_black_proto.webm" type="video/webm">
-	</video>
-</div> -->
 <?php
 	include_once 'navbar_top.php';
 	include_once 'header.php';
@@ -40,13 +33,9 @@ include_once('conecta.php');
 				<?php
 					include_once ('listar_letras.php');
 				?>
-				<!-- Bloco de codigo de inserção do LISTAR.PHP -->
-				<div class="row text-center">
-					<span id="msgAlerta"></span>
-				</div>
-				<div class="row text-center">
-					<span class="listar-animes"></span>
-				</div>
+                    <!-- Inserir o conteudo no bloco pricipal AQUI -->
+
+                    
 				<!-- Inicio do bloco da janela MODAL para fazer LOGIN -->
 				<div class="modal fade fundo_black_40" id="Modal_login" tabindex="-1" aria-labelledby="Modal_loginLabel" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
@@ -188,8 +177,5 @@ include_once('conecta.php');
 <!-- BOOTSTRAP JQUERRY + POPPERJS-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-<!-- meu arquivo JavaScript Custom.js para o arquivo listar-animes -->
-<script src="js/custom.js"></script>
-<!-- <script src="js/categorias.js"></script> -->
 </body>
 </html>

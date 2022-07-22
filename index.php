@@ -20,8 +20,7 @@ include_once('conecta.php');
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- Favicon Imagem -->
 	<link rel="icon" type="image/x-icon" sizes="128x128" href="imgs/favicon.ico">
-	<!-- Meu CSS INDEX -->
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<!-- Inserção do CSS GERAL da maioria das paginas -->
 	<link rel="stylesheet" type="text/css" href="css/geral_style.css">
 </head>
 <body>
