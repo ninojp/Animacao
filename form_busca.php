@@ -63,12 +63,9 @@
 
 	<div class="row" id="div_animes_conteiner"> 
 	<?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
-		
 		<?php if ($exibir['id_anime']!="") { ?>
 		<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
-			<div>
-				<h1><?php echo $exibir['nome_anime']; ?></h1>
-			</div>
+			<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
 			<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
 			<figure id="figure_foto">
 				<img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
@@ -83,22 +80,24 @@
 			</div> 
 			<a href="anime_alterar.php?id_anime=<?php echo $exibir['id_anime']; ?>">Alterar</a>
 		</div><br>
+
 		<?php } ?>
 		<?php if ($exibir['id_filme']!="") { ?>
-			<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+		<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
 			<span class="span_nome"><?php echo $exibir['titulo_filme']; ?></span>
 			<figure id="figure_foto">
 				<img class='thumb_img' src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
 			</figure>
+		</div><br>
 			
 		<?php } ?>
 		<?php if ($exibir['id_serie']!="") { ?>
-			<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+		<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
 			<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
 			<figure id="figure_foto">
 				<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
 			</figure>
-		
+		</div>
 		<?php } ?>	
 	<?php } ?>
 	</div>
