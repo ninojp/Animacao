@@ -53,17 +53,18 @@
                     <?php if ($exibir['id_anime']!="") { ?>
                         <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
                             <a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Detalhes do Anime" target="_blank">
-                            <div class='col-xxl-10'>
-                            <span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
-                                <img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
+                            <div class='col-xxl-10 border'>
+                            	<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
+                                	<img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
+							</div>
                             </a>
-						</div>
-                            <div class="form-group">
+						    <div class="form-group">
                             	<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>">
                                 	<button type="button" class="meu_btn">
                                 	Detalhes </button></a>
-                            </div> 
-                        <?php } ?>
+                            </div>
+						</div>
+					<?php } ?>
 
 						<!-- Exibir o resultado da BUSCA por FILMEs -->
                         <?php if ($exibir['id_filme']!="") { ?>
@@ -74,7 +75,7 @@
 							</figure>
 						</div><br>
 						<?php } ?>
-						
+
 						<!-- Exibir o resultado da BUSCA por SERIEs -->	
 						<?php if ($exibir['id_serie']!="") { ?>
 						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
@@ -177,9 +178,9 @@
 						</div>
 						</div>
 					</div>
-					</div>
-					<!-- Modal para RECUPERAR A SENHA -->
-					<div class="modal fade fundo_black_40" id="Modal_recuperarSenha" aria-hidden="true" aria-labelledby="Modal_recuperarSenhaLabel2" tabindex="-1">
+				</div>
+				<!-- Modal para RECUPERAR A SENHA -->
+				<div class="modal fade fundo_black_40" id="Modal_recuperarSenha" aria-hidden="true" aria-labelledby="Modal_recuperarSenhaLabel2" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content fundo_black_80">
 						<div class="row position-relative">
@@ -215,7 +216,7 @@
 						</div>
 						</div>
 					</div>
-					</div>
+				</div>
 		</div><!-- Fechamento da COLUNA CENTRAL  -->
 	<?php
 	include_once('side_bar.php');
