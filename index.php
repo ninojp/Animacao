@@ -1,7 +1,7 @@
 <?php
-session_start(); //deve ser a primeira linha de codigo da pagina(DICA), antes mesmo dos comentários kkkk
-//Limpar o buffer de saida
-ob_start();
+// session_start(); //deve ser a primeira linha de codigo da pagina(DICA), antes mesmo dos comentários kkkk
+// //Limpar o buffer de saida
+// ob_start();
 // conecta com o banco de dados
 include_once('conecta.php');
 // include_once('consulta_count.php');
