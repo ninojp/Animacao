@@ -8,8 +8,8 @@ include_once('conecta.php');
 <head>
 <!-- BOOTSTRAP CSS-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<!-- Inserção do CSS GERAL da maioria das paginas -->
-	<link rel="stylesheet" type="text/css" href="css/geral_style.css">
+<!-- Inserção do CSS GERAL da maioria das paginas -->
+<link rel="stylesheet" type="text/css" href="css/geral_style.css">
 </head>
 <!-- NAV: classe NAVBAR onde vão ficar o todos os elementos -->
 <nav class="navbar navbar-expand-lg fundo_black_80 navbar-dark fixed-top navbar_meu">

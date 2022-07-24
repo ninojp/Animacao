@@ -16,7 +16,7 @@ include_once('conecta.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="animação, anime, animação 3d, filmes anime, ecchi, desenhos animados">
 	<title>Animação</title>
-		<!-- Favicon Imagem -->
+	<!-- Favicon Imagem -->
 	<link rel="icon" type="image/x-icon" sizes="128x128" href="imgs/favicon.ico">
 </head>
 <body>
