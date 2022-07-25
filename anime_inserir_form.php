@@ -1,8 +1,9 @@
-<?php session_start();
+<?php 
+session_start();
 	if (empty($_SESSION['adm']) || $_SESSION['adm']!=1) {
 		header('location:index.php');
 	}
-	include('conecta.php');
+	include_once('conecta.php');
 	$consulta = $conecta->query('SELECT * FROM autor ORDER BY id_autor DESC');
 	$consulta1 = $conecta->query('SELECT * FROM anime  ORDER BY id_anime DESC');
 	$consulta2 = $conecta->query('SELECT * FROM anime ORDER BY id_anime DESC');
@@ -16,6 +17,8 @@
 	$consulta_especial = $conecta->query('SELECT * FROM especial ORDER BY id_especial DESC');
 	$consulta_ona = $conecta->query('SELECT * FROM ona ORDER BY id_ona DESC');
 	$consulta_filme = $conecta->query('SELECT * FROM filme ORDER BY id_filme DESC');
+	$consulta_categoria = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
+	$consulta_categoria2 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -25,9 +28,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="animação, anime, animação 3d, filmes anime, ecchi, desenhos animados">
 <title>Inserir Anime</title>
-	<!-- BOOTSTRAP CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/geral_style.css">
+<!-- Imagen Favcon -->
 <link rel="icon" sizes="128x128" href="imgs/favicon.ico">
 <!-- inserção das FUNÇÕEs JS - CampoVazio  -->
 <script type="text/javascript" src="js/functionCampoVazio.js"></script>
@@ -158,11 +159,19 @@
 		<div id="collapseThree" class="collapse" data-bs-parent="#accordion">
 			<form name="form_inserir_anime" class="card-body form-control fundo_dark" action="inserir_anime.php" method="post" onsubmit="return validaCampoNome()" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="row">
-			<div class="col-xxl-6">
+			<div class="col-xxl-12">
 				<label for="select_autor">Selecione o AUTOR do Anime</label>
 				<select name="select_autor">
 				<?php while($exibe=$consulta->fetch(PDO::FETCH_ASSOC)) { ?>
 					<option value="<?php echo $exibe['id_autor'];?>"><?php echo $exibe['direcao'];?></option>
+				<?php }	?>
+				</select>
+			</div>
+			<div class="col-xxl-6 mt-3">
+				<label for="select_categoria">Selecione a Categoria</label>
+				<select name="select_categoria">
+				<?php while($exibe_cat=$consulta_categoria->fetch(PDO::FETCH_ASSOC)) { ?>
+					<option value="<?php echo $exibe_cat['id'];?>"><?php echo $exibe_cat['nome_cat'];?></option>
 				<?php }	?>
 				</select>
 			</div>
@@ -225,7 +234,7 @@
 		<div id="collapseserie" class="collapse" data-bs-parent="#accordion">
 		<form name="form_inserir_serie" class="card-body form-control form-control-sm fundo_dark" action="inserir_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 		<div class="row">
-			<div class="col-xxl-6">
+			<div class="col-xxl-12">
 				<label for="img_mini">Selecione a Imagem MINI!</label>
 				<input type="file" name="img_mini" accept="imgs/serie/*" class="form-control">
 			</div>
@@ -240,6 +249,14 @@
 			<div class="col-xxl-6">
 				<label>Descrição e Enredo:</label>
 				<textarea row="3" name="enredo_serie" class="form-control" placeholder="Uma breve Descição e o Enredo da Série"></textarea><br>
+			</div>
+			<div class="col-xxl-6 mt-3">
+			<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label>
+				<select name="select_anime2">
+				<?php while($exibe2=$consulta2->fetch(PDO::FETCH_ASSOC)) { ?>
+					<option value="<?php echo $exibe2['id_anime'];?>"><?php echo $exibe2['nome_anime'];?></option>
+				<?php }	?>
+				</select>
 			</div>
 			<div class="col-xxl-4 border">
 				<label>Numero de Episódios:</label>
@@ -265,11 +282,11 @@
 				<input type="radio" name="tipo_anime" value="4">Animação (Stop_Motion)<br>
 				<input type="radio" name="tipo_anime" value="5">Live Action<br>
 			</div>
-			<div class="col-xxl-4 border">
-			<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label>
-				<select name="select_anime2">
-				<?php while($exibe2=$consulta2->fetch(PDO::FETCH_ASSOC)) { ?>
-					<option value="<?php echo $exibe2['id_anime'];?>"><?php echo $exibe2['nome_anime'];?></option>
+			<div class="col-xxl-4 mt-4 border">
+				<label for="select_cat_ser">Categoria da Série</label>
+				<select name="select_cat_ser">
+				<?php while($exibe_cat_ser=$consulta_categoria2->fetch(PDO::FETCH_ASSOC)) { ?>
+					<option value="<?php echo $exibe_cat_ser['id'];?>"><?php echo $exibe_cat_ser['nome_cat'];?></option>
 				<?php }	?>
 				</select>
 			</div>
@@ -647,8 +664,5 @@
 	</div>
 	</div>
 </main>
-<!-- BOOTSTRAP JQUERRY + POPPERJS-->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>
