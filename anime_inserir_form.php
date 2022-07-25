@@ -1,6 +1,6 @@
-<?php 
-session_start();
-	if (empty($_SESSION['adm']) || $_SESSION['adm']!=1) {
+<?php session_start();
+ob_start();
+		if (empty($_SESSION['adm']) || $_SESSION['adm']!=1) {
 		header('location:index.php');
 	}
 	include_once('conecta.php');

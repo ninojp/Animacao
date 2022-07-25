@@ -42,6 +42,7 @@ include_once('conecta.php');
 	</main>
 	<?php
 	include_once('rodape.php');
+	include_once('banner_girls.php');
 	?>
 <script src="js/onas.js"></script>
 </body>

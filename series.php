@@ -44,6 +44,7 @@ include_once('conecta.php');
 	</main>
 	<?php
 	include_once('rodape.php');
+	include_once('banner_girls.php');
 	?>
 <!-- meu arquivo JavaScript Custom.js para o arquivo LISTAR-SERIES -->
 <script src="js/series.js"></script>
