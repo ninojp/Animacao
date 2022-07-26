@@ -100,16 +100,16 @@ include_once('conecta.php');
 </nav><!-- fecha a /NAV -->
 <!-- Inicio do bloco da janela MODAL para fazer LOGIN -->
 <div class="modal fade fundo_black_40" id="Modal_login" tabindex="-1" aria-labelledby="Modal_loginLabel" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content fundo_black_80">
-				<div class="row position-relative">
-					<div class="col-1 position-absolute top-0 end-0">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content fundo_black_80">
+			<div class="row position-relative">
+				<div class="col-1 position-absolute top-0 end-0">
 					<button type="button" class="meu_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
-					</div>
 				</div>
-				<div class="modal-body">
-					<div class="container">
-						<div class="row justify-content-center">
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row justify-content-center">
 						<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_40"><br>
 							<fieldset>
 								<legend>Fazer Login</legend>
@@ -133,13 +133,13 @@ include_once('conecta.php');
 								<div class="form-group">
 									<button type="submit" class="meu_btn" data-bs-target="#Modal_recuperarSenha" data-bs-toggle="modal">Esqueci minha senha!</button>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>
-				</div>
-				</div>
-				</div>
+			</div>
+		</div>
+	</div>
+</div>
 				<!-- Modal para CADASTRAR NOVO usuário -->
 				<div class="modal fade fundo_black_40" id="Modal_cadastrar" aria-hidden="true" aria-labelledby="Modal_cadastrarLabel" tabindex="-1">
 					<div class="modal-dialog modal-dialog-centered">

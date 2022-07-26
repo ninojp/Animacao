@@ -30,6 +30,12 @@ body {
 }
 
 /*AS DEFINIÇÕES DAS CLASSES DOS BOTÔES ANTIGOS*/
+.bt_fechar {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+}
+
 .meu_btn {/*classe somente para botoes em geral*/
     background-color: rgba(255,255,255,0.9); 
     font-size: 10pt;
@@ -224,4 +230,11 @@ span a {
 	left: 400px;
 	width: 100%;
 	z-index: -1;	
+}
+.buttons_inserir {
+    display: block;
+	position: fixed;
+	top: 8rem;
+	left: 6rem;
+    max-width: 250px;
 }
