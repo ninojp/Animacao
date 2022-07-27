@@ -18,7 +18,11 @@ ob_start();
 	$consulta_ona = $conecta->query('SELECT * FROM ona ORDER BY id_ona DESC');
 	$consulta_filme = $conecta->query('SELECT * FROM filme ORDER BY id_filme DESC');
 	$consulta_categoria = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
+	$consulta_categoria1 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
 	$consulta_categoria2 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
+	$consulta_categoria3 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
+	$consulta_categoria4 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
+	$consulta_categoria5 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -56,10 +60,14 @@ ob_start();
 			Inserir Anime</button></div>
 		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_filme" data-bs-toggle="modal">
 			Inserir Filme</button></div>
-		<div class="row my-4"><button type="button" class="meu_btn" data-bs-target="#modal_serie" data-bs-toggle="modal">Inserir Série</button></div>
-		<div class="row my-4"><button type="button" class="meu_btn" data-bs-target="#modal_autor" data-bs-toggle="modal">Inserir OVA</button></div>
-		<div class="row my-4"><button type="button" class="meu_btn" data-bs-target="#modal_autor" data-bs-toggle="modal">Inserir ONA</button></div>
-		<div class="row my-4"><button type="button" class="meu_btn" data-bs-target="#modal_autor" data-bs-toggle="modal">Inserir Especial</button></div>
+		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_serie" data-bs-toggle="modal">
+			Inserir Série</button></div>
+		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_ova" data-bs-toggle="modal">
+			Inserir OVA</button></div>
+		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_especial" data-bs-toggle="modal">
+			Inserir Especial</button></div>
+		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_ona" data-bs-toggle="modal">
+			Inserir ONA</button></div>
 	</div></div>
 </div>
 <main class="container text-center">
@@ -300,15 +308,23 @@ ob_start();
 										<input type="radio" name="tipo_anime5" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime5" value="5">Live Action<br>
 									</div>
-									<div class="col-xxl-10 mt-1">
-										<label for="select_anime6">Selecione o NOME do Anime para cadastrar o FILME</label>
+									<div class="col-xxl-3 my-4 fundo_black_20 rounded-3">
+										<label for="select_cat_ser">Categoria do FILME</label><br>
+										<select name="select_cat_ser">
+										<?php while($exibe_cat_filme=$consulta_categoria1->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe_cat_filme['id'];?>"><?php echo $exibe_cat_filme['nome_cat'];?></option>
+										<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-7 mt-4">
+										<label for="select_anime6">Selecione o NOME do Anime para cadastrar o FILME</label><br>
 										<select name="select_anime6">
 											<?php while($exibe6=$consulta6->fetch(PDO::FETCH_ASSOC)) { ?>
 											<option value="<?php echo $exibe6['id_anime'];?>"><?php echo $exibe6['nome_anime'];?></option>
 											<?php }	?>
 										</select>
 									</div>
-									<div class="col-xxl-10 m-4">
+									<div class="col-xxl-10 m-3">
 										<button type="submit" class="btn btn-success">Enviar Dados do FILME!</button>
 									</div>
 								</div>
@@ -332,49 +348,41 @@ ob_start();
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
-							<form name="form_inserir_serie" class="card-body form-control form-control-sm fundo_dark" action="inserir_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+							<form name="form_inserir_serie" class="form-control form-control-sm fundo_dark" action="inserir_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-xxl-12">
+								<div class="col-xxl-11 my-2">
 									<label for="img_mini">Selecione a Imagem MINI!</label>
 									<input type="file" name="img_mini" accept="imgs/serie/*" class="form-control">
 								</div>
-								<div class="col-xxl-6">
+								<div class="col-xxl-11 my-2">
 									<label>Titulo da Série:</label>
 									<input type="text" name="titulo_serie" class="form-control" size="100" placeholder="Titulo da Série">
 								</div>
-								<div class="col-xxl-6">
+								<div class="col-xxl-11 my-2">
 									<label for="subtitulo_serie">Subtitulos e Sinônimos:</label>
 									<textarea rows="2" name="subtitulo_serie" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
 								</div>
-								<div class="col-xxl-6">
+								<div class="col-xxl-11 my-2">
 									<label>Descrição e Enredo:</label>
 									<textarea row="3" name="enredo_serie" class="form-control" placeholder="Uma breve Descição e o Enredo da Série"></textarea><br>
 								</div>
-								<div class="col-xxl-6 mt-3">
-								<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label>
-									<select name="select_anime2">
-									<?php while($exibe2=$consulta2->fetch(PDO::FETCH_ASSOC)) { ?>
-										<option value="<?php echo $exibe2['id_anime'];?>"><?php echo $exibe2['nome_anime'];?></option>
-									<?php }	?>
-									</select>
-								</div>
-								<div class="col-xxl-4 border">
+								<div class="col-xxl-3 my-2">
 									<label>Numero de Episódios:</label>
 									<input type="text" name="n_episodios" class="form-control" size="100" placeholder="Somente numeros">
 								</div>
-								<div class="col-xxl-4 border">
-									<label>Duração do Episódio:</label>
-									<input type="text" name="duracao_serie" class="form-control" size="100" placeholder="00h:00m:00s">
-								</div>
-								<div class="col-xxl-4 border">
+								<div class="col-xxl-4 my-2">
 									<label>Início da Exibição:</label>
 									<input type="text" name="exib_inicio_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
 								</div>
-								<div class="col-xxl-4 border">
+								<div class="col-xxl-4 my-2">
 									<label>Fim da Exibição:</label>
 									<input type="text" name="exib_fim_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
 								</div>
-								<div class="col-xxl-4 border">
+								<div class="col-xxl-3 my-2">
+									<label>Duração do Episódio:</label>
+									<input type="text" name="duracao_serie" class="form-control" size="100" placeholder="00h:00m:00s">
+								</div>
+								<div class="col-xxl-4 fundo_black_20 rounded-3 my-2">
 									<label for="tipo_anime">Série - Tipo</label><br>
 									<input type="radio" name="tipo_anime" value="1" checked>Anime<br>
 									<input type="radio" name="tipo_anime" value="2">Animação<br>
@@ -382,15 +390,23 @@ ob_start();
 									<input type="radio" name="tipo_anime" value="4">Animação (Stop_Motion)<br>
 									<input type="radio" name="tipo_anime" value="5">Live Action<br>
 								</div>
-								<div class="col-xxl-4 mt-4 border">
-									<label for="select_cat_ser">Categoria da Série</label>
+								<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
+									<label for="select_cat_ser">Categoria da Série</label><br>
 									<select name="select_cat_ser">
 									<?php while($exibe_cat_ser=$consulta_categoria2->fetch(PDO::FETCH_ASSOC)) { ?>
 										<option value="<?php echo $exibe_cat_ser['id'];?>"><?php echo $exibe_cat_ser['nome_cat'];?></option>
 									<?php }	?>
 									</select>
 								</div>
-								<div class="col-xxl-12"><br>
+								<div class="col-xxl-11 my-2">
+								<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label><br>
+									<select name="select_anime2">
+									<?php while($exibe2=$consulta2->fetch(PDO::FETCH_ASSOC)) { ?>
+										<option value="<?php echo $exibe2['id_anime'];?>"><?php echo $exibe2['nome_anime'];?></option>
+									<?php }	?>
+									</select>
+								</div>
+								<div class="col-xxl-12 my-3">
 									<button type="submit" class="btn btn-success">Enviar os Dados SÉRIE!</button>
 								</div>
 							</div>
@@ -402,8 +418,254 @@ ob_start();
 			</div>
 		</div>
 	</div>
+	<!-- OVA ------- MODAL para INSERIR UMA NOVA OVA -------- OVA -->
+	<div class="modal fade fundo_black_40" id="modal_ova" tabindex="-1" aria-labelledby="modal_ovaLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_ovaLabel">Inserir uma Nova OVA</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								<form name="form_inserir_ova" class="card-body form-control fundo_dark" action="inserir_ova.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-xxl-11 my-2">
+										<label for="img_mini_ova">Selecione a Imagem MINI!</label>
+										<input type="file" name="img_mini_ova" accept="imgs/serie/*" class="form-control">
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="titulo_ova">Titulo da OVA:</label>
+										<input type="text" name="titulo_ova" class="form-control" size="100" placeholder="Titulo da OVA" autofocus>
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="subtitulo_ova">Subtitulos e Sinônimos da OVA:</label><br>
+										<textarea rows="2" name="subtitulo_ova" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label>Descrição e Enredo da OVA:</label>
+										<textarea rows="3" name="enredo_ova" class="form-control" placeholder="Uma breve Descição e o Enredo da OVA"></textarea><br>
+									</div>
+									<div class="col-xxl-3 my-2">
+										<label>Numero de Episódios:</label>
+										<input type="text" name="n_episodios_ova" class="form-control" size="100" placeholder="Episódios da OVA">
+									</div>
+									<div class="col-xxl-4 my-2">
+										<label>Início da Exibição:</label>
+										<input type="text" name="exib_inicio_ova" class="form-control" size="100" placeholder="INICIO (0000ano-00mês-00dia)">
+									</div>
+									<div class="col-xxl-4 my-2">
+										<label>Fim da Exibição:</label>
+										<input type="text" name="exib_fim_ova" class="form-control" size="100">
+									</div>
+									<div class="col-xxl-3 my-2">
+										<label>Duração do Episódio:</label>
+										<input type="text" name="duracao_ova" class="form-control" size="100" placeholder="Duração (00h:00m:00s)">
+									</div>
+									<div class="col-xxl-4 fundo_black_20 rounded-3 my-2">
+										<label for="tipo_anime1">OVA - Tipo:</label><br>
+										<input type="radio" name="tipo_anime1" value="1" checked>Anime<br>
+										<input type="radio" name="tipo_anime1" value="2">Animação<br>
+										<input type="radio" name="tipo_anime1" value="3">Animação (CGI)<br>
+										<input type="radio" name="tipo_anime1" value="4">Animação (Stop_Motion)<br>
+										<input type="radio" name="tipo_anime1" value="5">Live Action<br>
+									</div>
+									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
+										<label for="select_cat_ser">Categoria da OVA</label><br>
+										<select name="select_cat_ser">
+										<?php while($exibe_cat_ova=$consulta_categoria3->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe_cat_ova['id'];?>"><?php echo $exibe_cat_ova['nome_cat'];?></option>
+										<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-10 my-3">
+										<label for="select_anime3">Selecione o Anime para cadastrar!</label><br>
+										<select name="select_anime3">
+											<?php while($exibe3=$consulta3->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe3['id_anime'];?>"><?php echo $exibe3['nome_anime'];?></option>
+											<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-11 m-3">
+										<button type="submit" class="btn btn-success">Enviar os Dados OVA!</button>
+									</div>
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- ESPECIAL ------- MODAL para INSERIR UM NOVO ESPECIAL -------- ESPECIAL -->
+	<div class="modal fade fundo_black_40" id="modal_especial" tabindex="-1" aria-labelledby="modal_especialLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_especialLabel">Inserir um Novo Especial</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								<form name="form_inserir_especial" class="card-body form-control fundo_dark" action="inserir_especial.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-xxl-11 my-2">
+										<label for="img_mini_esp">Selecione a Imagem MINI!</label><br>
+										<input type="file" name="img_mini_esp" accept="imgs/especial/*" class="form-control">
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="titulo_especial">Titulo do ESPECIAL:</label>
+										<input type="text" name="titulo_especial" class="form-control" size="100" placeholder="Titulo do Especial">
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="subtitulo_especial">Subtitulos e Sinônimos do ESPECIAL:</label>
+										<textarea rows="2" name="subtitulo_especial" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label>Breve descrição e Enredo do ESPECIAL:</label>
+										<textarea rows="2" name="enredo_especial" class="form-control" placeholder="Uma breve Descição e o Enredo do ESPECIAL"></textarea>
+									</div>
+									<div class="col-xxl-3 my-2">
+										<label>Numero de Episódios:</label>
+										<input type="text" name="n_episodios_especial" class="form-control" placeholder="SOMENTE Numeros ">
+									</div>
+									<div class="col-xxl-4 my-2">
+										<label>Início da Exibição:</label>
+										<input type="text" name="exib_inicio_especial" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
+									</div>
+									<div class="col-xxl-4 my-2">
+										<label>Fim da Exibição:</label>
+										<input type="text" name="exib_fim_especial" class="form-control" placeholder="Data do fim (0000ano-00mês-00dia)">
+									</div>
+									<div class="col-xxl-3 my-2">
+										<label>Duração do Episódio:</label>
+										<input type="text" name="duracao_especial" class="form-control" size="100" placeholder="00h:00m:00s">
+									</div>
+									<div class="col-xxl-4 fundo_black_20 rounded-3 my-2">
+										<label for="tipo_anime3">ESPECIAL - Tipo:</label><br>
+										<input type="radio" name="tipo_anime3" value="1" checked>Anime<br>
+										<input type="radio" name="tipo_anime3" value="2">Animação<br>
+										<input type="radio" name="tipo_anime3" value="3">Animação (CGI)<br>
+										<input type="radio" name="tipo_anime3" value="4">Animação (Stop_Motion)<br>
+										<input type="radio" name="tipo_anime3" value="5">Live Action<br>
+									</div>
+									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
+										<label for="select_cat_ser">Categoria do ESPECIAL</label><br>
+										<select name="select_cat_ser">
+										<?php while($exibe_cat_especial=$consulta_categoria4->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe_cat_especial['id'];?>"><?php echo $exibe_cat_especial['nome_cat'];?></option>
+										<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="select_anime4">Selecione o Anime para cadastrar:</label><br>
+										<select name="select_anime4">
+										<?php while($exibe4=$consulta4->fetch(PDO::FETCH_ASSOC)) { ?>
+										<option value="<?php echo $exibe4['id_anime'];?>"><?php echo $exibe4['nome_anime'];?></option>
+										<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-12 my-3">
+										<button type="submit" class="btn btn-success">Enviar Dados do ESPECIAL!</button>
+									</div>			
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- ONA ------- MODAL para INSERIR UMA NOVA ONA -------- ONA -->
+	<div class="modal fade fundo_black_40" id="modal_ona" tabindex="-1" aria-labelledby="modal_onaLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_onaLabel">Inserir uma Nova OVA</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								<form name="form_inserir_ona" class="card-body form-control fundo_dark" action="inserir_ona.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-xxl-11 my-2">
+										<label for="img_mini_ona">Selecione a Imagem MINI!</label><br>
+										<input type="file" name="img_mini_ona" accept="imgs/ona/*" class="form-control">
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="titulo_ona">Titulo da ONA:</label>
+										<input type="text" name="titulo_ona" class="form-control" size="100" placeholder="Titulo da ONA">
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="subtitulo_ona">Subtitulos e Sinônimos da ONA:</label>
+										<textarea rows="2" name="subtitulo_ona" class="form-control" placeholder="Subtitulo e Sinônimos da ONA"></textarea>
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label>Breve descrição e Enredo da ONA:</label>
+										<textarea rows="3" name="enredo_ona" class="form-control" placeholder="Uma breve Descição e o Enredo da ONA"></textarea>
+									</div>
+									<div class="col-xxl-3 my-2">
+										<label>Numero de Episódios:</label>
+										<input type="text" name="n_episodios_ona" class="form-control" size="100" placeholder="Numero de Episódios da ONA">
+									</div>
+									<div class="col-xxl-4 my-2">
+										<label>Início da Exibição:</label>
+										<input type="text" name="exib_inicio_ona" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
+									</div>
+									<div class="col-xxl-4 my-2">	
+										<label>Fim da Exibição:</label>
+										<input type="text" name="exib_fim_ona" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
+									</div>
+									<div class="col-xxl-3 my-2">	
+										<label>Duração do Episódio:</label>
+										<input type="text" name="duracao_ona" class="form-control" size="100" placeholder="00h:00m:00s">
+									</div>
+									<div class="col-xxl-4 fundo_black_20 rounded-3 my-2">
+										<label for="tipo_anime4">ONA - Tipo:</label><br>
+										<input type="radio" name="tipo_anime4" value="1" checked>Anime<br>
+										<input type="radio" name="tipo_anime4" value="2">Animação<br>
+										<input type="radio" name="tipo_anime4" value="3">Animação (CGI)<br>
+										<input type="radio" name="tipo_anime4" value="4">Animação (Stop_Motion)<br>
+										<input type="radio" name="tipo_anime4" value="5">Live Action<br>
+									</div>
+									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
+										<label for="select_cat_ser">Categoria da ONA</label><br>
+										<select name="select_cat_ser">
+										<?php while($exibe_cat_ona=$consulta_categoria5->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe_cat_ona['id'];?>"><?php echo $exibe_cat_ona['nome_cat'];?></option>
+										<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-11 my-2">
+										<label for="select_anime5">Selecione o Anime para cadastrar a ONA</label><br>
+										<select name="select_anime5">
+											<?php while($exibe5=$consulta5->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe5['id_anime'];?>"><?php echo $exibe5['nome_anime'];?></option>
+											<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-11 my-3">
+										<button type="submit" class="btn btn-success">Enviar Dados da ONA!</button>
+									</div>
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<!-- Bloco para inserir as IMAGENS ANIME anime,  por enquanto selecionar uma imagens por vez -->
+<!-- Bloco para inserir as IMAGENS ANIME anime,  por enquanto selecionar uma imagens por vez
 		<form name="form_img_anime" class="card-body form-control fundo_dark" onsubmit="return validaInputIMG()" action="inserir_img.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="col-xxl-12">
 				<label>Selecione uma Imagem para o Anime(ImgFundo)</label><br>
@@ -428,7 +690,7 @@ ob_start();
 			</div>
 		</form>
 		
-<!-- Bloco para inserir as IMAGENS do FILME,  por enquanto selecionar uma imagens por vez -->
+Bloco para inserir as IMAGENS do FILME,  por enquanto selecionar uma imagens por vez
 <form name="form_img_filme" class="card-body form-control fundo_dark" onsubmit="return validaInputImgFilme()" action="inserir_img_filme.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-xxl-12">
@@ -453,7 +715,7 @@ ob_start();
 			</div>
 		</form>
 
-<!-- Bloco para inserir as IMAGENS da SÉRIE,  por enquanto selecionar uma imagens por vez -->
+Bloco para inserir as IMAGENS da SÉRIE,  por enquanto selecionar uma imagens por vez
 		<form name="form_img_serie" class="card-body form-control fundo_dark" onsubmit="return validaInputImgSerie()" action="inserir_img_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-xxl-12">
@@ -476,70 +738,9 @@ ob_start();
 					<button type="submit" class="btn btn-success">Enviar Imagem!</button>
 				</div>
 			</div>
-		</form>
-
-<!-- Bloco para inserir os dados da OVA do anime------BLOCO OVA----------BLOCO OVA----BLOCO OVA--->
-	<div class="card col-md-6 fundo_transp">
-		<div class="card-header">
-			<a class="collapsed btn btn-primary" data-bs-toggle="collapse" href="#collapseova">Inserir os dados da OVA do anime</a>
-		</div>
-		<div id="collapseova" class="collapse" data-bs-parent="#accordion">
-		<form name="form_inserir_ova" class="card-body form-control fundo_dark" action="inserir_ova.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-xxl-6">
-					<label for="img_mini_ova">Selecione a Imagem MINI!</label>
-					<input type="file" name="img_mini_ova" accept="imgs/serie/*" class="form-control">
-				</div>
-				<div class="col-xxl-6">
-					<label for="titulo_ova">Titulo da OVA:</label>
-					<input type="text" name="titulo_ova" class="form-control" size="100" placeholder="Titulo da OVA" autofocus>
-				</div>
-				<div class="col-xxl-6">
-					<label for="subtitulo_ova">Subtitulos e Sinônimos da OVA:</label><br>
-					<textarea rows="2" name="subtitulo_ova" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
-				</div>
-				<div class="col-xxl-6">
-					<label>Descrição e Enredo da OVA:</label>
-					<textarea rows="2" name="enredo_ova" class="form-control" placeholder="Uma breve Descição e o Enredo da OVA"></textarea><br>
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Numero de Episódios:</label>
-					<input type="text" name="n_episodios_ova" class="form-control" size="100" placeholder="Episódios da OVA">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Duração do Episódio:</label>
-					<input type="text" name="duracao_ova" class="form-control" size="100" placeholder="Duração (00h:00m:00s)">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Início da Exibição:</label>
-					<input type="text" name="exib_inicio_ova" class="form-control" size="100" placeholder="INICIO (0000ano-00mês-00dia)">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Fim da Exibição:</label>
-					<input type="text" name="exib_fim_ova" class="form-control" size="100">
-				</div>
-				<div class="col-xxl-4 border">
-					<label for="tipo_anime1">OVA - Tipo:</label><br>
-					<input type="radio" name="tipo_anime1" value="1" checked>Anime<br>
-					<input type="radio" name="tipo_anime1" value="2">Animação<br>
-					<input type="radio" name="tipo_anime1" value="3">Animação (CGI)<br>
-					<input type="radio" name="tipo_anime1" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime1" value="5">Live Action<br>
-				</div>
-				<div class="col-xxl-4 border">
-					<label for="select_anime3">Selecione o Anime para cadastrar!</label>
-					<select name="select_anime3">
-						<?php while($exibe3=$consulta3->fetch(PDO::FETCH_ASSOC)) { ?>
-						<option value="<?php echo $exibe3['id_anime'];?>"><?php echo $exibe3['nome_anime'];?></option>
-						<?php }	?>
-					</select>
-				</div>
-				<div class="col-xxl-12"><hr>
-					<button type="submit" class="btn btn-success">Enviar os Dados OVA!</button>
-				</div>
-		</div>
-		</form>
-<!-- Bloco para inserir as IMAGENS da OVA,  por enquanto selecionar uma imagens por vez  IMAGENS da OVA-->
+		</form> 
+		
+Bloco para inserir as IMAGENS da OVA,  por enquanto selecionar uma imagens por vez  IMAGENS da OVA
 		<form name="form_img_ova" class="card-body form-control fundo_dark" onsubmit="return validaInputImgOva()" action="inserir_img_ova.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-xxl-12">
@@ -564,69 +765,9 @@ ob_start();
 		</div>
 		</form>
 		</div>
-	</div>
-<!-- Bloco para inserir os dados do ESPECIAL do anime BLOCO ESPECIAL------BLOCO ESPECIAL---BLOCO ESPECIAL-->
-	<div class="card col-md-6 fundo_transp">
-		<div class="card-header">
-			<a class="collapsed btn btn-primary" data-bs-toggle="collapse" href="#collapseespecial">Inserir os dados do ESPECIAL do anime</a>
-		</div>
-		<div id="collapseespecial" class="collapse" data-bs-parent="#accordion">
-		<form name="form_inserir_especial" class="card-body form-control fundo_dark" action="inserir_especial.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-xxl-6">
-					<label for="img_mini_esp">Selecione a Imagem MINI!</label><br>
-					<input type="file" name="img_mini_esp" accept="imgs/especial/*" class="form-control">
-				</div>
-				<div class="col-xxl-6">
-					<label for="titulo_especial">Titulo do ESPECIAL:</label>
-					<input type="text" name="titulo_especial" class="form-control" size="100" placeholder="Titulo do Especial">
-				</div>
-				<div class="col-xxl-6">
-					<label for="subtitulo_especial">Subtitulos e Sinônimos do ESPECIAL:</label>
-					<textarea rows="2" name="subtitulo_especial" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
-				</div>
-				<div class="col-xxl-6">
-					<label>Breve descrição e Enredo do ESPECIAL:</label>
-					<textarea name="enredo_especial" class="form-control" placeholder="Uma breve Descição e o Enredo do ESPECIAL"></textarea><br>
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Numero de Episódios:</label>
-					<input type="text" name="n_episodios_especial" class="form-control" placeholder="SOMENTE Numeros ">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Duração do Episódio:</label>
-					<input type="text" name="duracao_especial" class="form-control" size="100" placeholder="00h:00m:00s">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Início da Exibição:</label>
-					<input type="text" name="exib_inicio_especial" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Fim da Exibição:</label>
-					<input type="text" name="exib_fim_especial" class="form-control" placeholder="Data do fim (0000ano-00mês-00dia)">
-				</div>
-				<div class="col-xxl-4 border">
-					<label for="tipo_anime3">ESPECIAL - Tipo:</label><br>
-					<input type="radio" name="tipo_anime3" value="1" checked>Anime<br>
-					<input type="radio" name="tipo_anime3" value="2">Animação<br>
-					<input type="radio" name="tipo_anime3" value="3">Animação (CGI)<br>
-					<input type="radio" name="tipo_anime3" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime3" value="5">Live Action<br>
-				</div>
-				<div class="col-xxl-4  border">
-					<label for="select_anime4">Selecione o Anime para cadastrar:</label>
-					<select name="select_anime4">
-					<?php while($exibe4=$consulta4->fetch(PDO::FETCH_ASSOC)) { ?>
-					<option value="<?php echo $exibe4['id_anime'];?>"><?php echo $exibe4['nome_anime'];?></option>
-					<?php }	?>
-					</select>
-				</div>
-				<div class="col-xxl-12"><hr>
-					<button type="submit" class="btn btn-success">Enviar Dados do ESPECIAL!</button>
-				</div>			
-			</div>
-		</form>
-<!-- Bloco para inserir as IMAGENS do ESPECIAL,  por enquanto selecionar uma imagens por vez -->
+	</div>	
+		
+Bloco para inserir as IMAGENS do ESPECIAL,  por enquanto selecionar uma imagens por vez
 		<form name="form_img_especial" class="card-body form-control fundo_dark" onsubmit="return validaInputImgEspecial()" action="inserir_img_especial.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-xxl-12">
@@ -652,68 +793,9 @@ ob_start();
 		</form>
 		</div>
 	</div>
-<!-- Bloco para inserir os dados da ONA do anime---BLOCO ONA-------BLOCO ONA-------BLOCO ONA -->
-	<div class="card col-md-6 fundo_transp">
-		<div class="card-header">
-			<a class="collapsed btn btn-primary" data-bs-toggle="collapse" href="#collapseona">Inserir os dados da ONA do anime</a>
-		</div>
-		<div id="collapseona" class="collapse" data-bs-parent="#accordion">
-		<form name="form_inserir_ona" class="card-body form-control fundo_dark" action="inserir_ona.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-xxl-6">
-					<label for="img_mini_ona">Selecione a Imagem MINI!</label><br>
-					<input type="file" name="img_mini_ona" accept="imgs/ona/*" class="form-control">
-				</div>
-				<div class="col-xxl-6">
-					<label for="titulo_ona">Titulo da ONA:</label>
-					<input type="text" name="titulo_ona" class="form-control" size="100" placeholder="Titulo da ONA">
-				</div>
-				<div class="col-xxl-6">
-					<label for="subtitulo_ona">Subtitulos e Sinônimos da ONA:</label>
-					<textarea rows="2" name="subtitulo_ona" class="form-control" placeholder="Subtitulo e Sinônimos da ONA"></textarea>
-				</div>
-				<div class="col-xxl-6">
-					<label>Breve descrição e Enredo da ONA:</label>
-					<textarea rows="2" name="enredo_ona" class="form-control" placeholder="Uma breve Descição e o Enredo da ONA"></textarea>
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Numero de Episódios:</label>
-					<input type="text" name="n_episodios_ona" class="form-control" size="100" placeholder="Numero de Episódios da ONA">
-				</div>
-				<div class="col-xxl-4 border">	
-					<label>Duração do Episódio:</label>
-					<input type="text" name="duracao_ona" class="form-control" size="100" placeholder="00h:00m:00s">
-				</div>
-				<div class="col-xxl-4 border">
-					<label>Início da Exibição:</label>
-					<input type="text" name="exib_inicio_ona" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
-				</div>
-				<div class="col-xxl-4 border">	
-					<label>Fim da Exibição:</label>
-					<input type="text" name="exib_fim_ona" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
-				</div>
-				<div class="col-xxl-4 border">
-					<label for="tipo_anime4">ONA - Tipo:</label><br>
-					<input type="radio" name="tipo_anime4" value="1" checked>Anime<br>
-					<input type="radio" name="tipo_anime4" value="2">Animação<br>
-					<input type="radio" name="tipo_anime4" value="3">Animação (CGI)<br>
-					<input type="radio" name="tipo_anime4" value="4">Animação (Stop_Motion)<br>
-					<input type="radio" name="tipo_anime4" value="5">Live Action<br>
-				</div>
-				<div class="col-xxl-4 border">
-					<label for="select_anime5">Selecione o Anime para cadastrar a ONA</label>
-					<select name="select_anime5">
-						<?php while($exibe5=$consulta5->fetch(PDO::FETCH_ASSOC)) { ?>
-						<option value="<?php echo $exibe5['id_anime'];?>"><?php echo $exibe5['nome_anime'];?></option>
-						<?php }	?>
-					</select>
-				</div>
-				<div class="col-xxl-12"><hr>
-					<button type="submit" class="btn btn-success">Enviar Dados da ONA!</button>
-				</div>
-			</div>
-		</form>
-<!-- Bloco para inserir as IMAGENS da ONA,  por enquanto selecionar uma imagens por vez BLOCO ONA-->
+
+	
+Bloco para inserir as IMAGENS da ONA,  por enquanto selecionar uma imagens por vez BLOCO ONA
 		<form name="form_img_ona" class="card-body form-control fundo_dark" onsubmit="return validaInputImgOna()" action="inserir_img_ona.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-xxl-12">
@@ -739,6 +821,8 @@ ob_start();
 		</form>
 		</div>
 	</div>
+		-->
+
 </div><!-- Fecho a ROW do inicio -->
 </main>
 </body>
