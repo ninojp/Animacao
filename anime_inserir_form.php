@@ -555,8 +555,8 @@ ob_start();
 										<input type="radio" name="tipo_anime3" value="5">Live Action<br>
 									</div>
 									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-										<label for="select_cat_ser">Categoria do ESPECIAL</label><br>
-										<select name="select_cat_ser">
+										<label for="select_cat_especial">Categoria do ESPECIAL</label><br>
+										<select name="select_cat_especial">
 										<?php while($exibe_cat_especial=$consulta_categoria4->fetch(PDO::FETCH_ASSOC)) { ?>
 											<option value="<?php echo $exibe_cat_especial['id'];?>"><?php echo $exibe_cat_especial['nome_cat'];?></option>
 										<?php }	?>
@@ -637,8 +637,8 @@ ob_start();
 										<input type="radio" name="tipo_anime4" value="5">Live Action<br>
 									</div>
 									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-										<label for="select_cat_ser">Categoria da ONA</label><br>
-										<select name="select_cat_ser">
+										<label for="select_cat_ona">Categoria da ONA</label><br>
+										<select name="select_cat_ona">
 										<?php while($exibe_cat_ona=$consulta_categoria5->fetch(PDO::FETCH_ASSOC)) { ?>
 											<option value="<?php echo $exibe_cat_ona['id'];?>"><?php echo $exibe_cat_ona['nome_cat'];?></option>
 										<?php }	?>
@@ -665,80 +665,200 @@ ob_start();
 			</div>
 		</div>
 
+		<!-- ANIME ------- MODAL para INSERIR NOVA IMG para o ANIME -------- ANIME -->
+		<div class="modal fade fundo_black_40" id="modal_img_anime" tabindex="-1" aria-labelledby="modal_img_animeLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_img_animeLabel">Inserir uma Nova IMG para o ANIME</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								<form name="form_img_anime" class="card-body form-control fundo_dark" onsubmit="return validaInputIMG()" action="inserir_img.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="col-xxl-12">
+									<label>Selecione uma Imagem para o Anime(ImgFundo)</label><br>
+									<input type="file" accept="imgs/anime/*" class="form-control form-control-sm" name="caminho_img_anime" require>
+								</div>
+								<div class="col-xxl-12">
+								<label>Link Imagem(um nome para identificação da imagem):</label>
+									<input type="text" name="link_img" class="form-control form-control-sm" size="100" placeholder="Nome de Identificação da IMG">
+								</div>
+								<div class="row">
+									<div class="col-xxl-6">
+										<label for="select_anime7">Selecione o NOME do Anime para cadastrar a IMAGEM</label>
+											<select name="select_anime7">
+											<?php while($exibe7=$consulta7->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe7['id_anime'];?>"><?php echo $exibe7['nome_anime'];?></option>
+											<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-5"><hr>
+										<button type="submit" class="btn btn-success">Enviar Imagem!</button>
+									</div>
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- FILME ------- MODAL para INSERIR NOVA IMG para o FILME -------- FILME -->
+		<div class="modal fade fundo_black_40" id="modal_img_filme" tabindex="-1" aria-labelledby="modal_img_filmeLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_img_filmeLabel">Inserir uma Nova IMG para o FILME</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								<form name="form_img_filme" class="card-body form-control fundo_dark" onsubmit="return validaInputImgFilme()" action="inserir_img_filme.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-xxl-12">
+										<label>Selecione uma Imagem para o FILME!</label><br>
+										<input type="file" name="caminho_img_filme" accept="imgs/filme/*" class="form-control" require>
+									</div>
+									<div class="col-xxl-12">
+										<label>Link Imagem(um nome para identificação da imagem):</label>
+										<input type="text" name="link_img_filme" class="form-control" size="100" placeholder="Nome de Identificação da IMG">
+									</div>
+									<div class="col-xxl-6">
+										<label for="select_filme">Selecione o NOME do FILME para cadastrar a IMAGEM</label>
+										<select name="select_filme">
+											<?php while($exibe_filme=$consulta_filme->fetch(PDO::FETCH_ASSOC)) { ?>
+											<option value="<?php echo $exibe_filme['id_filme'];?>"><?php echo $exibe_filme['titulo_filme'];?></option>
+											<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-6"><hr>
+										<button type="submit" class="btn btn-success">Enviar Imagem!</button>
+									</div>
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- SÉRIE ------- MODAL para INSERIR NOVA IMG para a SÉRIE -------- SÉRIE -->
+		<div class="modal fade fundo_black_40" id="modal_img_serie" tabindex="-1" aria-labelledby="modal_img_serieLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_img_serieLabel">Inserir uma Nova IMG para a SÉRIE</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								<form name="form_img_serie" class="card-body form-control fundo_dark" onsubmit="return validaInputImgSerie()" action="inserir_img_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-xxl-12">
+										<label for="caminho_img_serie">Selecione uma Imagem para a SÉRIE!</label>
+										<input type="file" name="caminho_img_serie" accept="imgs/serie/*" class="form-control" require>
+									</div>
+									<div class="col-xxl-12">
+										<label>Link Imagem(um nome para identificação da imagem):</label>
+										<input type="text" name="link_img_serie" class="form-control" size="100" placeholder="Nome de Identificação da IMG">
+									</div>
+									<div class="col-xxl-6">
+										<label for="select_serie">Selecione a SÉRIE para cadastrar a IMAGEM</label>
+										<select name="select_serie">
+										<?php while($exibe_serie=$consulta_serie->fetch(PDO::FETCH_ASSOC)) { ?>
+										<option value="<?php echo $exibe_serie['id_serie'];?>"><?php echo $exibe_serie['titulo_serie'];?></option>
+										<?php }	?>
+										</select>
+									</div>
+									<div class="col-xxl-6"><hr>
+										<button type="submit" class="btn btn-success">Enviar Imagem!</button>
+									</div>
+								</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- OVA ------- MODAL para INSERIR NOVA IMG para o OVA -------- OVA -->
+		<div class="modal fade fundo_black_40" id="modal_img_ova" tabindex="-1" aria-labelledby="modal_img_ovaLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_img_ovaLabel">Inserir uma Nova IMG para o OVA</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ESPECIAL ------- MODAL para INSERIR NOVA IMG para o ESPECIAL -------- ESPECIAL -->
+		<div class="modal fade fundo_black_40" id="modal_img_especial" tabindex="-1" aria-labelledby="modal_img_especialLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_img_especialLabel">Inserir uma Nova IMG para o ESPECIAL</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ONA ------- MODAL para INSERIR NOVA IMG para o ONA -------- ONA -->
+		<div class="modal fade fundo_black_40" id="modal_img_ona" tabindex="-1" aria-labelledby="modal_img_onaLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content fundo_black_60">
+					<div class="d-flex flex-row col-12">
+						<h2 class="modal-title" id="modal_img_onaLabel">Inserir uma Nova IMG para o ONA</h2>
+						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>										
 <!-- Bloco para inserir as IMAGENS ANIME anime,  por enquanto selecionar uma imagens por vez
-		<form name="form_img_anime" class="card-body form-control fundo_dark" onsubmit="return validaInputIMG()" action="inserir_img.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-			<div class="col-xxl-12">
-				<label>Selecione uma Imagem para o Anime(ImgFundo)</label><br>
-				<input type="file" accept="imgs/anime/*" class="form-control form-control-sm" name="caminho_img_anime" require>
-			</div>
-			<div class="col-xxl-12">
-			<label>Link Imagem(um nome para identificação da imagem):</label>
-				<input type="text" name="link_img" class="form-control form-control-sm" size="100" placeholder="Nome de Identificação da IMG">
-			</div>
-			<div class="row">
-				<div class="col-xxl-6">
-					<label for="select_anime7">Selecione o NOME do Anime para cadastrar a IMAGEM</label>
-						<select name="select_anime7">
-						<?php while($exibe7=$consulta7->fetch(PDO::FETCH_ASSOC)) { ?>
-						<option value="<?php echo $exibe7['id_anime'];?>"><?php echo $exibe7['nome_anime'];?></option>
-						<?php }	?>
-					</select>
-				</div>
-				<div class="col-xxl-5"><hr>
-					<button type="submit" class="btn btn-success">Enviar Imagem!</button>
-				</div>
-			</div>
-		</form>
+		
 		
 Bloco para inserir as IMAGENS do FILME,  por enquanto selecionar uma imagens por vez
-<form name="form_img_filme" class="card-body form-control fundo_dark" onsubmit="return validaInputImgFilme()" action="inserir_img_filme.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-xxl-12">
-					<label>Selecione uma Imagem para o FILME!</label><br>
-					<input type="file" name="caminho_img_filme" accept="imgs/filme/*" class="form-control" require>
-				</div>
-				<div class="col-xxl-12">
-					<label>Link Imagem(um nome para identificação da imagem):</label>
-					<input type="text" name="link_img_filme" class="form-control" size="100" placeholder="Nome de Identificação da IMG">
-				</div>
-				<div class="col-xxl-6">
-					<label for="select_filme">Selecione o NOME do FILME para cadastrar a IMAGEM</label>
-					<select name="select_filme">
-						<?php while($exibe_filme=$consulta_filme->fetch(PDO::FETCH_ASSOC)) { ?>
-						<option value="<?php echo $exibe_filme['id_filme'];?>"><?php echo $exibe_filme['titulo_filme'];?></option>
-						<?php }	?>
-					</select>
-				</div>
-				<div class="col-xxl-6"><hr>
-					<button type="submit" class="btn btn-success">Enviar Imagem!</button>
-				</div>
-			</div>
-		</form>
+
 
 Bloco para inserir as IMAGENS da SÉRIE,  por enquanto selecionar uma imagens por vez
-		<form name="form_img_serie" class="card-body form-control fundo_dark" onsubmit="return validaInputImgSerie()" action="inserir_img_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-xxl-12">
-					<label for="caminho_img_serie">Selecione uma Imagem para a SÉRIE!</label>
-					<input type="file" name="caminho_img_serie" accept="imgs/serie/*" class="form-control" require>
-				</div>
-				<div class="col-xxl-12">
-					<label>Link Imagem(um nome para identificação da imagem):</label>
-					<input type="text" name="link_img_serie" class="form-control" size="100" placeholder="Nome de Identificação da IMG">
-				</div>
-				<div class="col-xxl-6">
-					<label for="select_serie">Selecione a SÉRIE para cadastrar a IMAGEM</label>
-					<select name="select_serie">
-					<?php while($exibe_serie=$consulta_serie->fetch(PDO::FETCH_ASSOC)) { ?>
-					<option value="<?php echo $exibe_serie['id_serie'];?>"><?php echo $exibe_serie['titulo_serie'];?></option>
-					<?php }	?>
-					</select>
-				</div>
-				<div class="col-xxl-6"><hr>
-					<button type="submit" class="btn btn-success">Enviar Imagem!</button>
-				</div>
-			</div>
-		</form> 
+		 
 		
 Bloco para inserir as IMAGENS da OVA,  por enquanto selecionar uma imagens por vez  IMAGENS da OVA
 		<form name="form_img_ova" class="card-body form-control fundo_dark" onsubmit="return validaInputImgOva()" action="inserir_img_ova.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
