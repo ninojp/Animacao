@@ -238,3 +238,10 @@ span a {
 	left: 19rem;
     max-width: 250px;
 }
+.buttons_inserir_imgs {
+    display: block;
+	position: fixed;
+	top: 19rem;
+	right: 19rem;
+    max-width: 250px;
+}
