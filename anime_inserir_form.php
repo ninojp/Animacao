@@ -309,8 +309,8 @@ ob_start();
 										<input type="radio" name="tipo_anime5" value="5">Live Action<br>
 									</div>
 									<div class="col-xxl-3 my-4 fundo_black_20 rounded-3">
-										<label for="select_cat_ser">Categoria do FILME</label><br>
-										<select name="select_cat_ser">
+										<label for="select_cat_filme">Categoria do FILME</label><br>
+										<select name="select_cat_filme">
 										<?php while($exibe_cat_filme=$consulta_categoria1->fetch(PDO::FETCH_ASSOC)) { ?>
 											<option value="<?php echo $exibe_cat_filme['id'];?>"><?php echo $exibe_cat_filme['nome_cat'];?></option>
 										<?php }	?>
@@ -473,8 +473,8 @@ ob_start();
 										<input type="radio" name="tipo_anime1" value="5">Live Action<br>
 									</div>
 									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-										<label for="select_cat_ser">Categoria da OVA</label><br>
-										<select name="select_cat_ser">
+										<label for="select_cat_ova">Categoria da OVA</label><br>
+										<select name="select_cat_ova">
 										<?php while($exibe_cat_ova=$consulta_categoria3->fetch(PDO::FETCH_ASSOC)) { ?>
 											<option value="<?php echo $exibe_cat_ova['id'];?>"><?php echo $exibe_cat_ova['nome_cat'];?></option>
 										<?php }	?>
