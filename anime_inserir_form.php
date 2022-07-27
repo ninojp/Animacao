@@ -41,7 +41,7 @@ ob_start();
 <header class="container mt-5">
 	<div class="row text-center my-5">
 		<div class="col-7">
-		<h1 class="mt-5 justify-content-center fundo_black_80 rounded-4">Página para inserção de Novos animes</h1>
+		<h1 class="justify-content-center fundo_black_80 mt-5 pb-2 rounded-4">Página para inserção de Novos animes</h1>
 		</div>
 	</div>
 </header>
@@ -138,7 +138,7 @@ ob_start();
 								<?php }	?>
 								</select>
 								<div class="row">
-									<div class="col-3 fundo_black_20">
+									<div class="col-3 fundo_black_20 rounded-3">
 									<input type="radio" name="genero_anime" value="1" checked>Ação<br>
 									<input type="radio" name="genero_anime" value="3">Aventura<br>
 									<input type="radio" name="genero_anime" value="4">Artes Marciais<br>
@@ -152,7 +152,7 @@ ob_start();
 									<input type="radio" name="genero_anime" value="11">Ficção Científica<br>
 									<input type="radio" name="genero_anime" value="20">Game<br>
 									</div>
-								<div class="col-3 fundo_black_20">
+								<div class="col-3 fundo_black_20 rounded-4">
 									<input type="radio" name="genero_anime" value="43">Gore<br>
 									<input type="radio" name="genero_anime" value="12">Harém<br>
 									<input type="radio" name="genero_anime" value="45">Histórico<br>
@@ -167,7 +167,7 @@ ob_start();
 									<input type="radio" name="genero_anime" value="14">Romance<br>
 									<input type="radio" name="genero_anime" value="15">Seinen<br>
 								</div>
-								<div class="col-3 fundo_black_20">
+								<div class="col-3 fundo_black_20 rounded-4">
 									<input type="radio" name="genero_anime" value="39">Slice of Life<br>
 									<input type="radio" name="genero_anime" value="40">Shounen<br>
 									<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
@@ -265,34 +265,34 @@ ob_start();
 				<div class="modal-body">
 					<div class="container">
 						<div class="row justify-content-center">
-							<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20">
-							<form name="form_inserir_filme" class="card-body form-control fundo_dark" action="inserir_filme.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-								<div class="row">
-									<div class="col-xxl-6">
+							<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+							<form name="form_inserir_filme" class="card-body form-control fundo_dark justify-content-center" action="inserir_filme.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+								<div class="row justify-content-center text-center">
+									<div class="col-xxl-11 mt-3">
 										<label for="img_mini_filme">Selecione a Imagem MINI!</label>
 										<input type="file" name="img_mini_filme" accept="imgs/filme/*" class="form-control">
 									</div>
-									<div class="col-xxl-6">
+									<div class="col-xxl-11 mt-3">
 										<label for="titulo_filme">Titulo do FILME:</label>
 										<input type="text" name="titulo_filme" class="form-control" size="100" placeholder="Titulo do FILME">
 									</div>
-									<div class="col-xxl-6">
+									<div class="col-xxl-11 mt-3">
 										<label for="subtitulo_filme">Subtitulos e Sinônimos do FILME:</label><br>
 										<textarea rows="2" name="subtitulo_filme" class="form-control" placeholder="Subtitulo e Sinônimos do FILME"></textarea>
 									</div>
-									<div class="col-xxl-6">
+									<div class="col-xxl-11 mt-3">
 										<label>Breve descrição e Enredo do FILME:</label>
-										<textarea rows="2" name="enredo_filme" class="form-control" placeholder="Uma breve Descição e o Enredo do FILME"></textarea><br>
+										<textarea rows="3" name="enredo_filme" class="form-control" placeholder="Uma breve Descição e o Enredo do FILME"></textarea><br>
 									</div>
-									<div class="col-xxl-4 border">
+									<div class="col-xxl-3 fundo_black_20 rounded-3 mt-1">
 										<label>Duração do FILME:</label>
 										<input type="text" name="duracao_filme" class="form-control" size="100" placeholder="00h:00m:00s">
 									</div>
-									<div class="col-xxl-4 border">
+									<div class="col-xxl-4 fundo_black_20 rounded-3 mt-1">
 										<label>Data de Exibição:</label>
 										<input type="text" name="exibido" class="form-control" size="100" placeholder="0000ano-00mês-00dia">
 									</div>
-									<div class="col-xxl-4 border">
+									<div class="col-xxl-4 fundo_black_20 rounded-3 mt-1">
 										<label for="tipo_anime5"  require>FILME - Tipo:</label><br>
 										<input type="radio" name="tipo_anime5" value="1" checked>Anime<br>
 										<input type="radio" name="tipo_anime5" value="2">Animação<br>
@@ -300,7 +300,7 @@ ob_start();
 										<input type="radio" name="tipo_anime5" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime5" value="5">Live Action<br>
 									</div>
-									<div class="col-xxl-6">
+									<div class="col-xxl-10 mt-1">
 										<label for="select_anime6">Selecione o NOME do Anime para cadastrar o FILME</label>
 										<select name="select_anime6">
 											<?php while($exibe6=$consulta6->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -308,7 +308,7 @@ ob_start();
 											<?php }	?>
 										</select>
 									</div>
-									<div class="col-xxl-6"><hr>
+									<div class="col-xxl-10 m-4">
 										<button type="submit" class="btn btn-success">Enviar Dados do FILME!</button>
 									</div>
 								</div>
@@ -320,80 +320,91 @@ ob_start();
 			</div>
 		</div>
 	</div>
-
-
-<!-- Bloco para inserir os dados da SERIE do anime ----------- --BLOCO SERIE-------------BLOCO SERIE --->
-		<div class="card col-md-6 fundo_transp">
-			<div class="card-header">
-				<a class="collapsed btn btn-primary" data-bs-toggle="collapse" href="#collapseserie">Inserir os dados da SERIE do anime</a>
-			</div>
-		<div id="collapseserie" class="collapse" data-bs-parent="#accordion">
-		<form name="form_inserir_serie" class="card-body form-control form-control-sm fundo_dark" action="inserir_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
-		<div class="row">
-			<div class="col-xxl-12">
-				<label for="img_mini">Selecione a Imagem MINI!</label>
-				<input type="file" name="img_mini" accept="imgs/serie/*" class="form-control">
-			</div>
-			<div class="col-xxl-6">
-				<label>Titulo da Série:</label>
-				<input type="text" name="titulo_serie" class="form-control" size="100" placeholder="Titulo da Série">
-			</div>
-			<div class="col-xxl-6">
-				<label for="subtitulo_serie">Subtitulos e Sinônimos:</label>
-				<textarea rows="2" name="subtitulo_serie" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
-			</div>
-			<div class="col-xxl-6">
-				<label>Descrição e Enredo:</label>
-				<textarea row="3" name="enredo_serie" class="form-control" placeholder="Uma breve Descição e o Enredo da Série"></textarea><br>
-			</div>
-			<div class="col-xxl-6 mt-3">
-			<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label>
-				<select name="select_anime2">
-				<?php while($exibe2=$consulta2->fetch(PDO::FETCH_ASSOC)) { ?>
-					<option value="<?php echo $exibe2['id_anime'];?>"><?php echo $exibe2['nome_anime'];?></option>
-				<?php }	?>
-				</select>
-			</div>
-			<div class="col-xxl-4 border">
-				<label>Numero de Episódios:</label>
-				<input type="text" name="n_episodios" class="form-control" size="100" placeholder="Somente numeros">
-			</div>
-			<div class="col-xxl-4 border">
-				<label>Duração do Episódio:</label>
-				<input type="text" name="duracao_serie" class="form-control" size="100" placeholder="00h:00m:00s">
-			</div>
-			<div class="col-xxl-4 border">
-				<label>Início da Exibição:</label>
-				<input type="text" name="exib_inicio_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
-			</div>
-			<div class="col-xxl-4 border">
-				<label>Fim da Exibição:</label>
-				<input type="text" name="exib_fim_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
-			</div>
-			<div class="col-xxl-4 border">
-				<label for="tipo_anime">Série - Tipo</label><br>
-				<input type="radio" name="tipo_anime" value="1" checked>Anime<br>
-				<input type="radio" name="tipo_anime" value="2">Animação<br>
-				<input type="radio" name="tipo_anime" value="3">Animação (CGI)<br>
-				<input type="radio" name="tipo_anime" value="4">Animação (Stop_Motion)<br>
-				<input type="radio" name="tipo_anime" value="5">Live Action<br>
-			</div>
-			<div class="col-xxl-4 mt-4 border">
-				<label for="select_cat_ser">Categoria da Série</label>
-				<select name="select_cat_ser">
-				<?php while($exibe_cat_ser=$consulta_categoria2->fetch(PDO::FETCH_ASSOC)) { ?>
-					<option value="<?php echo $exibe_cat_ser['id'];?>"><?php echo $exibe_cat_ser['nome_cat'];?></option>
-				<?php }	?>
-				</select>
-			</div>
-			<div class="col-xxl-12"><br>
-				<button type="submit" class="btn btn-success">Enviar os Dados SÉRIE!</button>
+	<!-- SERIE ------- MODAL para INSERIR UMA NOVA SERIE -------- SERIE -->
+	<div class="modal fade fundo_black_40" id="modal_serie" tabindex="-1" aria-labelledby="modal_serieLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content fundo_black_60">
+				<div class="d-flex flex-row col-12">
+					<h2 class="modal-title" id="modal_serieLabel">Inserir uma Nova SÉRIE</h2>
+					<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-12 col-xl-12 col-xxl-12 fundo_black_20 text-center">
+							<form name="form_inserir_serie" class="card-body form-control form-control-sm fundo_dark" action="inserir_serie.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-xxl-12">
+									<label for="img_mini">Selecione a Imagem MINI!</label>
+									<input type="file" name="img_mini" accept="imgs/serie/*" class="form-control">
+								</div>
+								<div class="col-xxl-6">
+									<label>Titulo da Série:</label>
+									<input type="text" name="titulo_serie" class="form-control" size="100" placeholder="Titulo da Série">
+								</div>
+								<div class="col-xxl-6">
+									<label for="subtitulo_serie">Subtitulos e Sinônimos:</label>
+									<textarea rows="2" name="subtitulo_serie" class="form-control" placeholder="Subtitulo e Sinônimos"></textarea>
+								</div>
+								<div class="col-xxl-6">
+									<label>Descrição e Enredo:</label>
+									<textarea row="3" name="enredo_serie" class="form-control" placeholder="Uma breve Descição e o Enredo da Série"></textarea><br>
+								</div>
+								<div class="col-xxl-6 mt-3">
+								<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label>
+									<select name="select_anime2">
+									<?php while($exibe2=$consulta2->fetch(PDO::FETCH_ASSOC)) { ?>
+										<option value="<?php echo $exibe2['id_anime'];?>"><?php echo $exibe2['nome_anime'];?></option>
+									<?php }	?>
+									</select>
+								</div>
+								<div class="col-xxl-4 border">
+									<label>Numero de Episódios:</label>
+									<input type="text" name="n_episodios" class="form-control" size="100" placeholder="Somente numeros">
+								</div>
+								<div class="col-xxl-4 border">
+									<label>Duração do Episódio:</label>
+									<input type="text" name="duracao_serie" class="form-control" size="100" placeholder="00h:00m:00s">
+								</div>
+								<div class="col-xxl-4 border">
+									<label>Início da Exibição:</label>
+									<input type="text" name="exib_inicio_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
+								</div>
+								<div class="col-xxl-4 border">
+									<label>Fim da Exibição:</label>
+									<input type="text" name="exib_fim_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
+								</div>
+								<div class="col-xxl-4 border">
+									<label for="tipo_anime">Série - Tipo</label><br>
+									<input type="radio" name="tipo_anime" value="1" checked>Anime<br>
+									<input type="radio" name="tipo_anime" value="2">Animação<br>
+									<input type="radio" name="tipo_anime" value="3">Animação (CGI)<br>
+									<input type="radio" name="tipo_anime" value="4">Animação (Stop_Motion)<br>
+									<input type="radio" name="tipo_anime" value="5">Live Action<br>
+								</div>
+								<div class="col-xxl-4 mt-4 border">
+									<label for="select_cat_ser">Categoria da Série</label>
+									<select name="select_cat_ser">
+									<?php while($exibe_cat_ser=$consulta_categoria2->fetch(PDO::FETCH_ASSOC)) { ?>
+										<option value="<?php echo $exibe_cat_ser['id'];?>"><?php echo $exibe_cat_ser['nome_cat'];?></option>
+									<?php }	?>
+									</select>
+								</div>
+								<div class="col-xxl-12"><br>
+									<button type="submit" class="btn btn-success">Enviar os Dados SÉRIE!</button>
+								</div>
+							</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		</form>
+	</div>
 
 <!-- Bloco para inserir as IMAGENS ANIME anime,  por enquanto selecionar uma imagens por vez -->
-<form name="form_img_anime" class="card-body form-control fundo_dark" onsubmit="return validaInputIMG()" action="inserir_img.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+		<form name="form_img_anime" class="card-body form-control fundo_dark" onsubmit="return validaInputIMG()" action="inserir_img.php" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 			<div class="col-xxl-12">
 				<label>Selecione uma Imagem para o Anime(ImgFundo)</label><br>
 				<input type="file" accept="imgs/anime/*" class="form-control form-control-sm" name="caminho_img_anime" require>
@@ -466,8 +477,6 @@ ob_start();
 				</div>
 			</div>
 		</form>
-		</div>
-	</div>
 
 <!-- Bloco para inserir os dados da OVA do anime------BLOCO OVA----------BLOCO OVA----BLOCO OVA--->
 	<div class="card col-md-6 fundo_transp">
