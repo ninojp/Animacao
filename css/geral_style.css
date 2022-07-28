@@ -151,20 +151,6 @@ li .menu_pag {
 .nav-link_meu {
 	padding: 0rem;
 }
-
-/*ALGO QUE AINDA NEM EU SEI*/
-.destaque {
-	font-size: 14pt;
-	font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color: rgba(77,112,255,1.00);
-}
-.h1_titulo {
-	color: white;
-}
-.div_img_thumb {
-	margin-top: 2rem;
-}
 /*Classe de FUNDO das DIVs anime_detales e outras */
 .fundo_dark {
 	background-color: #373636;
@@ -185,14 +171,21 @@ li .menu_pag {
 .fundo_black_20 {
 	background-color: rgba(0,0,0,0.2);
 }
-
-.thumb_div {
-    margin: 1rem 0rem 0rem 0rem;
-    max-height: 300px;
+/*ALGO QUE AINDA NEM EU SEI*/
+.destaque {
+	font-size: 14pt;
+	font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: rgba(77,112,255,1.00);
 }
-
+/* DIVs E IMAGENS DO LISTAR_ANIMES */
+.thumb_div {
+    max-height: 320px;
+    max-width: 195px;
+    margin: 1rem 0rem 0rem 1.5rem;
+}
 .thumb_img {
-    max-height:270px;
+    height:270px;
     width:190px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255,1.00);
@@ -201,7 +194,7 @@ li .menu_pag {
     transform: scale(1.1);
     transition: all 0.3s ease-in;
 }
-span .span_nome {
+.span_nome {
     color: #ffffff;
     font-weight: 600;
     font-size: 1rem;
@@ -209,13 +202,14 @@ span .span_nome {
     background-color: rgba(0,0,0,0.8);
     padding: 0rem 0.5rem 0rem 0.5rem;
 }
-span a {
+.link_sem_ {
     text-decoration: none;
 }
 .fonte_small {
     font-weight: 400;
     font-size: 10pt;
 }
+/* BANNER GIRLs DA LATERAL DIREITA */
 .banner_lat_direita {
 	display: block;
 	position: fixed;
@@ -223,14 +217,7 @@ span a {
 	right: 1rem;
 	max-width: 290px;
 }
-/*BLOCO DE CONTROLE DO VIDEO DO DARAGÃO*/
-.video_dragao {
-	position: fixed;
-	top: 0px;
-	left: 400px;
-	width: 100%;
-	z-index: -1;	
-}
+/* BOTÕES DA PAGINA INSERIR ANIMES */
 .buttons_inserir {
     display: block;
 	position: fixed;
@@ -244,4 +231,12 @@ span a {
 	top: 19rem;
 	right: 19rem;
     max-width: 250px;
+}
+/*BLOCO DE CONTROLE DO VIDEO DO DARAGÃO*/
+.video_dragao {
+	position: fixed;
+	top: 0px;
+	left: 400px;
+	width: 100%;
+	z-index: -1;	
 }

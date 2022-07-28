@@ -15,7 +15,7 @@ if (!empty($especial)) {
 	while($row_especial = $result_especial->fetch(PDO::FETCH_ASSOC)){
 		extract($row_especial);
 		$dadoespecial .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
-		$dadoespecial .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do especial' target='_blank'>";
+		$dadoespecial .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do especial' target='_blank'>";
 		$dadoespecial .= "<img class='thumb_img' src='imgs/especial/$img_mini'>";
 		$dadoespecial .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_especial</span>";
 		$dadoespecial .= "</div></a></div>";
