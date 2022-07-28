@@ -15,7 +15,7 @@ if (!empty($serie)) {
 	while($row_serie = $result_serie->fetch(PDO::FETCH_ASSOC)){
 		extract($row_serie);
 		$dadoserie .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
-		$dadoserie .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do serie' target='_blank'>";
+		$dadoserie .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do serie' target='_blank'>";
 		$dadoserie .= "<img class='thumb_img' src='imgs/serie/$img_mini'>";
 		$dadoserie .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_serie</span>";
 		$dadoserie .= "</div></a></div>";

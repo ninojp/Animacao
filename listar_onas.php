@@ -15,7 +15,7 @@ if (!empty($ona)) {
 	while($row_ona = $result_ona->fetch(PDO::FETCH_ASSOC)){
 		extract($row_ona);
 		$dadoona .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
-		$dadoona .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do ona' target='_blank'>";
+		$dadoona .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do ona' target='_blank'>";
 		$dadoona .= "<img class='thumb_img' src='imgs/ona/$img_mini'>";
 		$dadoona .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_ona</span>";
 		$dadoona .= "</div></a></div>";

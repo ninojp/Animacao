@@ -15,7 +15,7 @@ if (!empty($filme)) {
 	while($row_filme = $result_filme->fetch(PDO::FETCH_ASSOC)){
 		extract($row_filme);
 		$dadofilme .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
-		$dadofilme .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do filme' target='_blank'>";
+		$dadofilme .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do filme' target='_blank'>";
 		$dadofilme .= "<img class='thumb_img' src='imgs/filme/$img_mini'>";
 		$dadofilme .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_filme</span>";
 		$dadofilme .= "</div></a></div>";

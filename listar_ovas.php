@@ -15,7 +15,7 @@ if (!empty($ova)) {
 	while($row_ova = $result_ova->fetch(PDO::FETCH_ASSOC)){
 		extract($row_ova);
 		$dadoova .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
-		$dadoova .= "<a href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do ova' target='_blank'>";
+		$dadoova .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do ova' target='_blank'>";
 		$dadoova .= "<img class='thumb_img' src='imgs/ova/$img_mini'>";
 		$dadoova .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_ova</span>";
 		$dadoova .= "</div></a></div>";
