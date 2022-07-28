@@ -240,3 +240,8 @@ li .menu_pag {
 	width: 100%;
 	z-index: -1;	
 }
+/* Paragarfo em destaque do busca sem resultado */
+.destaque {
+    color: #ffd700;
+    font-weight: 600;
+}

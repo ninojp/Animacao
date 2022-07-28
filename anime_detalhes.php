@@ -38,15 +38,15 @@ $consulta_img_serie = $conecta->query("SELECT * FROM imagem");
 $consulta_img2_serie = $conecta->query("SELECT caminho_img, serie_id_serie FROM imagem
 where serie_id_serie != 0");
 // Consulta SELECT -> BD.serie -> TODOS os dados de TODAS as SÉRIEs deste anime
-$consulta_serie = $conecta->query("SELECT * FROM serie where anime_id_anime='$id_anime'");
+$consulta_serie = $conecta->query("SELECT * FROM serie where serie_id_anime='$id_anime'");
 // Consulta SELECT -> BD.ova -> TODOS os dados de TODAS as OVAs deste anime
-$consulta_ova = $conecta->query("SELECT * FROM ova where anime_id_anime='$id_anime'");
+$consulta_ova = $conecta->query("SELECT * FROM ova where ova_id_anime='$id_anime'");
 // Consulta SELECT -> BD.especial -> TODOS os dados de TODOS os ESPECIAIS deste anime
-$consulta_especial = $conecta->query("SELECT * FROM especial where anime_id_anime='$id_anime'");
+$consulta_especial = $conecta->query("SELECT * FROM especial where especial_id_anime='$id_anime'");
 // Consulta SELECT -> BD.ona -> TODOS os dados de TODOS as ONAS deste anime
-$consulta_ona = $conecta->query("SELECT * FROM ona where anime_id_anime='$id_anime'");
+$consulta_ona = $conecta->query("SELECT * FROM ona where ona_id_anime='$id_anime'");
 // Consulta SELECT -> BD.filme -> TODOS os dados de TODOS os FILMEs deste anime		
-$consulta_filme = $conecta->query("SELECT * FROM filme where anime_id_anime='$id_anime'");
+$consulta_filme = $conecta->query("SELECT * FROM filme where filme_id_anime='$id_anime'");
 		
 	} else {
 		header('location:index.php');

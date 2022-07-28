@@ -29,12 +29,10 @@ include_once('conecta.php');
 		<div class="row text-center fundo_black_40"><!-- ROW da parte CENTRAL  -->
 			<div class="col-xxl-10 col-xl-10 col-lg-10 container"><!-- COLUNA CENTRAL  -->
 				<fieldset>
-					<legend>Nenhum Resultado ENCONTRADO!</legend>
+					<legend><h2>O termo procurado não foi encontrado!!!</h2></legend>
 					<div class="form-group">
-						<h2>O termo procurado não foi encontrado!!!</h2>
-					</div>
-					<div class="form-group">
-						<p>Lembrando que a busca obtem melhores resultas por PALAVRAS do que por frases, caso não encontre o titulo completo do ANIME, busque por uma ou duas palavras do Titulo, Subtitulo em Inglês, Português ou Hepburn.</p>
+						<p class="destaque">A busca obtem melhores resultas com poucas PALAVRAS do que com frases!<br>
+						Busque pelo nome parcial ou completo em Inglês, Hepburn ou Português.</p>
 					</div>
 					<div class="form-group">
 						<a href="index.php" target="_parent">

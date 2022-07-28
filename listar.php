@@ -5,7 +5,7 @@ $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
 
 if (!empty($pagina)) {
 	// CALCULAR O INICIO DA VISUALIZAÇÃO
-	$qnt_result_pg = 32; // Quantidade de registro por pagina
+	$qnt_result_pg = 40; // Quantidade de registro por pagina
 	$inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
 	
 //CONSULTA QUERY na tabela ANIME JOIN IMAGEM ordenado por nome_anime
