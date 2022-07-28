@@ -1,4 +1,5 @@
-<?php
+<?php session_start();
+ob_start();
 include_once('conecta.php');
 ?>
 <!doctype html>
@@ -25,10 +26,9 @@ include_once('conecta.php');
 				<?php
 					include_once ('listar_letras.php');
 				?>
-                    <!-- Inserir o conteudo no bloco pricipal AQUI -->
+                <!-- Inserir o conteudo no bloco pricipal AQUI -->
 
-                
-		</div><!-- Fechamento da COLUNA CENTRAL  -->
+			</div><!-- Fechamento da COLUNA CENTRAL  -->
 	<?php
 	include_once('side_bar.php');
 	?>
