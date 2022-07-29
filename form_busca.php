@@ -40,56 +40,47 @@ ob_start();
                 <div class="row justify-content-center">
                     <div class="col-sm-12 text-center">
 						<h2>Resultado da busca</h2>
-                        <p>Atualmente o resultado tem LINKs apenas para os animes, dentro da pagina ANIMES DETALHES vc terá acesso a todas os detalhes do anime; Filmes, Series, Ovas, Onas, Especiais do mesmo.</p>
+                        <p class="destaque">CLICK na IMAGEM e vc terá acesso a todas os detalhes do mesmo; Filmes, Series, Ovas, Onas e Especiais.</p>
                     </div>
-					<div class="row justify-content-center text-center border">
+				</div><!-- FECHAMENTO do ROW de exibição do resulta da BUSCA -->
+					<div class="row justify-content-center text-center">
 					<!-- WHILE para exibir o resulta da BUSCA -->
                     <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
 					<!-- Exibir o resultado da BUSCA por ANIME -->
                     <?php if ($exibir['id_anime']!="") { ?>
-                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4" >
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
                             <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
-                            <div class='col-xxl-11'>
+                            <div class='col-xxl-12'>
                             	<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
                                 <img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
 							</div></a>
-						    <div class="form-group">
-                            	<a href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
-                                	<button type="button" class="meu_btn">
-                                	Detalhes </button></a>
-                            </div>
 						</div>
 					<?php } ?>
 
 						<!-- Exibir o resultado da BUSCA por FILMEs -->
                         <?php if ($exibir['id_filme']!="") { ?>
-						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
 							<a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['filme_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
-                            <div class='col-xxl-11'>
+                            <div class='col-xxl-12'>
 								<span class="span_nome"><?php echo $exibir['titulo_filme']; ?></span>
 								<img class='thumb_img' src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
 							</div></a>
-							<div class="form-group">
-                            	<a href="anime_detalhes.php?id_anime=<?php echo $exibir['filme_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
-                                <button type="button" class="meu_btn">
-                                Detalhes </button></a>
-                            </div>
 						</div>
 						<?php } ?>
 
 						<!-- Exibir o resultado da BUSCA por SERIEs -->	
 						<?php if ($exibir['id_serie']!="") { ?>
-						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
+						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
 							<a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['filme_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
+							<div class='col-xxl-12'>
                             	<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
 								<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
-								<button type="button" class="meu_btn">
-                                Detalhes </button></a>
+							</div></a>
 						</div>
 						<?php } ?>
 					<?php } ?>
 					</div><!-- FECHAMENTO do ROW do WHILE -->
-				</div><!-- FECHAMENTO do ROW de exibição do resulta da BUSCA -->
+				
 
 		</div><!-- Fechamento da COLUNA CENTRAL  -->
 	<?php
