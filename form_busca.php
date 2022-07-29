@@ -12,7 +12,7 @@ ob_start();
 	// $consulta = $conecta->query("SELECT * FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE ani.nome_anime OR fil.titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR fil.titulo_filme LIKE CONCAT ('%','$recebe_busca','%')");
 	
 	// Novos testes 21-07-22 - estava retornando BEM mas não consegui linkar para os DETALHES do anime(foi ai q descobri meu erro no PESQ_AUTO2)
-	$consulta = $conecta->query("SELECT ani.id_anime, ani.nome_anime, ani.nome_completo_anime, ani.img_mini as ani_img, fil.id_filme, fil.filme_id_anime, fil.titulo_filme, fil.img_mini as fil_img, ser.id_serie, ser.serie_id_anime, ser.titulo_serie, ser.img_mini as ser_img, ova.id_ova, ova.titulo_ova, ona.id_ona, ona.titulo_ona, esp.id_especial, esp.titulo_especial FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE id_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR titulo_serie LIKE CONCAT ('%','$recebe_busca','%')");
+	$consulta = $conecta->query("SELECT ani.id_anime, ani.nome_anime, ani.nome_completo_anime, ani.img_mini as ani_img, fil.id_filme, fil.filme_id_anime, fil.titulo_filme, fil.img_mini as fil_img, ser.id_serie, ser.serie_id_anime, ser.titulo_serie, ser.img_mini as ser_img, ova.id_ova, ova.ova_id_anime, ova.titulo_ova, ova.img_mini as ova_img, ona.id_ona, ona.ona_id_anime, ona.titulo_ona, ona.img_mini as ona_img, esp.id_especial, esp.especial_id_anime, esp.titulo_especial, esp.img_mini as esp_img FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR titulo_serie LIKE CONCAT ('%','$recebe_busca','%') OR titulo_ova LIKE CONCAT ('%','$recebe_busca','%') OR titulo_especial LIKE CONCAT ('%','$recebe_busca','%') OR titulo_ona LIKE CONCAT ('%','$recebe_busca','%')");
 	if ($consulta->rowCount()==0) {
 		echo "<html><script>location.href='erro_busca.php'</script></hmtl>";	
 	} ?>
@@ -39,13 +39,13 @@ ob_start();
 				<!-- Aqui começa o row para EXIBIÇÃO dos resultados da BUSCA -->
                 <div class="row justify-content-center">
                     <div class="col-sm-12 text-center">
-						<h2>Resultado da busca</h2>
+						<h2 class="branco">Resultado da busca</h2>
                         <p class="destaque">CLICK na IMAGEM e vc terá acesso a todas os detalhes do mesmo; Filmes, Series, Ovas, Onas e Especiais.</p>
                     </div>
-				</div><!-- FECHAMENTO do ROW de exibição do resulta da BUSCA -->
-					<div class="row justify-content-center text-center">
-					<!-- WHILE para exibir o resulta da BUSCA -->
-                    <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
+				</div>
+				<div class="row justify-content-center text-center">
+				<!-- WHILE para exibir o resulta da BUSCA -->
+                <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
 					<!-- Exibir o resultado da BUSCA por ANIME -->
                     <?php if ($exibir['id_anime']!="") { ?>
                         <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
@@ -71,17 +71,50 @@ ob_start();
 						<!-- Exibir o resultado da BUSCA por SERIEs -->	
 						<?php if ($exibir['id_serie']!="") { ?>
 						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
-							<a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['filme_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
+							<a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['serie_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
 							<div class='col-xxl-12'>
                             	<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
 								<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
 							</div></a>
 						</div>
 						<?php } ?>
+					
+					<!-- Exibir o resultado da BUSCA por OVA -->
+                    <?php if ($exibir['id_ova']!="") { ?>
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                            <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['ova_id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
+                            <div class='col-xxl-12'>
+                            	<span class="span_nome"><?php echo $exibir['titulo_ova']; ?></span>
+                                <img class='thumb_img' src="imgs/ova/<?php echo $exibir['ova_img']; ?>" class="img-responsive">
+							</div></a>
+						</div>
 					<?php } ?>
-					</div><!-- FECHAMENTO do ROW do WHILE -->
-				
 
+					<!-- Exibir o resultado da BUSCA por ESPECIAL -->
+                    <?php if ($exibir['id_especial']!="") { ?>
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                            <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['especial_id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
+                            <div class='col-xxl-12'>
+                            	<span class="span_nome"><?php echo $exibir['titulo_especial']; ?></span>
+                                <img class='thumb_img' src="imgs/especial/<?php echo $exibir['esp_img']; ?>" class="img-responsive">
+							</div></a>
+						</div>
+					<?php } ?>
+
+					<!-- Exibir o resultado da BUSCA por ONA -->
+                    <?php if ($exibir['id_ona']!="") { ?>
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                            <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['ona_id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
+                            <div class='col-xxl-12'>
+                            	<span class="span_nome"><?php echo $exibir['titulo_ona']; ?></span>
+                                <img class='thumb_img' src="imgs/ona/<?php echo $exibir['ona_img']; ?>" class="img-responsive">
+							</div></a>
+						</div>
+					<?php } ?>
+
+
+				<?php } ?>
+				</div><!-- FECHAMENTO do ROW de exibição do resulta da BUSCA -->
 		</div><!-- Fechamento da COLUNA CENTRAL  -->
 	<?php
 	include_once('side_bar.php');
