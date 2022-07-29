@@ -7,7 +7,7 @@ if (!empty($especial)) {
 	$qnt_result_pg = 40; // Quantidade de registro por pagina de especial
 	$inicio = ($especial * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
     //CONSULTA QUERY na tabela especial JOIN ANIME ordenado por nome_especial
-	$query_especial = "SELECT seri.id_especial, seri.titulo_especial, seri.img_mini, ani.id_anime FROM especial AS seri LEFT JOIN anime AS ani ON ani.id_anime = seri.anime_id_anime ORDER BY titulo_especial ASC LIMIT $inicio, $qnt_result_pg";
+	$query_especial = "SELECT esp.id_especial, esp.titulo_especial, esp.img_mini, ani.id_anime FROM especial AS esp LEFT JOIN anime AS ani ON ani.id_anime = esp.especial_id_anime ORDER BY titulo_especial ASC LIMIT $inicio, $qnt_result_pg";
 	$result_especial = $conecta->prepare($query_especial);
 	$result_especial->execute();
     if (($result_especial) and ($result_especial->rowCount() != 0)){

@@ -7,7 +7,7 @@ if (!empty($filme)) {
 	$qnt_result_pg = 40; // Quantidade de registro por pagina de filme
 	$inicio = ($filme * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
     //CONSULTA QUERY na tabela FILME JOIN ANIME ordenado por nome_filme
-	$query_filme = "SELECT film.id_filme, film.titulo_filme, film.img_mini, ani.id_anime FROM filme AS film LEFT JOIN anime AS ani ON ani.id_anime = film.anime_id_anime ORDER BY titulo_filme ASC LIMIT $inicio, $qnt_result_pg";
+	$query_filme = "SELECT film.id_filme, film.titulo_filme, film.img_mini, ani.id_anime FROM filme AS film LEFT JOIN anime AS ani ON ani.id_anime = film.filme_id_anime ORDER BY titulo_filme ASC LIMIT $inicio, $qnt_result_pg";
 	$result_filme = $conecta->prepare($query_filme);
 	$result_filme->execute();
     if (($result_filme) and ($result_filme->rowCount() != 0)){

@@ -7,7 +7,7 @@ if (!empty($serie)) {
 	$qnt_result_pg = 40; // Quantidade de registro por pagina de SERIE
 	$inicio = ($serie * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
     //CONSULTA QUERY na tabela ANIME JOIN IMAGEM ordenado por nome_anime
-	$query_serie = "SELECT seri.id_serie, seri.titulo_serie, seri.img_mini, ani.id_anime FROM serie AS seri LEFT JOIN anime AS ani ON ani.id_anime = seri.anime_id_anime ORDER BY titulo_serie ASC LIMIT $inicio, $qnt_result_pg";
+	$query_serie = "SELECT seri.id_serie, seri.titulo_serie, seri.img_mini, ani.id_anime FROM serie AS seri LEFT JOIN anime AS ani ON ani.id_anime = seri.serie_id_anime ORDER BY titulo_serie ASC LIMIT $inicio, $qnt_result_pg";
 	$result_serie = $conecta->prepare($query_serie);
 	$result_serie->execute();
     if (($result_serie) and ($result_serie->rowCount() != 0)){

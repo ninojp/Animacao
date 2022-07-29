@@ -7,7 +7,7 @@ if (!empty($ova)) {
 	$qnt_result_pg = 40; // Quantidade de registro por pagina de ova
 	$inicio = ($ova * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
     //CONSULTA QUERY na tabela OVA JOIN ANIME ordenado por nome_ova
-	$query_ova = "SELECT seri.id_ova, seri.titulo_ova, seri.img_mini, ani.id_anime FROM ova AS seri LEFT JOIN anime AS ani ON ani.id_anime = seri.anime_id_anime ORDER BY titulo_ova ASC LIMIT $inicio, $qnt_result_pg";
+	$query_ova = "SELECT ova.id_ova, ova.titulo_ova, ova.img_mini, ani.id_anime FROM ova AS ova LEFT JOIN anime AS ani ON ani.id_anime = ova.ova_id_anime ORDER BY titulo_ova ASC LIMIT $inicio, $qnt_result_pg";
 	$result_ova = $conecta->prepare($query_ova);
 	$result_ova->execute();
     if (($result_ova) and ($result_ova->rowCount() != 0)){

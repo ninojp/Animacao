@@ -7,7 +7,7 @@ if (!empty($ona)) {
 	$qnt_result_pg = 40; // Quantidade de registro por pagina de ona
 	$inicio = ($ona * $qnt_result_pg) - $qnt_result_pg;//2 * 10 = 20 - 10 = 10
     //CONSULTA QUERY na tabela ona JOIN ANIME ordenado por nome_ona
-	$query_ona = "SELECT seri.id_ona, seri.titulo_ona, seri.img_mini, ani.id_anime FROM ona AS seri LEFT JOIN anime AS ani ON ani.id_anime = seri.anime_id_anime ORDER BY titulo_ona ASC LIMIT $inicio, $qnt_result_pg";
+	$query_ona = "SELECT ona.id_ona, ona.titulo_ona, ona.img_mini, ani.id_anime FROM ona AS ona LEFT JOIN anime AS ani ON ani.id_anime = ona.ona_id_anime ORDER BY titulo_ona ASC LIMIT $inicio, $qnt_result_pg";
 	$result_ona = $conecta->prepare($query_ona);
 	$result_ona->execute();
     if (($result_ona) and ($result_ona->rowCount() != 0)){
