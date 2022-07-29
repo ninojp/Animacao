@@ -1,4 +1,5 @@
-<?php
+<?php session_start();
+ob_start();
 // conecta com o banco de dados
 include_once('conecta.php');
 ?>

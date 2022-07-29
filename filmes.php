@@ -1,4 +1,5 @@
-<?php
+<?php session_start();
+ob_start();
 include_once('conecta.php');
 ?>
 <!doctype html>
