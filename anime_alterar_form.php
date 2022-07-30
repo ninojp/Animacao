@@ -45,27 +45,27 @@ where serie_id_serie != 0");
 $consulta_serie = $conecta->query("SELECT * FROM serie AS ser
 INNER JOIN tipo as tip
 ON tip.id_tipo = ser.tipo_id_tipo
-WHERE anime_id_anime='$id_anime'");
+WHERE serie_id_anime='$id_anime'");
 // Consulta SELECT -> anime_bd.ova ->  JOIN tipo = TODOS os dados de TODAS as OVAs deste anime
 $consulta_ova = $conecta->query("SELECT * FROM ova AS ov
 INNER JOIN tipo as tip
 ON tip.id_tipo = ov.tipo_id_tipo
-WHERE anime_id_anime='$id_anime'");
+WHERE ova_id_anime='$id_anime'");
 // Consulta SELECT -> anime_bd.especial ->  JOIN tipo = TODOS os dados de TODOS os ESPECIAIS deste anime
 $consulta_especial = $conecta->query("SELECT * FROM especial AS esp
 INNER JOIN tipo as tip
 ON tip.id_tipo = esp.tipo_id_tipo
-WHERE anime_id_anime='$id_anime'");
+WHERE especial_id_anime='$id_anime'");
 // Consulta SELECT -> anime_bd.ona ->  JOIN tipo TODOS os dados de TODOS as ONAS deste anime
 $consulta_ona = $conecta->query("SELECT * FROM ona AS ona
 INNER JOIN tipo as tip
 ON tip.id_tipo = ona.tipo_id_tipo
-where anime_id_anime='$id_anime'");
+where ona_id_anime='$id_anime'");
 // Consulta SELECT -> anime_bd.filme ->  JOIN tipo  TODOS os dados de TODOS os FILMEs deste anime		
 $consulta_filme = $conecta->query("SELECT * FROM filme AS fil 
 INNER JOIN tipo as tip
 ON tip.id_tipo = fil.tipo_id_tipo
-where anime_id_anime='$id_anime'");
+where filme_id_anime='$id_anime'");
 	} else {
 		header('location:index.php');
 } ?>

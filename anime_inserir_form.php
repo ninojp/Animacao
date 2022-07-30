@@ -17,10 +17,9 @@ ob_start();
 	$consulta_especial = $conecta->query('SELECT * FROM especial ORDER BY id_especial DESC');
 	$consulta_ona = $conecta->query('SELECT * FROM ona ORDER BY id_ona DESC');
 	$consulta_filme = $conecta->query('SELECT * FROM filme ORDER BY id_filme DESC');
-	$consulta_categoria = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
-	$consulta_categoria1 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
-	$consulta_categoria2 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
-	$consulta_categoria3 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
+	$consulta_categoria = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id ASC');
+	$consulta_categoria1 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id ASC');
+	$consulta_categoria2 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id ASC');
 	$consulta_categoria4 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
 	$consulta_categoria5 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
 ?>
@@ -254,18 +253,13 @@ ob_start();
 								<label for="img_mini_anime">Selecione a Imagem MINI!</label>
 									<input type="file" name="img_mini_anime" accept="imgs/anime/*" class="form-control form-control-sm">
 								</div>
-								<div class="col-xxl-7 m-3">
+								<div class="col-xxl-11 m-3">
 								<label for="personagens">Personagens Principais do Anime:</label>
 									<textarea rows="4" name="personagens" class="form-control" placeholder="Personagens Principais" require></textarea>
 								</div>
-								<div class="col-xxl-4 mt-5">
-									<label for="select_categoria">Selecione a Categoria</label><br>
-									<select name="select_categoria">
-									<?php while($exibe_cat=$consulta_categoria->fetch(PDO::FETCH_ASSOC)) { ?>
-										<option value="<?php echo $exibe_cat['id'];?>"><?php echo $exibe_cat['nome_cat'];?></option>
-									<?php }	?>
-									</select>
-								</div>
+								<!-- INPUT de inserção da CATEGORIA do anime -->
+								<input type="hidden" value="1" name="select_categoria">
+								
 								<div class="col-xxl-11 m-3">
 								<button type="submit" class="btn btn-success">Enviar os Dados do ANIME!</button>
 								</div>
@@ -325,14 +319,9 @@ ob_start();
 										<input type="radio" name="tipo_anime5" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime5" value="5">Live Action<br>
 									</div>
-									<div class="col-xxl-3 my-4 fundo_black_20 rounded-3">
-										<label for="select_cat_filme">Categoria do FILME</label><br>
-										<select name="select_cat_filme">
-										<?php while($exibe_cat_filme=$consulta_categoria1->fetch(PDO::FETCH_ASSOC)) { ?>
-											<option value="<?php echo $exibe_cat_filme['id'];?>"><?php echo $exibe_cat_filme['nome_cat'];?></option>
-										<?php }	?>
-										</select>
-									</div>
+									<!-- INPUT de inserção da CATEGORIA do FILME -->
+									<input type="hidden" value="2" name="select_cat_filme">
+									
 									<div class="col-xxl-7 mt-4">
 										<label for="select_anime6">Selecione o NOME do Anime para cadastrar o FILME</label><br>
 										<select name="select_anime6">
@@ -489,14 +478,8 @@ ob_start();
 										<input type="radio" name="tipo_anime1" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime1" value="5">Live Action<br>
 									</div>
-									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-										<label for="select_cat_ova">Categoria da OVA</label><br>
-										<select name="select_cat_ova">
-										<?php while($exibe_cat_ova=$consulta_categoria3->fetch(PDO::FETCH_ASSOC)) { ?>
-											<option value="<?php echo $exibe_cat_ova['id'];?>"><?php echo $exibe_cat_ova['nome_cat'];?></option>
-										<?php }	?>
-										</select>
-									</div>
+									<!-- INPUT de inserção da CATEGORIA do anime -->
+									<input type="hidden" value="4" name="select_cat_ova">
 									<div class="col-xxl-10 my-3">
 										<label for="select_anime3">Selecione o Anime para cadastrar!</label><br>
 										<select name="select_anime3">
