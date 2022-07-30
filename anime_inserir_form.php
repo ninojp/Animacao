@@ -233,6 +233,10 @@ ob_start();
 									</select>
 								</div>
 								<div class="col-xxl-11 m-3">
+								<label for="img_mini_anime">Selecione a Imagem MINI!</label>
+									<input type="file" name="img_mini_anime" accept="imgs/anime/*" class="form-control form-control-sm">
+								</div>
+								<div class="col-xxl-11 m-3">
 									<label> Insira o Nome do anime:</label>
 									<input type="text" name="input_nome" class="form-control" placeholder="Nome do anime" required maxlength="100">
 								</div>
@@ -243,10 +247,6 @@ ob_start();
 								<div class="col-xxl-11 m-3">
 								<label for="descricao">Descrição do Anime:</label>
 									<textarea rows="3" name="descricao" class="form-control" placeholder="Descrição do Anime"></textarea>
-								</div>
-								<div class="col-xxl-11 m-3">
-								<label for="img_mini_anime">Selecione a Imagem MINI!</label>
-									<input type="file" name="img_mini_anime" accept="imgs/anime/*" class="form-control form-control-sm">
 								</div>
 								<div class="col-xxl-11 m-3">
 								<label for="personagens">Personagens Principais do Anime:</label>
