@@ -17,11 +17,6 @@ ob_start();
 	$consulta_especial = $conecta->query('SELECT * FROM especial ORDER BY id_especial DESC');
 	$consulta_ona = $conecta->query('SELECT * FROM ona ORDER BY id_ona DESC');
 	$consulta_filme = $conecta->query('SELECT * FROM filme ORDER BY id_filme DESC');
-	$consulta_categoria = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id ASC');
-	$consulta_categoria1 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id ASC');
-	$consulta_categoria2 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id ASC');
-	$consulta_categoria4 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
-	$consulta_categoria5 = $conecta->query('SELECT * FROM categoria_animacao ORDER BY id DESC');
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -384,11 +379,11 @@ ob_start();
 									<label>Fim da Exibição:</label>
 									<input type="text" name="exib_fim_serie" class="form-control" size="100" placeholder="000ano-00mês-00dia">
 								</div>
-								<div class="col-xxl-3 my-2">
+								<div class="col-xxl-4 my-4">
 									<label>Duração do Episódio:</label>
 									<input type="text" name="duracao_serie" class="form-control" size="100" placeholder="00h:00m:00s">
 								</div>
-								<div class="col-xxl-4 fundo_black_20 rounded-3 my-2">
+								<div class="col-xxl-5 fundo_black_20 rounded-3 my-2">
 									<label for="tipo_anime">Série - Tipo</label><br>
 									<input type="radio" name="tipo_anime" value="1" checked>Anime<br>
 									<input type="radio" name="tipo_anime" value="2">Animação<br>
@@ -396,14 +391,9 @@ ob_start();
 									<input type="radio" name="tipo_anime" value="4">Animação (Stop_Motion)<br>
 									<input type="radio" name="tipo_anime" value="5">Live Action<br>
 								</div>
-								<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-									<label for="select_cat_ser">Categoria da Série</label><br>
-									<select name="select_cat_ser">
-									<?php while($exibe_cat_ser=$consulta_categoria2->fetch(PDO::FETCH_ASSOC)) { ?>
-										<option value="<?php echo $exibe_cat_ser['id'];?>"><?php echo $exibe_cat_ser['nome_cat'];?></option>
-									<?php }	?>
-									</select>
-								</div>
+								<!-- INPUT de inserção da CATEGORIA da SÉRIE -->
+								<input type="hidden" value="3" name="select_cat_ser">
+								
 								<div class="col-xxl-11 my-2">
 								<label for="select_anime2">Selecione o NOME do Anime para cadastrar a SÉRIE</label><br>
 									<select name="select_anime2">
@@ -478,8 +468,9 @@ ob_start();
 										<input type="radio" name="tipo_anime1" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime1" value="5">Live Action<br>
 									</div>
-									<!-- INPUT de inserção da CATEGORIA do anime -->
+									<!-- INPUT de inserção da CATEGORIA do OVA -->
 									<input type="hidden" value="4" name="select_cat_ova">
+
 									<div class="col-xxl-10 my-3">
 										<label for="select_anime3">Selecione o Anime para cadastrar!</label><br>
 										<select name="select_anime3">
@@ -542,11 +533,11 @@ ob_start();
 										<label>Fim da Exibição:</label>
 										<input type="text" name="exib_fim_especial" class="form-control" placeholder="Data do fim (0000ano-00mês-00dia)">
 									</div>
-									<div class="col-xxl-3 my-2">
+									<div class="col-xxl-4 my-4">
 										<label>Duração do Episódio:</label>
 										<input type="text" name="duracao_especial" class="form-control" size="100" placeholder="00h:00m:00s">
 									</div>
-									<div class="col-xxl-4 fundo_black_20 rounded-3 my-2">
+									<div class="col-xxl-5 fundo_black_20 rounded-3 my-2">
 										<label for="tipo_anime3">ESPECIAL - Tipo:</label><br>
 										<input type="radio" name="tipo_anime3" value="1" checked>Anime<br>
 										<input type="radio" name="tipo_anime3" value="2">Animação<br>
@@ -554,14 +545,9 @@ ob_start();
 										<input type="radio" name="tipo_anime3" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime3" value="5">Live Action<br>
 									</div>
-									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-										<label for="select_cat_especial">Categoria do ESPECIAL</label><br>
-										<select name="select_cat_especial">
-										<?php while($exibe_cat_especial=$consulta_categoria4->fetch(PDO::FETCH_ASSOC)) { ?>
-											<option value="<?php echo $exibe_cat_especial['id'];?>"><?php echo $exibe_cat_especial['nome_cat'];?></option>
-										<?php }	?>
-										</select>
-									</div>
+									<!-- INPUT de inserção da CATEGORIA do ESPECIAL -->
+									<input type="hidden" value="6" name="select_cat_especial">
+
 									<div class="col-xxl-11 my-2">
 										<label for="select_anime4">Selecione o Anime para cadastrar:</label><br>
 										<select name="select_anime4">
@@ -636,14 +622,9 @@ ob_start();
 										<input type="radio" name="tipo_anime4" value="4">Animação (Stop_Motion)<br>
 										<input type="radio" name="tipo_anime4" value="5">Live Action<br>
 									</div>
-									<div class="col-xxl-4 my-5 fundo_black_20 rounded-3">
-										<label for="select_cat_ona">Categoria da ONA</label><br>
-										<select name="select_cat_ona">
-										<?php while($exibe_cat_ona=$consulta_categoria5->fetch(PDO::FETCH_ASSOC)) { ?>
-											<option value="<?php echo $exibe_cat_ona['id'];?>"><?php echo $exibe_cat_ona['nome_cat'];?></option>
-										<?php }	?>
-										</select>
-									</div>
+									<!-- INPUT de inserção da CATEGORIA do ONA -->
+									<input type="hidden" value="5" name="select_cat_ona">
+
 									<div class="col-xxl-11 my-2">
 										<label for="select_anime5">Selecione o Anime para cadastrar a ONA</label><br>
 										<select name="select_anime5">
