@@ -54,10 +54,10 @@ ob_start();
 	<div class="row"><div class="col-10">
 		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_autor" data-bs-toggle="modal">
 			Inserir Autor</button></div>
-		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_genero" data-bs-toggle="modal">
-			Escolher Generos</button></div>
 		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_anime" data-bs-toggle="modal">
 			Inserir Anime</button></div>
+		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_genero" data-bs-toggle="modal">
+			Escolher Generos</button></div>
 		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_filme" data-bs-toggle="modal">
 			Inserir Filme</button></div>
 		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_serie" data-bs-toggle="modal">
@@ -69,7 +69,7 @@ ob_start();
 		<div class="row my-4"><button type="button" class="btn btn-primary" data-bs-target="#modal_ona" data-bs-toggle="modal">
 			Inserir ONA</button></div>
 	</div></div>
-</div>modal_img_anime
+</div>
 <!-- BOTÕES PARA ABRIR OS MODALs DE INSERÇÃO DE IMGs -->
 <div class="container fundo_black_80 buttons_inserir_imgs rounded-4">
 	<div class="row"><div class="col-10">

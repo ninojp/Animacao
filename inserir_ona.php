@@ -22,7 +22,7 @@ preg_match("/\.(jpg|jpeg|png|gif){1}$/i",$recebe_img_mini['name'],$extencao1);
 $img_nome1 = md5(uniqid(time())).".".$extencao1[1];
 
 try {
-	$inserir=$conecta->query("INSERT INTO `ona` (`titulo_ona`, `s_titulo_ona`, `enredo_ona`, `n_episodio_ona`, `duracao_ona`, `exib_inicio`, `exib_fim`, `img_mini`, `anime_id_anime`, `tipo_id_tipo`, `categoria_id_cat`) 
+	$inserir=$conecta->query("INSERT INTO `ona` (`titulo_ona`, `s_titulo_ona`, `enredo_ona`, `n_episodio_ona`, `duracao_ona`, `exib_inicio`, `exib_fim`, `img_mini`, `ona_id_anime`, `tipo_id_tipo`, `categoria_id_cat`) 
 	VALUES ('$recebe_titulo_ona', '$recebe_subtitulo_ona', '$recebe_enredo_ona', '$recebe_n_episodios_ona', '$recebe_duracao_ona', '$recebe_exib_inicio_ona', '$recebe_exib_fim_ona', '$img_nome1', '$recebe_select_anime5', '$recebe_tipo_anime4', '$recebe_cat_ona')");
 	move_uploaded_file($recebe_img_mini['tmp_name'], $destino.$img_nome1);
 	header('location:anime_inserir_form.php');
