@@ -103,7 +103,7 @@ ob_start();
 									</div>
 									<div class="col-xxl-12 my-2">
 										<label for="input_producao">Produção:</label>
-										<textarea rows="1" name="input_producao" class="form-control" placeholder="Produção"></textarea>
+										<textarea rows="2" name="input_producao" class="form-control" placeholder="Produção"></textarea>
 									</div>
 									<div class="col-xxl-6 my-2">
 									<label>Roteiro:</label>
