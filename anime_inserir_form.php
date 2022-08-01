@@ -183,10 +183,11 @@ ob_start();
 									<input type="radio" name="genero_anime" value="19">Militar<br>
 									<input type="radio" name="genero_anime" value="21">Mistério<br>
 									<input type="radio" name="genero_anime" value="46">Mitológico<br>
+									<input type="radio" name="genero_anime" value="2">Musical<br>
 									<input type="radio" name="genero_anime" value="14">Romance<br>
-									<input type="radio" name="genero_anime" value="15">Seinen<br>
 								</div>
 								<div class="col-3 fundo_black_20 rounded-4">
+									<input type="radio" name="genero_anime" value="15">Seinen<br>
 									<input type="radio" name="genero_anime" value="39">Slice of Life<br>
 									<input type="radio" name="genero_anime" value="40">Shounen<br>
 									<input type="radio" name="genero_anime" value="16">Sobrevivência<br>
