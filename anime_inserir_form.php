@@ -612,7 +612,7 @@ ob_start();
 			<div class="modal-dialog modal-dialog-centered modal-lg">
 				<div class="modal-content fundo_black_60">
 					<div class="d-flex flex-row col-12">
-						<h2 class="modal-title" id="modal_onaLabel">Inserir uma Nova OVA</h2>
+						<h2 class="modal-title" id="modal_onaLabel">Inserir uma Nova ONA</h2>
 						<button type="button" class="meu_btn px-2 py-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"><span class="bt_fechar">X</span></button>
 					</div>
 					<div class="modal-body">
