@@ -174,6 +174,8 @@ ob_start();
 									<input type="radio" id="genero_36" name="genero_anime" value="36"><br>
 									<label for="genero_5">Escolar</label>
 									<input type="radio" id="genero_5" name="genero_anime" value="5"><br>
+									<label for="genero_47">Esporte</label>
+									<input type="radio" id="genero_47" name="genero_anime" value="47"><br>
 									<label for="genero_9">Fantasia</label>
 									<input type="radio" id="genero_9" name="genero_anime" value="9"><br>
 									<label for="genero_10">Ficção</label>
