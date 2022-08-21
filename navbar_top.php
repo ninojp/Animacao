@@ -90,7 +90,13 @@ include_once('conecta.php');
          <!-- Bloco do FORM de BUSCA -->
         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
             <form class="form-control d-flex fundo_black_40" method="POST" action="form_busca.php" name="form_busca" id="form_busca" role="search">
-               <input class="form-control form-sm me-3" type="text" name="input_busca" placeholder="Pesquisar por nome">
+				<?php
+					$pesquisar = "";
+					if(isset($recebe_busca['input_busca'])){
+					$pesquisar = $recebe_busca['input_busca'];
+					}
+				?>
+               <input class="form-control form-sm me-3" type="text" name="input_busca" placeholder="Pesquisar por nome" value="<?php echo $pesquisar; ?>">
                <button class="btn btn-primary btn-sm" type="submit" name="input_submit"><img src="imgs/pesquisar-26_mini.png"></button>
             </form>
         </div>
