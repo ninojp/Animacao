@@ -31,10 +31,20 @@ include_once('conecta.php');
 				<fieldset>
 					<legend><h2>O termo procurado não foi encontrado!!!</h2></legend>
 					<div class="form-group">
-						<p class="destaque">A busca obtem melhores resultas com poucas PALAVRAS do que com frases!<br>
+						<p class="destaque">O método de pesquisa usado foi por PALAVRAS(Full-Text), cada palavra digitada gera um resultado.<br>
 						Busque pelo nome parcial ou completo em Inglês, Hepburn ou Português.</p>
 					</div>
-					<div class="form-group">
+					<div class="form-group mt-5">
+						<p>Você pode usar este OUTRO método de pesquisa abaixo!<br>
+						<form method="GET" name="form_busca2" action="form_busca2.php">
+							<input type="text" name="busca2" placeholder="Buscar por TERMO">
+							<button type="submit" class="btn btn-sm btn-primary" name="button_busca"><img src="imgs/pesquisar-26_mini.png"></button>
+						</form>
+						<p>Neste método de pesquisa a busca é por TERMO completo, ignorando o que tiver antes ou depois do termo pesquisado!<br>
+						Qualquer caracter DENTRO do termo pesquisa será considerado, por exemplo:<br> (termo: pesquisado) trará um resultado diferente de (termo pesquisado).</p>
+					</p>
+					</div>
+					<div class="form-group mt-5">
 						<a href="index.php" target="_parent">
 							<button type="button" class="meu_btn">
 								Voltar para pagina inicial</button></a>
