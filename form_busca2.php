@@ -1,26 +1,26 @@
 <?php session_start();
 ob_start();
 	include_once 'conecta.php';
-    if (empty($_GET['busca2'])) {
+    if (empty($_POST['busca2'])) {
 		echo "<html><script>location.href='index.php'</script></hmtl>";
 	}	
 	// if (empty($_POST['busca2'])) {
 	// 	echo "<html><script>location.href='index.php'</script></hmtl>";
 	// }
-    $recebe_busca = $_GET['busca2'];
-	// $busca2 = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    $recebe_busca = $_POST['busca2'];
+	// $recebe_busca = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     //Primeira CONSULTA TESTADA
 	// $consulta = $conecta->query("SELECT * FROM anime WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%')");
 
     // Novos testes 21-07-22 - estava retornando BEM mas não consegui linkar para os DETALHES do anime(foi ai q descobri meu erro no PESQ_AUTO2)
-	$consulta = $conecta->query("SELECT ani.id_anime, ani.nome_anime, ani.nome_completo_anime, ani.img_mini as ani_img, fil.id_filme, fil.filme_id_anime, fil.titulo_filme, fil.s_titulo_filme, fil.img_mini as fil_img, ser.id_serie, ser.serie_id_anime, ser.titulo_serie, ser.s_titulo_serie, ser.img_mini as ser_img, ova.id_ova, ova.ova_id_anime, ova.titulo_ova, ova.img_mini as ova_img, ona.id_ona, ona.ona_id_anime, ona.titulo_ona, ona.s_titulo_ona, ona.img_mini as ona_img, esp.id_especial, esp.especial_id_anime, esp.titulo_especial, esp.s_titulo_especial, esp.img_mini as esp_img FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR titulo_serie LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_serie LIKE CONCAT ('%','$recebe_busca','%') OR titulo_ova LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_ova LIKE CONCAT ('%','$recebe_busca','%') OR titulo_especial LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_especial LIKE CONCAT ('%','$recebe_busca','%') OR titulo_ona LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_ona LIKE CONCAT ('%','$recebe_busca','%')");
+	$consulta_query = ("SELECT ani.id_anime, ani.nome_anime, ani.nome_completo_anime, ani.img_mini as ani_img, fil.id_filme, fil.filme_id_anime, fil.titulo_filme, fil.s_titulo_filme, fil.img_mini as fil_img, ser.id_serie, ser.serie_id_anime, ser.titulo_serie, ser.s_titulo_serie, ser.img_mini as ser_img, ova.id_ova, ova.ova_id_anime, ova.titulo_ova, ova.img_mini as ova_img, ona.id_ona, ona.ona_id_anime, ona.titulo_ona, ona.s_titulo_ona, ona.img_mini as ona_img, esp.id_especial, esp.especial_id_anime, esp.titulo_especial, esp.s_titulo_especial, esp.img_mini as esp_img FROM categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE nome_anime LIKE CONCAT ('%','$recebe_busca','%') OR nome_completo_anime LIKE CONCAT ('%','$recebe_busca','%') OR titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_filme LIKE CONCAT ('%','$recebe_busca','%') OR titulo_serie LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_serie LIKE CONCAT ('%','$recebe_busca','%') OR titulo_ova LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_ova LIKE CONCAT ('%','$recebe_busca','%') OR titulo_especial LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_especial LIKE CONCAT ('%','$recebe_busca','%') OR titulo_ona LIKE CONCAT ('%','$recebe_busca','%') OR s_titulo_ona LIKE CONCAT ('%','$recebe_busca','%')");
 	// NOVO TESTE 20-08-22 - teste com o MATCH ainda em desenvolvimnto
 	//$consulta_query = ("SELECT ani.id_anime, ani.nome_anime, ani.nome_completo_anime, ani.img_mini as ani_img, fil.id_filme, fil.filme_id_anime, fil.titulo_filme, fil.s_titulo_filme, fil.img_mini as fil_img, ser.id_serie, ser.serie_id_anime, ser.titulo_serie, ser.s_titulo_serie, ser.img_mini as ser_img, ova.id_ova, ova.ova_id_anime, ova.titulo_ova, ova.img_mini as ova_img, ona.id_ona, ona.ona_id_anime, ona.titulo_ona, ona.s_titulo_ona, ona.img_mini as ona_img, esp.id_especial, esp.especial_id_anime, esp.titulo_especial, esp.s_titulo_especial, esp.img_mini as esp_img FROM  categoria_animacao AS cat_ani LEFT JOIN anime AS ani ON cat_ani.id = ani.categoria_id_cat LEFT JOIN filme AS fil ON cat_ani.id = fil.categoria_id_cat LEFT JOIN serie AS ser ON cat_ani.id = ser.categoria_id_cat LEFT JOIN ova AS ova ON cat_ani.id = ova.categoria_id_cat LEFT JOIN ona AS ona ON cat_ani.id = ona.categoria_id_cat LEFT JOIN especial AS esp ON cat_ani.id = esp.categoria_id_cat WHERE MATCH(nome_anime) AGAINST (:buscar) OR MATCH(nome_completo_anime) AGAINST (:buscar) OR MATCH(titulo_filme) AGAINST (:buscar) OR MATCH(s_titulo_filme) AGAINST (:buscar) OR MATCH(titulo_serie) AGAINST (:buscar) OR MATCH(s_titulo_serie) AGAINST (:buscar) OR MATCH(titulo_ova) AGAINST (:buscar) OR MATCH(s_titulo_ova) AGAINST (:buscar) OR MATCH(titulo_ona) AGAINST (:buscar) OR MATCH(s_titulo_ona) AGAINST (:buscar) OR MATCH(titulo_especial) AGAINST (:buscar) OR MATCH(s_titulo_especial) AGAINST (:buscar) LIMIT 50");
-	// $consulta = $conecta->prepare($consulta_query);
+	$consulta = $conecta->prepare($consulta_query);
 	// $consulta->bindParam(':buscar', $busca2['busca2'], PDO::PARAM_STR);
-	// $consulta->execute();
+	$consulta->execute();
 	if ($consulta->rowCount()==0) {
-		echo "<html><script>location.href='erro_busca.php'</script></hmtl>";	
+		echo "<html><script>location.href='erro_busca2.php'</script></hmtl>";	
 	} ?>
 <!doctype html>
 <html lang="pt-br">
@@ -52,7 +52,7 @@ ob_start();
 				</div>
 				<div class="row justify-content-center text-center">
 				<!-- WHILE para exibir o resulta da BUSCA -->
-                <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
+                <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) extract($exibir); { ?>
 					<!-- Exibir o resultado da BUSCA por ANIME -->
                     <?php if ($exibir['id_anime']!="") { ?>
                         <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">

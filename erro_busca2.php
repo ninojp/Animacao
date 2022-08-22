@@ -9,7 +9,7 @@ include_once('conecta.php');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="animação, anime, animação 3d, filmes anime, ecchi, desenhos animados">
-	<title>BUSCA! Nenhum Resultado Encontrado</title>
+	<title>Nenhum Resultado Encontrado</title>
 	<!-- Favicon Imagem -->
 	<link rel="icon" type="image/x-icon" sizes="128x128" href="imgs/favicon.ico">
 </head>
@@ -29,13 +29,13 @@ include_once('conecta.php');
 		<div class="row text-center fundo_black_40"><!-- ROW da parte CENTRAL  -->
 			<div class="col-xxl-10 col-xl-10 col-lg-10 container"><!-- COLUNA CENTRAL  -->
 				<fieldset>
-					<legend><h2>A Palavra procurada não foi encontrado!!!</h2></legend>
+					<legend><h2>Não foi possivel encontrar o TERMO!!!</h2></legend>
 					<div class="form-group">
-						<p class="destaque">O método de pesquisa usado foi por PALAVRAS(Full-Text), cada palavra digitada gera um resultado.<br>
-						Busque pelo nome parcial ou completo em Inglês, Hepburn ou Português.</p>
+						<p class="destaque">Se mesmo o segundo método de busca não obteve resultado é porque o termo procura está ESCRITO de forma incorreta ou não existe no nosso banco de dados.<br>
+                    Tente novamente a busca por PALAVRAS no pesquisar no Topo da Página</p>
 					</div>
 					<div class="form-group mt-5">
-						<p>Você pode usar este OUTRO método de pesquisa abaixo!<br>
+						<p>Ou tente OUTRO Termo Novamente!<br>
 						<form method="POST" name="form_busca2" action="form_busca2.php">
 							<input type="text" name="busca2" placeholder="Buscar por TERMO">
 							<button type="submit" class="btn btn-sm btn-primary" name="button_busca"><img src="imgs/pesquisar-26_mini.png"></button>
