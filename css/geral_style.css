@@ -182,7 +182,7 @@ li .menu_pag {
 .thumb_div {
     max-height: 320px;
     max-width: 195px;
-    margin: 1rem 0rem 0rem 1.5rem;
+    margin: 2rem 0rem 0rem 1.5rem;
 }
 .thumb_img {
     height:270px;
@@ -198,8 +198,10 @@ li .menu_pag {
     transition: all 0.3s ease-in;
 }
 .span_nome {
+    position: relative;
+    top: -23px; left: 10px;
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     border-radius: 5px;
     background-color: rgba(0,0,0,0.8);

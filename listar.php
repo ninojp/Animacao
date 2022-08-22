@@ -20,10 +20,11 @@ if (($result_anime) and ($result_anime->rowCount() != 0)){
 	
 	while($row_anime = $result_anime->fetch(PDO::FETCH_ASSOC)){
 		extract($row_anime);
+		$nome_anime2 = nl2br(mb_strimwidth($nome_anime,0,36,'...'));
 		$dados .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
 		$dados .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do Anime' target='_blank'>";
 		$dados .= "<img class='thumb_img' src='imgs/anime/$img_mini'>";
-		$dados .= "<div class='col-xxl-10'><span class='span_nome'>$nome_anime</span>";
+		$dados .= "<div class='col-xxl-10'><span class='span_nome'>$nome_anime2</span>";
 		$dados .= "</div></a></div>";
 	}
 	$dados .= "</div>";

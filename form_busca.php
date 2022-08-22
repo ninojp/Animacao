@@ -57,71 +57,69 @@ ob_start();
                 <?php while ($exibir = $consulta->fetch(PDO::FETCH_ASSOC)) { extract($exibir); ?>
 					<!-- Exibir o resultado da BUSCA por ANIME -->
                     <?php if ($exibir['id_anime']!="") { ?>
-                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
                             <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
                             <div class='col-xxl-12'>
-                            	<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
-                                <img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
+                            	<img class='thumb_img' src="imgs/anime/<?php echo $exibir['ani_img']; ?>" class="img-responsive">
+								<span class="span_nome"><?php echo $exibir['nome_anime']; ?></span>
 							</div></a>
 						</div>
 					<?php } ?>
 
 						<!-- Exibir o resultado da BUSCA por FILMEs -->
                         <?php if ($exibir['id_filme']!="") { ?>
-						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
 							<a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['filme_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
                             <div class='col-xxl-12'>
-								<span class="span_nome"><?php echo $exibir['titulo_filme']; ?></span>
 								<img class='thumb_img' src="imgs/filme/<?php echo $exibir['fil_img']; ?>" class="img-responsive">
+								<span class="span_nome"><?php echo $exibir['titulo_filme']; ?></span>
 							</div></a>
 						</div>
 						<?php } ?>
 
 						<!-- Exibir o resultado da BUSCA por SERIEs -->	
 						<?php if ($exibir['id_serie']!="") { ?>
-						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+						<div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
 							<a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['serie_id_anime'];?>" title="Click para Detalhes do Anime" target="_blank">
 							<div class='col-xxl-12'>
-                            	<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
-								<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
+                            	<img class='thumb_img' src="imgs/serie/<?php echo $exibir['ser_img']; ?>" class="img-responsive">
+								<span class='span_nome'><?php echo $exibir['titulo_serie']; ?></span>
 							</div></a>
 						</div>
 						<?php } ?>
 					
 					<!-- Exibir o resultado da BUSCA por OVA -->
                     <?php if ($exibir['id_ova']!="") { ?>
-                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
                             <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['ova_id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
                             <div class='col-xxl-12'>
-                            	<span class="span_nome"><?php echo $exibir['titulo_ova']; ?></span>
-                                <img class='thumb_img' src="imgs/ova/<?php echo $exibir['ova_img']; ?>" class="img-responsive">
+                            	<img class='thumb_img' src="imgs/ova/<?php echo $exibir['ova_img']; ?>" class="img-responsive">
+								<span class="span_nome"><?php echo $exibir['titulo_ova']; ?></span>
 							</div></a>
 						</div>
 					<?php } ?>
 
 					<!-- Exibir o resultado da BUSCA por ESPECIAL -->
                     <?php if ($exibir['id_especial']!="") { ?>
-                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
                             <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['especial_id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
                             <div class='col-xxl-12'>
-                            	<span class="span_nome"><?php echo $exibir['titulo_especial']; ?></span>
-                                <img class='thumb_img' src="imgs/especial/<?php echo $exibir['esp_img']; ?>" class="img-responsive">
+                            	<img class='thumb_img' src="imgs/especial/<?php echo $exibir['esp_img']; ?>" class="img-responsive">
+								<span class="span_nome"><?php echo $exibir['titulo_especial']; ?></span>
 							</div></a>
 						</div>
 					<?php } ?>
 
 					<!-- Exibir o resultado da BUSCA por ONA -->
                     <?php if ($exibir['id_ona']!="") { ?>
-                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4 mt-4">
+                        <div class="thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4">
                             <a class="link_sem_" href="anime_detalhes.php?id_anime=<?php echo $exibir['ona_id_anime']; ?>" title="Click para Detalhes do Anime" target="_blank">
                             <div class='col-xxl-12'>
-                            	<span class="span_nome"><?php echo $exibir['titulo_ona']; ?></span>
-                                <img class='thumb_img' src="imgs/ona/<?php echo $exibir['ona_img']; ?>" class="img-responsive">
+                            	<img class='thumb_img' src="imgs/ona/<?php echo $exibir['ona_img']; ?>" class="img-responsive">
+								<span class="span_nome"><?php echo $exibir['titulo_ona']; ?></span>
 							</div></a>
 						</div>
 					<?php } ?>
-
-
 				<?php } ?>
 				</div><!-- FECHAMENTO do ROW de exibição do resulta da BUSCA -->
 		</div><!-- Fechamento da COLUNA CENTRAL  -->
