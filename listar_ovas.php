@@ -14,11 +14,11 @@ if (!empty($ova)) {
         $dadoova = "<div class='row text-center'>";
 	while($row_ova = $result_ova->fetch(PDO::FETCH_ASSOC)){
 		extract($row_ova);
+		$titulo_ova2 = nl2br(mb_strimwidth($titulo_ova,0,50,'...'));
 		$dadoova .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
 		$dadoova .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do ova' target='_blank'>";
 		$dadoova .= "<img class='thumb_img' src='imgs/ova/$img_mini'>";
-		$dadoova .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_ova</span>";
-		$dadoova .= "</div></a></div>";
+		$dadoova .= "<div class='span_nome'>$titulo_ova2</div></a></div>";
 	}
 	$dadoova .= "</div>";
 	//Paginação - somar a quantidade de registro que ha no BD
