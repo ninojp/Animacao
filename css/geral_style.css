@@ -201,10 +201,10 @@ li .menu_pag {
     position: relative;
     top: -23px; left: 10px;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     border-radius: 5px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     padding: 0rem 0.5rem 0rem 0.5rem;
 }
 .link_sem_ {

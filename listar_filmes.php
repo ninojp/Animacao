@@ -14,11 +14,11 @@ if (!empty($filme)) {
         $dadofilme = "<div class='row text-center'>";
 	while($row_filme = $result_filme->fetch(PDO::FETCH_ASSOC)){
 		extract($row_filme);
+		$titulo_filme2 = nl2br(mb_strimwidth($titulo_filme,0,50,'...'));
 		$dadofilme .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
 		$dadofilme .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do filme' target='_blank'>";
 		$dadofilme .= "<img class='thumb_img' src='imgs/filme/$img_mini'>";
-		$dadofilme .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_filme</span>";
-		$dadofilme .= "</div></a></div>";
+		$dadofilme .= "<div class='span_nome'>$titulo_filme2</div></a></div>";
 	}
 	$dadofilme .= "</div>";
 	//Paginação - somar a quantidade de registro que ha no BD

@@ -14,12 +14,11 @@ if (!empty($especial)) {
         $dadoespecial = "<div class='row text-center'>";
 	while($row_especial = $result_especial->fetch(PDO::FETCH_ASSOC)){
 		extract($row_especial);
-		$titulo_especial2 = nl2br(mb_strimwidth($titulo_especial,0,45,'...'));
+		$titulo_especial2 = nl2br(mb_strimwidth($titulo_especial,0,50,'...'));
 		$dadoespecial .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
 		$dadoespecial .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do especial' target='_blank'>";
 		$dadoespecial .= "<img class='thumb_img' src='imgs/especial/$img_mini'>";
-		$dadoespecial .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_especial2</span>";
-		$dadoespecial .= "</div></a></div>";
+		$dadoespecial .= "<div class='span_nome'>$titulo_especial2</div></a></div>";
 	}
 	$dadoespecial .= "</div>";
 	//Paginação - somar a quantidade de registro que ha no BD

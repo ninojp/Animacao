@@ -14,11 +14,11 @@ if (!empty($ona)) {
         $dadoona = "<div class='row text-center'>";
 	while($row_ona = $result_ona->fetch(PDO::FETCH_ASSOC)){
 		extract($row_ona);
+		$titulo_ona2 = nl2br(mb_strimwidth($titulo_ona,0,50,'...'));
 		$dadoona .= "<div class='thumb_div col-xxl-3 col-xl-3 col-lg-3 col-md-4'>";
 		$dadoona .= "<a class='link_sem_' href='anime_detalhes.php?id_anime=$id_anime' title='Detalhes do ona' target='_blank'>";
 		$dadoona .= "<img class='thumb_img' src='imgs/ona/$img_mini'>";
-		$dadoona .= "<div class='col-xxl-10'><span class='span_nome'>$titulo_ona</span>";
-		$dadoona .= "</div></a></div>";
+		$dadoona .= "<div class='span_nome'>$titulo_ona2</div></a></div>";
 	}
 	$dadoona .= "</div>";
 	//Paginação - somar a quantidade de registro que ha no BD
